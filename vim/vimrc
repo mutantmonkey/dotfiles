@@ -4,95 +4,59 @@
 " author: mutantmonkey <mutantmonkey@gmail.com>
 " ##############################################################################
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General Settings {{{
 
-" Disable backup files
-set nobackup
+set hidden							" Switch buffers without saving
+set nobackup						" Disable backup files
+set nocompatible					" Disable vi-compatible mode
+set noerrorbells					" Don't make noise on errors
+set shortmess+=I					" Do not show welcome screen
+set title							" Update window title
 
-" Disable vi-compatible mode
-set nocompatible
+" }}}
 
-" Don't make noise
-set noerrorbells
 
-" Switch buffers without saving
-set hidden
+" Color Settings {{{
 
-" Update window title
-set title
+if $TERM =~ "256color" || has('gui_running')
+	colorscheme xoria256
+else
+	colorscheme darkdot
+endif
 
-" Hide Vim welcome screen
-set shortmess+=I
+" }}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" UI Settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Color scheme
-colors xoria256
-
-" Highlight current line
-set cursorline
-
-" Show line numbers
-set number
-
-" Highlight matching brackets
-set showmatch
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" GUI Settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GUI Settings {{{
 
 if has("gui_running")
-	" Color scheme
-	"colors asmanian_blood
-	"colors darkspectrum
-
-	" Disable tear-off menus
-	set guioptions-=t
+	set guioptions-=t				" Disable tear-off menus
 
 	" Window size
 	set columns=100
 	set lines=40
 endif
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Editing
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
 
-" Make backspace more flexible
-set backspace=indent,eol,start
 
-" Allow use of arrow keys while in insert mode
-set esckeys
+" Editing {{{
 
-" Don't stay in insert mode
-set noinsertmode
+set backspace=indent,eol,start		" Make backspace key behave normally
+set esckeys							" Allow use of arrow keys while in insert mode
+set noinsertmode					" Don't stay in insert mode
+set spell							" Enable spell checking
 
-" Prevent cursor from moving to left one space when exiting insert mode
-"inoremap <esc> <right><esc>
+set cursorline						" Highlight current line
+set number							" Show line numbers
 
-" Show matching parentheses
-set showmatch
+set showmatch						" Highlight matching pairs
+set matchpairs+=<:>					" Make < and > match
 
-" Spell checking
-set spell
+" }}}
 
-" Syntax highlighting
-syntax enable
 
-" Highlight HTML code inside of PHP
-let php_htmlInStrings=1
-
-" Highlight MySQL queries inside of PHP
-let php_sql_query=1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Indentation
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Indentation {{{
 
 " Automatic indentation on new lines
 set autoindent
@@ -111,9 +75,25 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" File formats
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+
+
+" Folding {{{
+
+if has('folding')
+	set foldenable				" Enable folding
+	set foldmethod=marker		" Fold on marker
+	set foldopen-=search		" Do not open folds when searching
+	set foldopen-=undo			" Do not open folds when using undo
+	"set foldlevel=999			" Show folds at start
+	set foldmarker={{{,}}}		" Use default fold marker
+	set foldcolumn=0			" Do not use a fold column
+endif
+
+" }}}
+
+
+" File Formats {{{
 
 " Unicode support
 set encoding=utf-8
@@ -121,15 +101,19 @@ set encoding=utf-8
 " Support UNIX, DOS, and Mac line endings
 set fileformats=unix,dos,mac
 
+" Enable filetype auto-detection
+filetype plugin on
+
 " Enable filetype-specific indentation
 filetype plugin indent on
 
 " Enable Sparkup plugin for HTML files
 autocmd FileType html source ~/.config/vim/scripts/sparkup.vim
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Searching
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+
+
+" Searching {{{
 
 " Highlight
 set hlsearch
@@ -137,4 +121,32 @@ set hlsearch
 " Ignore case unless token contains uppercase
 set ignorecase
 set smartcase
+
+" }}}
+
+
+" Syntax Highlighting {{{
+
+" Syntax highlighting
+syntax enable
+
+" Highlight HTML code inside of PHP
+let php_htmlInStrings=1
+
+" Highlight MySQL queries inside of PHP
+let php_sql_query=1
+
+" }}}
+
+
+" Plugins {{{
+
+" SnipMate
+"set runtimepath+=~/.config/vim/plugin/snipmate/
+set runtimepath+=~/.config/vim/plugin/snipmate/after/
+let g:snips_author ='mutantmonkey'
+let g:snips_email = 'mutantmonkey@gmail.com'
+let g:snippets_dir = '/home/mutantmonkey/.config/vim/plugin/snipmate/snippets'
+
+" }}}
 
