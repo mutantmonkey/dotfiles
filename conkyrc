@@ -1,0 +1,122 @@
+################################################################################
+# .conkyrc - Conky configuration
+#
+# author: mutantmonkey <mutantmonkey@gmail.com>
+################################################################################
+
+# UBUNTU-CONKY
+# A comprehensive conky script, configured for use on
+# Ubuntu / Debian Gnome, without the need for any external scripts.
+#
+# Based on conky-jc and the default .conkyrc.
+# INCLUDES:
+# - tail of /var/log/messages 
+# - netstat connections to your computer
+#
+# -- Pengo (conky@pengo.us)
+#
+
+################################################################################
+# Window style and placement
+################################################################################
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_transparent yes
+own_window_type override
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+background yes
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+use_spacer none
+
+use_xft yes
+xftfont DejaVu Sans:size=8
+xftalpha 0.5
+
+# Update interval in seconds
+update_interval 1.0
+
+# Minimum size of text area
+minimum_size 160 5
+
+# Draw shades?
+draw_shades yes
+
+################################################################################
+# Text configuration
+################################################################################
+
+draw_outline no # amplifies text if yes
+draw_borders no
+
+uppercase no # set to yes if you want all text to be in uppercase
+
+# Stippled borders?
+stippled_borders 8
+
+# border margins
+border_margin 4
+
+# border width
+border_width 1
+
+# Default colors and also border colors, grey90 == #e5e5e5
+default_color white
+#default_shade_color black
+#default_outline_color white
+
+own_window_colour white
+own_window_transparent yes
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+gap_x 10
+gap_y 30
+
+################################################################################
+# Display the mess
+################################################################################
+TEXT
+SYSTEM ${hr 2}
+Hostname:$alignr$nodename
+Uptime:$alignr$uptime
+
+CPU ${hr 2}
+CPU0:$alignr${cpu cpu0}%
+${cpugraph cpu0 20,160 ffffff}
+CPU1:$alignr${cpu cpu1}%
+${cpugraph cpu1 20,160 ffffff}
+
+RAM ${hr 2}
+$mem/$memmax$alignr${membar 5,50 ffffff}
+
+HDD ${hr 2}
+sda:$alignr${diskio sda}
+${diskiograph sda 20,160 ffffff}
+#/$alignr${fs_bar 5,80 /}
+#${if_mounted /home}/home$alignr${fs_bar 5,80 /home}${endif}
+sdb:$alignr${diskio sdb}
+${diskiograph sdb 20,160 ffffff}
+#${if_mounted /media/stuff}/media/stuff$alignr${fs_bar 5,80 /media/stuff}${endif}
+
+NETWORK ${hr 2}
+${if_up eth0}Local IP:$alignr${addr eth0}
+Up:$alignr${upspeedf eth0} kb/s
+${upspeedgraph eth0 20,160 ffffff}
+Down:$alignr${downspeedf eth0}kb/s${color}
+${downspeedgraph eth0 20,160 ffffff}
+
+WEATHER ${hr 2}
+${execi 3600 conkyForecast --location=USVA0068 --datatype=CC}$alignr${execi 3600 conkyForecast --location=USVA0068 --datatype=HT -i}
+#${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ KBCB weather}$alignr${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ KBCB temperature}
+${else}Not connected
+${endif}
+
