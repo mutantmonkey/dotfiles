@@ -4,9 +4,7 @@
 # author: mutantmonkey <mutantmonkey@gmail.com>
 ################################################################################
 
-#
-# History
-#
+# History {{{
 
 HISTFILE=~/.zsh_history
 HISTSIZE=50000
@@ -14,9 +12,10 @@ SAVEHIST=50000
 setopt appendhistory
 bindkey -e
 
-#
-# Key bindings
-#
+# }}}
+
+
+# Key bindings {{{
 
 bindkey "\e[1~" beginning-of-line
 bindkey "\e[4~" end-of-line
@@ -47,9 +46,10 @@ bindkey "\e[F" end-of-line
 # completion in the middle of a line
 bindkey '^i' expand-or-complete-prefix
 
-#
-# Auto completion
-#
+# }}}
+
+
+# Auto completion {{{
 
 zstyle :compinstall filename "$HOME/.zshrc"
 
@@ -65,9 +65,10 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*' force-list always
 
-#
-# Terminal colors
-#
+# }}}
+
+
+# Terminal colors {{{
 
 # directory colors
 if [ "$TERM" != "dumb" ]; then
@@ -80,9 +81,10 @@ if [ "$TERM" != "dumb" ]; then
 	alias grep='grep --color=auto'
 fi
 
-#
-# Window title
-#
+# }}}
+
+
+# Window title {{{
 
 # user@host:dir
 case "$TERM" in
@@ -91,9 +93,10 @@ case "$TERM" in
     ;;
 esac
 
-#
-# Prompt
-# 
+# }}}
+
+
+# Prompt {{{
 
 MAIN_COLOR=$'%{\e[1;30m%}'
 USER_COLOR=$'%{\e[1;31m%}'
@@ -103,9 +106,10 @@ RESET_COLOR=$'%{\e[0;00m%}'
 export PROMPT="$MAIN_COLOR($USER_COLOR%n@%m$MAIN_COLOR|$DIR_COLOR%~$MAIN_COLOR)$RESET_COLOR%# "
 export PROMPT2="$MAIN_COLOR... $RESET_COLOR"
 
-#
-# Variables
-# 
+# }}}
+
+
+# Variables {{{
 
 export EDITOR=vim
 export VISUAL=gvim
@@ -115,9 +119,10 @@ if [[ "$COLORTERM" == "gnome-terminal" ]] || [[ "$COLORTERM" == "Terminal" ]]; t
 	export TERM=xterm-256color
 fi
 
-#
-# Aliases
-# 
+# }}}
+
+
+# Aliases {{{
 
 # SSH tunnels
 alias sshtunnel_home="ssh -D 4711 -N home.schwinabart.com"
@@ -127,4 +132,6 @@ alias net_connected='netstat -tuoceewp'
 alias net_listening='netstat -ntulp'
 
 alias pacs='clyde -Ss'
+
+# }}}
 

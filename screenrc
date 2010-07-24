@@ -4,9 +4,7 @@
 # author: mutantmonkey <mutantmonkey@gmail.com>
 ################################################################################
 
-#
-# General
-#
+# General {{{
 
 altscreen on			# alternate screen to prevent vim from leaving content on screen
 autodetach on			# detach on HUP instead of kill
@@ -17,17 +15,19 @@ msgwait 3				# display messages for 3 seconds
 startup_message off		# disable annoying startup message
 term screen-256color	# set $TERM
 
-#
-# Terminal capabilities
-#
+# }}}
+
+
+# Terminal capabilities {{{
 
 terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 termcapinfo xterm* ti@:te@	# enable use of scroll bars
 
-#
-# Keybindings
-#
+# }}}
+
+
+# Keybindings {{{
 
 # disable freezing of terminals
 bind s
@@ -35,9 +35,10 @@ bind s
 #bindkey "^[Od" prev	# change window with ctrl-left
 #bindkey "^[Oc" next	# change window with ctrl-right
 
-#
-# Hardstatus
-#
+# }}}
+
+
+# Hardstatus {{{
 
 hardstatus off
 hardstatus alwayslastline
@@ -45,9 +46,10 @@ hardstatus alwayslastline
 # hostname 0 screen 1 screen 2 screen	07.23.10 23:44
 hardstatus string '%{= kw}%{w}%{+b R}%H %{-b w} %{= kw}%?%-w%{+b W}%n %t%{-b w}%?%+Lw%?%?%= %{w}%m.%d.%y %{R}%c%{dw}'
 
-#
-# Windows
-#
+# }}}
+
+
+# Windows {{{
 
 # banish screen 0
 bind c screen 1
@@ -57,4 +59,6 @@ bind 0 select 10
 screen -t irc	1	irssi
 screen -t zsh	2
 #select 1
+
+# }}}
 
