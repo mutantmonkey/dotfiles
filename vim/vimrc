@@ -107,9 +107,6 @@ filetype plugin on
 " Enable filetype-specific indentation
 filetype plugin indent on
 
-" Enable Sparkup plugin for HTML files
-autocmd FileType html source ~/.config/vim/scripts/sparkup.vim
-
 " }}}
 
 
@@ -145,7 +142,10 @@ let php_sql_query=1
 set runtimepath+=~/.config/vim/plugin/snipmate/after/
 let g:snips_author ='mutantmonkey'
 let g:snips_email = 'mutantmonkey@gmail.com'
-let g:snippets_dir = '/home/mutantmonkey/.config/vim/snippets'
+let g:snippets_dir = "~/.config/vim/snippets"
+
+" Sparkup
+autocmd FileType html source ~/.config/vim/scripts/sparkup.vim
 
 " }}}
 
