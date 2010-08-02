@@ -112,7 +112,6 @@ export PROMPT2="$MAIN_COLOR... $RESET_COLOR"
 # Variables {{{
 
 export EDITOR=vim
-export VISUAL=gvim
 
 # ensure terminal type is set properly for color-capable terminals
 if [[ "$COLORTERM" == "gnome-terminal" ]] || [[ "$COLORTERM" == "Terminal" ]]; then
