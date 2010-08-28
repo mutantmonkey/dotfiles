@@ -70,10 +70,19 @@ set cindent
 " Use real tab characters
 set noexpandtab
 
+" Copy existing indentation structure
+set copyindent
+
+" Preserve indentation structure when indenting existing lines
+set preserveindent
+
+" Use tabs for indentation and spaces for alignment
+set smarttab
+
 " Tab width
+set softtabstop=0
 set tabstop=4
 set shiftwidth=4
-set softtabstop=4
 
 " }}}
 
@@ -138,8 +147,17 @@ let php_sql_query=1
 
 " Plugins {{{
 
+" NERDCommenter
+set runtimepath+=~/.config/vim/plugin-git/nerdcommenter/
+
+" NERDTree
+set runtimepath+=~/.config/vim/plugin-git/nerdtree/
+let g:NERDTreeChDirMode = 2
+let g:NERDTreeHighlightCursorline = 0
+
 " SnipMate
-set runtimepath+=~/.config/vim/plugin/snipmate/after/
+set runtimepath+=~/.config/vim/plugin-git/snipmate/
+set runtimepath+=~/.config/vim/plugin-git/snipmate/after/
 let g:snips_author ='mutantmonkey'
 let g:snips_email = 'mutantmonkey@gmail.com'
 let g:snippets_dir = "~/.config/vim/snippets"
