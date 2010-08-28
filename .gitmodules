@@ -1,3 +1,9 @@
 [submodule "vim/plugin/snipmate"]
 	path = vim/plugin/snipmate
 	url = git://github.com/msanders/snipmate.vim.git
+[submodule "vim/plugin/nerdcommenter"]
+	path = vim/plugin/nerdcommenter
+	url = http://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/plugin/nerdtree"]
+	path = vim/plugin/nerdtree
+	url = http://github.com/scrooloose/nerdtree.git
