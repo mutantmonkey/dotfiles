@@ -44,3 +44,10 @@ set sort_aux  = reverse-last-date-received
 ignore *
 unignore from date subject to cc
 
+# signatures
+send-hook "~f james@schwinabart.com"   "set signature=~/.mutt/signatures/personal"
+send-hook "~f jschwinabart@vt.edu"     "set signature=~/.mutt/signatures/vt"
+send-hook "~f jschwina@vt.edu"         "set signature=~/.mutt/signatures/vt"
+send-hook "~f jschwina@cs.vt.edu"      "set signature=~/.mutt/signatures/vtcs"
+send-hook "~f mutantmonkey@gmail.com"  "set signature=~/.mutt/signatures/mutantmonkey"
+
