@@ -1,0 +1,46 @@
+#################################################################################
+# .mutt/muttrc - mutt configuration
+#
+# author: mutantmonkey <mutantmonkey@gmail.com>
+################################################################################
+
+source ${HOME}/.mutt/muttcolors
+source ${HOME}/.mutt/muttgpg
+
+# mailcap
+set mailcap_path = ${HOME}/.mutt/mailcap
+auto_view text/html
+
+set mbox_type  = Maildir
+set folder     = ${HOME}/.mail
+set spoolfile  = +/gmail/INBOX
+
+folder-hook gmail source ${HOME}/.mutt/gmail.muttrc
+
+mailboxes +gmail/INBOX +gmail/sent +gmail/spam +gmail/trash
+
+# header cache
+set header_cache = ${HOME}/.mutt/hcache
+
+# don't even think about moving mail
+set move       = no
+
+# outgoing mail
+set realname   = "James Schwinabart"
+set sendmail   = "/usr/bin/msmtp"
+set envelope_from = "yes"
+set edit_headers  = "yes"
+
+# outgoing addresses
+set reverse_name
+set from      = "James Schwinabart <james@schwinabart.com>"
+alternates      "James Schwinabart <jschwinabart@vt.edu>" | "James Schwinabart <jschwina@vt.edu>" | "James Schwinabart <jschwina@cs.vt.edu>" | "mutantmonkey <mutantmonkey@gmail.com>"
+
+# sorting
+set sort      = threads
+set sort_aux  = reverse-last-date-received
+
+# hide unimportant headers
+ignore *
+unignore from date subject to cc
+

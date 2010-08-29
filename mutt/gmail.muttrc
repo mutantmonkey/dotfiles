@@ -1,0 +1,12 @@
+#################################################################################
+# .mutt/gmail.muttrc - mutt configuration for Gmail
+#
+# author: mutantmonkey <mutantmonkey@gmail.com>
+################################################################################
+
+set mbox_type = Maildir
+set folder    = ${HOME}/.mail/gmail
+
+macro index D "<save-message>+trash"       "move message to trash"
+macro index S "<save-message>+spam"        "mark message as spam"
+
