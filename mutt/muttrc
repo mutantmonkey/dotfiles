@@ -44,6 +44,10 @@ set sort_aux  = reverse-last-date-received
 ignore *
 unignore from date subject to cc
 
+# contacts and autocompletion
+set query_command = "goobook query '%s'"
+bind editor <Tab> complete-query
+
 # signatures
 send-hook "~f james@schwinabart.com"   "set signature=~/.mutt/signatures/personal"
 send-hook "~f jschwinabart@vt.edu"     "set signature=~/.mutt/signatures/vt"
