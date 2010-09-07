@@ -132,6 +132,8 @@ alias net_listening='netstat -ntulp'
 
 alias pacs='clyde -Ss'
 
+alias strtx='startx & vlock'
+
 alias -g linode='li169-98.members.linode.com'
 
 # }}}
