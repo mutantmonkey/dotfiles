@@ -18,11 +18,13 @@ set spoolfile  = +/INBOX
 
 # folder hook
 folder-hook gmail source ${HOME}/.mutt/gmail.muttrc
+folder-hook beneathvt source ${HOME}/.mutt/beneathvt.muttrc
 
 #mailboxes +gmail/INBOX +gmail/sent +gmail/spam +gmail/trash
 
 # keybindings to change mailbox
 macro index <f5> <change-folder>${HOME}/.mail/gmail/INBOX<enter>
+macro index <f6> <change-folder>${HOME}/.mail/beneathvt/INBOX<enter>
 
 # header cache
 set header_cache = ${HOME}/.mutt/hcache
