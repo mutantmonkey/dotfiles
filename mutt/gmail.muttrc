@@ -8,16 +8,25 @@
 set mbox_type = Maildir
 set folder    = ${HOME}/.mail/gmail
 set spoolfile = +INBOX
+set record    = +sent
 
 # keybindings
 macro index D "<save-message>+trash"       "move message to trash"
 macro index S "<save-message>+spam"        "mark message as spam"
 
+# outgoing mail
 set realname   = "James Schwinabart"
+set sendmail  = "/usr/bin/msmtp"
 
 # outgoing addresses
-set from      = "James Schwinabart <james@schwinabart.com>"
-alternates      "James Schwinabart <jschwinabart@vt.edu>" | "James Schwinabart <jschwina@vt.edu>" | "James Schwinabart <jschwina@cs.vt.edu>" | "mutantmonkey <mutantmonkey@gmail.com>"
+set from      = "james@schwinabart.com"
+alternates      "jschwinabart@vt.edu|jschwina@vt.edu|jschwina@cs.vt.edu|mutantmonkey@gmail.com"
+
+# signature
+set signature = ""
+
+# sign emails
+set pgp_autosign = yes
 
 # status bar color
 color status brightwhite blue
