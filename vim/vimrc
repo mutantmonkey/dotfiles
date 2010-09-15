@@ -6,9 +6,9 @@
 
 " General Settings {{{
 
+set nocompatible					" Disable vi-compatible mode
 set hidden							" Switch buffers without saving
 set nobackup						" Disable backup files
-set nocompatible					" Disable vi-compatible mode
 set noerrorbells					" Don't make noise on errors
 set shortmess+=I					" Do not show welcome screen
 set title							" Update window title
@@ -58,26 +58,14 @@ set matchpairs+=<:>					" Make < and > match
 
 " Indentation {{{
 
-" Automatic indentation on new lines
-set autoindent
+set autoindent						" Automatic indentation on new lines
+set copyindent						" Copy existing indentation structure on autoindent
+set preserveindent					" Preserve indentation structure for existing lines
+set smartindent						" Smart indentation based on typed code
+set smarttab						" Tabs based on shiftwidth, not tabstop
+set cindent							" Automatically indent code
 
-" Smart indentation based on typed code
-set smartindent
-
-" Enable C-style indentation
-set cindent
-
-" Use real tab characters
-set noexpandtab
-
-" Copy existing indentation structure
-set copyindent
-
-" Preserve indentation structure when indenting existing lines
-set preserveindent
-
-" Use tabs for indentation and spaces for alignment
-set smarttab
+set noexpandtab						" Use real tab characters
 
 " Tab width
 set softtabstop=0
