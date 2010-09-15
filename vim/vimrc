@@ -13,6 +13,8 @@ set noerrorbells					" Don't make noise on errors
 set shortmess+=I					" Do not show welcome screen
 set title							" Update window title
 
+let mapleader=","					" Map the <Leader> key so plugins work properly
+
 " }}}
 
 
