@@ -386,3 +386,8 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+-- {{{ Startup applications
+-- Only start applications if gnome-settings-daemon is not running
+awful.util.spawn_with_shell('pgrep -f -x gnome-settings-daemon || (dex -a)')
+-- }}}
+
