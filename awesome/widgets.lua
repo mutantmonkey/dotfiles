@@ -3,11 +3,15 @@ require("bashets")
 -- Vicious widgets
 require("vicious")
 
--- Create a wibox for each screen and add it
+bashets.set_script_path(awful.util.getdir('config') .. '/bashets/')
+
 wiboxtop = {}
 wiboxbottom = {}
-mypromptbox = {}
+
 mylayoutbox = {}
+
+-- {{{ Tag list
+
 mytaglist = {}
 mytaglist.buttons = awful.util.table.join(
 					awful.button({ }, 1, awful.tag.viewonly),
@@ -17,6 +21,11 @@ mytaglist.buttons = awful.util.table.join(
 					awful.button({ }, 4, awful.tag.viewnext),
 					awful.button({ }, 5, awful.tag.viewprev)
 					)
+
+-- }}}
+
+-- {{{ Task list
+
 mytasklist = {}
 mytasklist.buttons = awful.util.table.join(
 					 awful.button({ }, 1, function (c)
@@ -43,6 +52,8 @@ mytasklist.buttons = awful.util.table.join(
 											  if client.focus then client.focus:raise() end
 										  end))
 
+-- }}}
+
 -- {{{ System tray
 
 systraywidget = widget({ type = 'systray' })
@@ -65,7 +76,7 @@ weatherwidget = widget({ type = 'textbox' })
 vicious.register(weatherwidget, vicious.widgets.weather,
 	function (widget, args)
 		if args["{tempc}"] == "N/A" then
-			return ""
+			return "N/A"
 		else
 			--weatherwidget:connect_signal('mouse::enter', function () weather_n = { naughty.notify({ title = "Weather", text = "" .. args['{sky}'] .. "\nTemperature: " .. args['{tempf}'] .. "°F", timeout = 0, hover_timeout = 0.5 }) } end)
 			--weatherwidget:connect_signal('mouse::leave', function () naughty.destroy(weather_n[1]) end)
@@ -74,6 +85,7 @@ vicious.register(weatherwidget, vicious.widgets.weather,
 		end
 	end, 1200, "KBCB")
 --weatherwidget:buttons(awful.util.table.join(awful.button({}, 3, function () awful.util.spawn ( browser .. "http://forecast.weather.gov/zipcity.php?inputstring=KBCB") end)))
+--bashets.register('forecast.sh', { widget = weatherwidget, format = "<span face='ConkyWeather' color='" .. beautiful.fg_focus .."' weight='bold' rise='-1400'>$1</span> $2", file_update_time = 1200, async = true })
 
 -- }}}
 
@@ -83,7 +95,8 @@ batticon = widget({ type = 'imagebox' })
 batticon.image  = image(beautiful.widget_battery)
 
 battwidget = widget({ type = 'textbox' })
-vicious.register(battwidget, vicious.widgets.bat, "$2%", 61, "CMB1")
+--vicious.register(battwidget, vicious.widgets.bat, "$2%", 61, "CMB1")
+bashets.register('battery.sh', { widget = battwidget, format = "$2%", update_time = 61 })
 
 -- }}}
 
@@ -93,18 +106,27 @@ wifiicon = widget({ type = 'imagebox' })
 wifiicon.image  = image(beautiful.widget_wifi)
 
 wifiwidget = widget({ type = 'textbox' })
-vicious.register(wifiwidget, vicious.widgets.wifi, "${ssid}", 5, "wlan0")
+vicious.register(wifiwidget, vicious.widgets.wifi, "${ssid}", 61, "wlan0")
 
 -- }}}
 
 -- {{{ Mail widget
 
+ctitle = ""
+function mail_callback(data)
+	if data[1] ~= ctitle then
+		ctitle = data[1]
+
+		--naughty.notify({ text = "You have mail" })
+	end
+end
+
 mailicon = widget({ type = 'imagebox' })
 mailicon.image  = image(beautiful.widget_mail)
 
 mailwidget = widget({ type = 'textbox' })
-mailwidget.text = '0'
-bashets.register('/home/mutantmonkey/bin/check_gmail.py', { widget = mailwidget, format = '$1', file_update_time = 300, async = true })
+mailwidget.text = '-'
+bashets.register('check_gmail.py', { widget = mailwidget, format = '$1', file_update_time = 300, async = true })
 
 -- }}}
 
@@ -114,8 +136,8 @@ greadericon = widget({ type = 'imagebox' })
 greadericon.image = image(beautiful.widget_greader)
 
 greaderwidget = widget({ type = 'textbox' })
-greaderwidget.text = '0'
-bashets.register('/home/mutantmonkey/bin/check_greader.py', { widget = greaderwidget, format = '$1', file_update_time = 900, async = true })
+greaderwidget.text = '-'
+bashets.register('check_greader.py', { widget = greaderwidget, format = '$1', file_update_time = 900, async = true })
 
 -- }}}
 
@@ -130,7 +152,6 @@ vicious.register(datewidget, vicious.widgets.date, "%a %b %d, %R")
 -- }}}
 
 for s = 1, screen.count() do
-	-- Create a promptbox for each screen
 	mylayoutbox[s] = awful.widget.layoutbox(s)
 	mylayoutbox[s]:buttons(awful.util.table.join(
 						   awful.button({ }, 1, function () awful.layout.inc(layouts, 1) end),
@@ -168,7 +189,7 @@ for s = 1, screen.count() do
 	table.insert(right_aligned, spacer)
  
  	-- Create wiboxes
-	wiboxtop[s] = awful.wibox({ position = "top", screen = s, height = 22 })
+	wiboxtop[s] = awful.wibox({ position = "top", screen = s })
 	wiboxbottom[s] = awful.wibox({ position = "bottom", screen = s })
 	
 	-- Top wibox
