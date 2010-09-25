@@ -46,7 +46,7 @@ layouts =
 tags = {}
 for s = 1, screen.count() do
 	-- Each screen has its own tag table.
-	tags[s] = awful.tag({ 'main', 'web', 'dev', 'im', 5, 'work', 7, 8, 9 }, s,
+	tags[s] = awful.tag({ 'main', 'web', 'im', 5, 5, 6, 7, 8, 9 }, s,
 						{ layouts[5], layouts[5], layouts[5], layouts[5],
 						  layouts[2], layouts[2], layouts[2], layouts[5],
 						  layouts[5] })
@@ -264,10 +264,8 @@ awful.rules.rules = {
 	{
 		rule = { class = "Pidgin" },
 		properties = {
-			floating = true,
-			tag = tags[screen.count()][4],
+			tag = tags[screen.count()][3],
 		},
-		--callback = awful.titlebar.add
 	},
 
 	-- }}}
