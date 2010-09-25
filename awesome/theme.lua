@@ -6,7 +6,7 @@ theme = {}
 
 theme.confdir       = awful.util.getdir('config')
 
-theme.font          = "monospace 9"
+theme.font          = "sans 9"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#3c3c3c"
@@ -83,8 +83,8 @@ theme.titlebar_maximized_button_normal_active = "/usr/share/themes/Shiki-Colors-
 theme.titlebar_maximized_button_focus_active  = "/usr/share/themes/Shiki-Colors-Metacity/metacity-1/maximize.png"
 
 -- You can use your own command to set your wallpaper
---theme.wallpaper_cmd = { "awsetbg -r /media/stuff/artwork/wallpapers/1680x1050" }
-theme.wallpaper_cmd = { "/home/mutantmonkey/.config/awesome/wallpaper.py" }
+theme.wallpaper_cmd = { "awsetbg -r /media/stuff/artwork/wallpapers/1680x1050" }
+--theme.wallpaper_cmd = { "/home/mutantmonkey/.config/awesome/wallpaper.py" }
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = "/usr/share/awesome/themes/default/layouts/fairhw.png"
