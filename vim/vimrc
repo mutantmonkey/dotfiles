@@ -34,6 +34,12 @@ endif
 if has("gui_running")
 	set guioptions-=t				" Disable tear-off menus
 
+	set guioptions-=m				" Disable menubar
+	set guioptions-=T				" Disable toolbar
+
+	set guioptions+=LlRrb
+	set guioptions-=LlRrb			" Disable scrollbars
+
 	" Window size
 	set columns=100
 	set lines=40
