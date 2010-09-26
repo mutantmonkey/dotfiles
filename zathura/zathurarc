@@ -1,0 +1,18 @@
+# Colors {{{
+
+set inputbar_fgcolor #ffffff
+
+set statusbar_bgcolor #222222
+set statusbar_fgcolor #aaaaaa
+
+#  }}}
+
+# Key bindings {{{
+
+map <PageUp> navigate previous
+map <PageDown> navigate next
+
+map <C-q> quit
+
+# }}}
+
