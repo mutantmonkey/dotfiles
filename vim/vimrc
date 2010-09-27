@@ -40,6 +40,8 @@ if has("gui_running")
 	set guioptions+=LlRrb
 	set guioptions-=LlRrb			" Disable scrollbars
 
+	set mousemodel=popup			" Enable right click menu
+
 	" Window size
 	set columns=100
 	set lines=40
