@@ -114,9 +114,9 @@ ${upspeedgraph eth0 20,160 ffffff}
 Down:$alignr${downspeedf eth0}kb/s${color}
 ${downspeedgraph eth0 20,160 ffffff}
 
-WEATHER ${hr 2}
-${execi 3600 conkyForecast --location=USVA0068 --datatype=CC}$alignr${execi 3600 conkyForecast --location=USVA0068 --datatype=HT -i}
+##WEATHER ${hr 2}
+##${execi 3600 conkyForecast --location=USVA0068 --datatype=CC}$alignr${execi 3600 conkyForecast --location=USVA0068 --datatype=HT -i}
 #${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ KBCB weather}$alignr${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ KBCB temperature}
-${else}Not connected
-${endif}
+##${else}Not connected
+##${endif}
 
