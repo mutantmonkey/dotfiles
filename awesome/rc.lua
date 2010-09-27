@@ -47,9 +47,9 @@ tags = {}
 for s = 1, screen.count() do
 	-- Each screen has its own tag table.
 	tags[s] = awful.tag({ 'main', 'web', 'im', 4, 5, 6, 7, 8, 9 }, s,
-						{ layouts[5], layouts[5], layouts[7], layouts[5],
-						  layouts[2], layouts[2], layouts[2], layouts[5],
-						  layouts[5] })
+						{ layouts[2], layouts[2], layouts[7], layouts[2],
+						  layouts[2], layouts[2], layouts[5], layouts[2],
+						  layouts[2] })
 end
 --- }}}
 
@@ -295,7 +295,6 @@ awful.rules.rules = {
 	{
 		rule = { class = "Gimp" },
 		properties = {
-			floating = true,
 			tag = tags[1][5],
 			switchtotag = true,
 		}
@@ -386,6 +385,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- {{{ Startup applications
 -- Only start applications if gnome-settings-daemon is not running
-awful.util.spawn_with_shell('pgrep -f -x gnome-settings-daemon || (dex -a)')
+awful.util.spawn_with_shell('pgrep -f gnome-settings-daemon || (dex -a)')
 -- }}}
 
