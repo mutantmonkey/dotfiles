@@ -99,7 +99,7 @@ esac
 # Prompt {{{
 
 MAIN_COLOR=$'%{\e[1;30m%}'
-USER_COLOR=$'%{\e[1;31m%}'
+USER_COLOR=$'%{\e[1;32m%}'
 DIR_COLOR=$'%{\e[0;37m%}'
 RESET_COLOR=$'%{\e[0;00m%}'
 
