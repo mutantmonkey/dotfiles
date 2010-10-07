@@ -53,28 +53,6 @@ for s = 1, screen.count() do
 end
 --- }}}
 
--- {{{ Menu
-
--- Create a launcher widget and a main menu
-myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
-}
-
-mymenu = {
-	{ "awesome", myawesomemenu, beautiful.awesome_icon },
-	{ "open terminal", terminal },
-	{ "lock", "gnome-screensaver-command -l" },
-}
-
-mymainmenu = awful.menu({ items = mymenu })
-
-mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
-									 menu = mymainmenu })
--- }}}
-
 require("widgets")
 
 -- {{{ Mouse bindings
@@ -385,6 +363,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- {{{ Startup applications
 -- Only start applications if gnome-settings-daemon is not running
-awful.util.spawn_with_shell('pgrep -f gnome-settings-daemon || (dex -a)')
+awful.util.spawn_with_shell('pgrep -f gnome-settings-daemon || dex -a')
 -- }}}
 

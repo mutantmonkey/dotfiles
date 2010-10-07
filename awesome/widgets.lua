@@ -4,6 +4,7 @@ require("bashets")
 require("vicious")
 
 bashets.set_script_path(awful.util.getdir('config') .. '/bashets/')
+bashets.set_temporary_path('/dev/shm/tmp/')
 
 wiboxtop = {}
 wiboxbottom = {}
@@ -194,7 +195,6 @@ for s = 1, screen.count() do
 	
 	-- Top wibox
 	wiboxtop[s].widgets = {
-		mylauncher,
 		mytaglist[s],
 		right_aligned,
 		layout = awful.widget.layout.horizontal.leftright,
