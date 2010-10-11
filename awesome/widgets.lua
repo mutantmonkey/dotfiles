@@ -70,7 +70,7 @@ spacer.text = " "
 
 -- {{{ Weather widget
 
-weathericon = widget({ type = 'imagebox' })
+weathericon = widget({ type = 'imagebox', image = beautiful.widget_weather })
 weathericon.image  = image(beautiful.widget_weather)
 
 weatherwidget = widget({ type = 'textbox' })
@@ -92,22 +92,30 @@ vicious.register(weatherwidget, vicious.widgets.weather,
 
 -- {{{ Battery widget
 
-batticon = widget({ type = 'imagebox' })
+batticon = widget({ type = 'imagebox', image = beautiful.widget_battery })
 batticon.image  = image(beautiful.widget_battery)
 
 battwidget = widget({ type = 'textbox' })
---vicious.register(battwidget, vicious.widgets.bat, "$2%", 61, "CMB1")
 bashets.register('battery.sh', { widget = battwidget, format = "$2%", update_time = 61 })
 
 -- }}}
 
 -- {{{ Wifi widget
 
-wifiicon = widget({ type = 'imagebox' })
-wifiicon.image  = image(beautiful.widget_wifi)
+function wifi_callback(data)
+	if data[1] ~= 'wired' then
+		wifiicon.image = image(beautiful.widget_wifi)
+	else
+		wifiicon.image = nil
+		wifiwidget.text = ''
+	end
+end
+
+wifiicon = widget({ type = 'imagebox', image = beautiful.widget_wifi })
+wifiicon.image = nil
 
 wifiwidget = widget({ type = 'textbox' })
-vicious.register(wifiwidget, vicious.widgets.wifi, "${ssid}", 61, "wlan0")
+bashets.register('wifi.sh', { widget = wifiwidget, format = '$1 ', callback = wifi_callback })
 
 -- }}}
 
@@ -122,7 +130,7 @@ function mail_callback(data)
 	end
 end
 
-mailicon = widget({ type = 'imagebox' })
+mailicon = widget({ type = 'imagebox', image = beautiful.widget_mail })
 mailicon.image  = image(beautiful.widget_mail)
 
 mailwidget = widget({ type = 'textbox' })
@@ -133,18 +141,18 @@ bashets.register('check_gmail.py', { widget = mailwidget, format = '$1', file_up
 
 -- {{{ Google Reader widget
 
-greadericon = widget({ type = 'imagebox' })
+greadericon = widget({ type = 'imagebox', image = beautiful.widget_greader })
 greadericon.image = image(beautiful.widget_greader)
 
 greaderwidget = widget({ type = 'textbox' })
 greaderwidget.text = '-'
-bashets.register('check_greader.py', { widget = greaderwidget, format = '$1', file_update_time = 900, async = true })
+bashets.register('check_greader.py', { widget = greaderwidget, format = '$1', file_update_time = 300, async = true })
 
 -- }}}
 
 -- {{{ Date/time widget
 
-dateicon = widget({ type = 'imagebox' })
+dateicon = widget({ type = 'imagebox', image = beautiful.widget_date })
 dateicon.image  = image(beautiful.widget_date)
 
 datewidget = widget({ type = 'textbox' })
@@ -178,7 +186,6 @@ for s = 1, screen.count() do
 	table.insert(right_aligned, spacer)
 	table.insert(right_aligned, wifiicon)
 	table.insert(right_aligned, wifiwidget)
-	table.insert(right_aligned, spacer)
 	table.insert(right_aligned, batticon)
 	table.insert(right_aligned, battwidget)
 	table.insert(right_aligned, spacer)
