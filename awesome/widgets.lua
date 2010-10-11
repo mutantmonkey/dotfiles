@@ -92,22 +92,34 @@ vicious.register(weatherwidget, vicious.widgets.weather,
 
 -- {{{ Battery widget
 
+function batt_callback(widget, args)
+	if args[1] == "⌁" then
+		-- If battery state is unknown, hide info
+		batticon.image = nil
+		return ""
+	else
+		batticon.image = image(beautiful.widget_battery)
+		return args[2] .. '% '
+	end
+end
+
 batticon = widget({ type = 'imagebox', image = beautiful.widget_battery })
-batticon.image  = image(beautiful.widget_battery)
+batticon.image = nil
 
 battwidget = widget({ type = 'textbox' })
-bashets.register('battery.sh', { widget = battwidget, format = "$2%", update_time = 61 })
+vicious.register(battwidget, vicious.widgets.bat, batt_callback, 61, "CMB1")
+--bashets.register('battery.sh', { widget = battwidget, format = "$2%", update_time = 61 })
 
 -- }}}
 
 -- {{{ Wifi widget
 
-function wifi_callback(data)
-	if data[1] ~= 'wired' then
-		wifiicon.image = image(beautiful.widget_wifi)
-	else
+function wifi_callback(widget, args)
+	if args['{ssid}'] == 'N/A' then
 		wifiicon.image = nil
-		wifiwidget.text = ''
+	else
+		wifiicon.image = image(beautiful.widget_wifi)
+		return "" .. args['{ssid}'] .. " "
 	end
 end
 
@@ -115,7 +127,8 @@ wifiicon = widget({ type = 'imagebox', image = beautiful.widget_wifi })
 wifiicon.image = nil
 
 wifiwidget = widget({ type = 'textbox' })
-bashets.register('wifi.sh', { widget = wifiwidget, format = '$1 ', callback = wifi_callback })
+vicious.register(wifiwidget, vicious.widgets.wifi, wifi_callback, 2, "wlan0")
+--bashets.register('wifi.sh', { widget = wifiwidget, format = '$1 ', callback = wifi_callback })
 
 -- }}}
 
@@ -188,7 +201,6 @@ for s = 1, screen.count() do
 	table.insert(right_aligned, wifiwidget)
 	table.insert(right_aligned, batticon)
 	table.insert(right_aligned, battwidget)
-	table.insert(right_aligned, spacer)
 	table.insert(right_aligned, weathericon)
 	table.insert(right_aligned, weatherwidget)
 	table.insert(right_aligned, spacer)
