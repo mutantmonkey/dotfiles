@@ -212,11 +212,6 @@ awful.rules.rules = {
 					 keys = clientkeys,
 					 buttons = clientbuttons } },
 
-	{ rule = { class = "MPlayer" },
-	  properties = { floating = true } },
-	{ rule = { class = "pinentry" },
-	  properties = { floating = true } },
-
 	-- tag: web {{{
 	
 	-- Chromium
@@ -319,6 +314,13 @@ awful.rules.rules = {
 	
 	{
 		rule = { class = "banshee-1" },
+		properties = {
+			tag = tags[1][8],
+		}
+	},
+
+	{
+		rule = { name = "Quod Libet" },
 		properties = {
 			tag = tags[1][8],
 		}
