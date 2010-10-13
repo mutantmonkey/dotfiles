@@ -58,7 +58,7 @@ require("widgets")
 -- {{{ Mouse bindings
 
 root.buttons(awful.util.table.join(
-	awful.button({ }, 3, function () mymainmenu:toggle() end),
+	--awful.button({ }, 3, function () mymainmenu:toggle() end),
 	awful.button({ }, 4, awful.tag.viewnext),
 	awful.button({ }, 5, awful.tag.viewprev)
 ))
@@ -134,7 +134,8 @@ globalkeys = awful.util.table.join(
 	awful.key({ }, "Pause", function () awful.util.spawn("gnome-screensaver-command -l") end),
 
 	-- Print screen
-	awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'") end)
+	awful.key({         }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'") end),
+	awful.key({ "Shift"  }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null' -s") end)
 )
 
 clientkeys = awful.util.table.join(
