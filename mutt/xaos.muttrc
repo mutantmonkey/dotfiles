@@ -1,0 +1,37 @@
+#################################################################################
+# .mutt/xaos.muttrc - mutt configuration for XAOS Interactive Gmail
+#
+# author: mutantmonkey <mutantmonkey@gmail.com>
+################################################################################
+
+source ${HOME}/.mutt/xaos.imaprc
+
+# mailbox
+set folder    = "imaps://imap.gmail.com:993"
+set spoolfile = =INBOX
+set record    = "=[Gmail]/Sent Mail"
+set postponed = "=[Gmail]/Drafts"
+
+# IMAP settings
+set imap_keepalive = 5
+
+mailboxes "=INBOX/ =[Gmail]/Sent Mail"
+
+# keybindings
+macro index S "<save-message>=[Gmail]/Spam" "mark message as spam"
+
+# outgoing mail
+set realname   = "James Schwinabart"
+
+# outgoing addresses
+set from      = "icebbteam@gmail.com"
+
+# signature
+set signature = ""
+
+# don't sign emails
+set pgp_autosign = no
+
+# status bar color
+color status brightwhite brightgreen
+

@@ -7,28 +7,42 @@
 source ${HOME}/.mutt/muttcolors
 source ${HOME}/.mutt/muttgpg
 
+source ${HOME}/.mutt/groups
+source ${HOME}/.mutt/lists
+
 # mailcap
 set mailcap_path = ${HOME}/.mutt/mailcap
 auto_view text/html
 
+# aliases
+set alias_file = ${HOME}/.mutt/aliases
+set sort_alias = alias
+set reverse_alias = yes
+source $alias_file
+
 # default mailbox
-set mbox_type  = Maildir
-set folder     = ${HOME}/.mail/gmail
-set spoolfile  = +/INBOX
-
-# folder hook
-folder-hook gmail source ${HOME}/.mutt/gmail.muttrc
-
-#mailboxes +gmail/INBOX +gmail/sent +gmail/spam +gmail/trash
+source ${HOME}/.mutt/gmail.muttrc
 
 # keybindings to change mailbox
-macro index <f5> <change-folder>${HOME}/.mail/gmail/INBOX<enter>
+macro index <f5> "<enter-command>source ${HOME}/.mutt/gmail.muttrc<enter><change-folder>=INBOX<enter>"
+macro index <f6> "<enter-command>source ${HOME}/.mutt/xaos.muttrc<enter><change-folder>=INBOX<enter>"
 
 # header cache
-set header_cache = ${HOME}/.mutt/hcache
+set header_cache = ${HOME}/.mutt/cache
+
+# Always use TLS
+set ssl_starttls  = yes
+set ssl_force_tls = yes
+
+# IMAP settings
+set imap_check_subscribed
+
+# polling frequency
+set mail_check   = 60
+set timeout      = 10
 
 # don't even think about moving mail
-set move       = no
+set move          = no
 
 # outgoing mail
 set sendmail      = "/usr/bin/msmtp"
@@ -46,15 +60,4 @@ set sort_aux  = reverse-last-date-received
 # hide unimportant headers
 ignore *
 unignore from date subject to cc
-
-# contacts and autocompletion
-set query_command = "goobook query '%s'"
-bind editor <Tab> complete-query
-
-# signatures
-send-hook "~f james@schwinabart.com"   "set signature=~/.mutt/signatures/personal"
-send-hook "~f jschwinabart@vt.edu"     "set signature=~/.mutt/signatures/vt"
-send-hook "~f jschwina@vt.edu"         "set signature=~/.mutt/signatures/vt"
-send-hook "~f jschwina@cs.vt.edu"      "set signature=~/.mutt/signatures/vtcs"
-send-hook "~f mutantmonkey@gmail.com"  "set signature=~/.mutt/signatures/mutantmonkey"
 
