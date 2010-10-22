@@ -19,9 +19,12 @@
 import XMonad
 import Data.Monoid
 import System.Exit
+import IO (Handle, hPutStrLn)
+
+-- hooks
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
-import IO (Handle, hPutStrLn)
+import XMonad.Hooks.UrgencyHook
 
 -- utils
 import XMonad.Util.Run  (spawnPipe)
@@ -29,9 +32,8 @@ import XMonad.Util.Run  (spawnPipe)
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
-import XMonad.Layout.LayoutModifier
-
 -- layouts
+import XMonad.Layout.LayoutModifier
 import XMonad.Layout.NoBorders
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.Named
@@ -42,7 +44,7 @@ barFg = "#aaaaaa"
 barBg = "#111111"
 
 activeWsFg = "#111111"
-activeWsBg = "#5a7b1c"
+activeWsBg = "#7b9d3f"
 
 inactiveWsFg = activeWsBg
 inactiveWsBg = ""
@@ -50,13 +52,16 @@ inactiveWsBg = ""
 unusedWsFg = "#444444"
 unusedWsBg = ""
 
+urgentWsFg = activeWsFg
+urgentWsBg = "#de6951"
+
 barLeftWidth = "300"
-barRightWidth = "980"
+barRightPad = "402"
 
 dzenCmd = "dzen2 -bg '" ++ barBg ++ "' -fg '" ++ barFg ++ "' -fn '" ++ barFont ++ "'"
 
 dzenLeft = dzenCmd ++ " -ta l -w " ++ barLeftWidth
-dzenRight = "conky -c ~/.config/dzen/conkyrc | " ++ dzenCmd ++ " -ta r -x " ++ barLeftWidth ++ " -w " ++ barRightWidth ++ ""
+dzenRight = "conky -c ~/.config/dzen/conkyrc | " ++ dzenCmd ++ " -ta r -x " ++ barRightPad
 
 --main = xmonad =<< dzen defaults
 
@@ -339,7 +344,7 @@ myLogHook h = dynamicLogWithPP $ defaultPP -- the h here...
     , ppLayout          = dzenColor "#909090" "" . pad 
 
     -- if a window on a hidden workspace needs my attention, color it so
-    , ppUrgent          = dzenColor "#ff0000" "" . pad . dzenStrip
+    , ppUrgent          = dzenColor urgentWsFg urgentWsBg . pad . dzenStrip
 
     -- shorten if it goes over 100 characters
     --, ppTitle           = shorten 100  
@@ -394,7 +399,7 @@ main = do
 	d <- spawnPipe dzenLeft
 	spawn $ dzenRight
 
-	xmonad $ defaultConfig {
+	xmonad $ withUrgencyHook NoUrgencyHook defaultConfig {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
