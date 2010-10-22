@@ -290,9 +290,10 @@ myManageHook = composeAll
       className =? "Chromium"       --> doF (W.shift "web")
     , className =? "Minefield"      --> doF (W.shift "web")
     , className =? "Pidgin"         --> doF (W.shift "im")
-    , className =? "quodlibet"      --> doF (W.shift "8")
+    , title     =? "Quod Libet"     --> doF (W.shift "8")
+    , resource  =? "stalonetray"    --> doIgnore
     , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore 
+    , resource  =? "kdesktop"       --> doIgnore
     , manageDocks
     ]
  

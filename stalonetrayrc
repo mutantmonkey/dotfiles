@@ -1,0 +1,13 @@
+background "#111111"
+decorations none
+geometry 6x1+300
+
+icon_size 16
+icon_gravity W
+
+# do not show in taskbar
+skip_taskbar true
+
+# show on all workspaces
+sticky true
+
