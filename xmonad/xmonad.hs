@@ -344,7 +344,7 @@ myLogHook h = dynamicLogWithPP $ defaultPP -- the h here...
     , ppLayout          = dzenColor "#909090" "" . pad 
 
     -- if a window on a hidden workspace needs my attention, color it so
-    , ppUrgent          = dzenColor urgentWsFg urgentWsBg . pad . dzenStrip
+    , ppUrgent          = dzenColor urgentWsFg urgentWsBg . dzenStrip
 
     -- shorten if it goes over 100 characters
     --, ppTitle           = shorten 100  
