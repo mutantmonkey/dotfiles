@@ -23,7 +23,9 @@ import IO (Handle, hPutStrLn)
 
 -- hooks
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.EwmhDesktops (ewmh, fullscreenEventHook)
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.UrgencyHook
 
 -- utils
@@ -121,13 +123,16 @@ myFocusedBorderColor = "#1f1f1f"
 --
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
  
-    -- launch a terminal
-    [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
+    -- Launch a terminal
+    [ ((modm .|. shiftMask, xK_Return        ), spawn $ XMonad.terminal conf)
  
-    -- launch dmenu
+    -- Launch file manager
+    , ((modm .|. shiftMask, xK_n             ), spawn "nautilus --browser")
+
+    -- Launch dmenu
     , ((modm,               xK_semicolon     ), spawn "launcher")
- 
-    -- close focused window
+
+    -- Close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
  
      -- Rotate through the available layout algorithms
@@ -185,7 +190,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     , ((0		  , xK_Print ), spawn "scrot")
 
-        , ((modm              , xK_x     ), spawn "gnome-screensaver-command --lock")
+	-- Lock X
+    , ((modm              , xK_x     ), spawn "gnome-screensaver-command --lock")
  
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
@@ -292,6 +298,7 @@ myLayout = avoidStruts $ tiled ||| Mirror tiled ||| Full ||| tabbed shrinkText t
 --
 myManageHook = composeAll
     [
+    --  className =? "MPlayer"        --> doFloat
       className =? "Chromium"       --> doF (W.shift "web")
     , className =? "Minefield"      --> doF (W.shift "web")
     , className =? "Pidgin"         --> doF (W.shift "im")
@@ -299,6 +306,7 @@ myManageHook = composeAll
     , resource  =? "stalonetray"    --> doIgnore
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore
+    , isFullscreen                  --> doFullFloat
     , manageDocks
     ]
  
@@ -315,7 +323,7 @@ myManageHook = composeAll
 -- combining them with ewmhDesktopsEventHook.
 --
 myEventHook = mempty
- 
+
 ------------------------------------------------------------------------
 -- Status bars and logging
  
@@ -344,7 +352,7 @@ myLogHook h = dynamicLogWithPP $ defaultPP -- the h here...
     , ppLayout          = dzenColor "#909090" "" . pad 
 
     -- if a window on a hidden workspace needs my attention, color it so
-    , ppUrgent          = dzenColor urgentWsFg urgentWsBg . dzenStrip
+    , ppUrgent          = dzenColor urgentWsFg urgentWsBg . pad . dzenStrip
 
     -- shorten if it goes over 100 characters
     --, ppTitle           = shorten 100  
@@ -399,7 +407,7 @@ main = do
 	d <- spawnPipe dzenLeft
 	spawn $ dzenRight
 
-	xmonad $ withUrgencyHook NoUrgencyHook defaultConfig {
+	xmonad $ ewmh $ withUrgencyHook NoUrgencyHook defaultConfig {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
