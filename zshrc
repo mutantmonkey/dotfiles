@@ -113,9 +113,18 @@ export PROMPT2="$MAIN_COLOR... $RESET_COLOR"
 
 export EDITOR=vim
 
+export PAGER=less
+export LESS="-iMx4"
+
 # ensure terminal type is set properly for color-capable terminals
-if [[ "$COLORTERM" == "gnome-terminal" ]] || [[ "$COLORTERM" == "Terminal" ]]; then
+if [[ "$COLORTERM" == "gnome-terminal" ]] || [[ "$COLORTERM" == "Terminal" ]] || [[ "$COLORTERM" == "roxterm" ]]; then
+	# make sure $TERM is xterm-256color if the terminal supports 256 colors
 	export TERM=xterm-256color
+fi
+
+if [ -n "$TMUX" ]; then
+	# set $TERM for tmux
+	export TERM=screen-256color
 fi
 
 # }}}
