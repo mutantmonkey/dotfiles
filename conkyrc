@@ -94,6 +94,18 @@ CPU0:$alignr${cpu cpu0}%
 ${cpugraph cpu0 20,160 ffffff}
 CPU1:$alignr${cpu cpu1}%
 ${cpugraph cpu1 20,160 ffffff}
+CPU2:$alignr${cpu cpu2}%
+${cpugraph cpu2 20,160 ffffff}
+CPU3:$alignr${cpu cpu3}%
+${cpugraph cpu3 20,160 ffffff}
+CPU4:$alignr${cpu cpu4}%
+${cpugraph cpu4 20,160 ffffff}
+CPU5:$alignr${cpu cpu5}%
+${cpugraph cpu5 20,160 ffffff}
+CPU6:$alignr${cpu cpu6}%
+${cpugraph cpu6 20,160 ffffff}
+CPU7:$alignr${cpu cpu7}%
+${cpugraph cpu7 20,160 ffffff}
 
 RAM ${hr 2}
 $mem/$memmax$alignr${membar 5,50 ffffff}
@@ -106,6 +118,8 @@ ${diskiograph sda 20,160 ffffff}
 sdb:$alignr${diskio sdb}
 ${diskiograph sdb 20,160 ffffff}
 #${if_mounted /media/stuff}/media/stuff$alignr${fs_bar 5,80 /media/stuff}${endif}
+sdc:$alignr${diskio sdc}
+${diskiograph sdc 20,160 ffffff}
 
 NETWORK ${hr 2}
 ${if_up eth0}Local IP:$alignr${addr eth0}
