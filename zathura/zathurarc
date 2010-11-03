@@ -1,9 +1,28 @@
+# Settings {{{
+
+set adjust_open width
+
+# }}}
+
 # Colors {{{
 
-set inputbar_fgcolor #ffffff
+set default_bgcolor #1e2320
+set inputbar_bgcolor #1e2320
+set inputbar_fgcolor #f0dfaf
+set statusbar_bgcolor #3f3f3f
+set statusbar_fgcolor #dcdccc
 
-set statusbar_bgcolor #222222
-set statusbar_fgcolor #aaaaaa
+set completion_bgcolor #3f3f3f
+set completion_fgcolor #aecf96
+set completion_g_bgcolor #3f3f3f
+set completion_g_fgcolor #aecf96
+set completion_hl_bgcolor #aecf96
+set completion_hl_fgcolor #1e2320
+
+set notification_e_bgcolor #cc9393
+set notification_e_fgcolor #1e2320
+set notification_w_bgcolor #1e2320
+set notification_w_fgcolor #f0dfaf
 
 #  }}}
 
