@@ -21,7 +21,7 @@ let mapleader=","					" Map the <Leader> key so plugins work properly
 " Color Settings {{{
 
 if $TERM =~ "256color" || has('gui_running')
-	colorscheme xoria256
+	colorscheme zenburn
 else
 	colorscheme darkdot
 endif
