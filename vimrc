@@ -4,6 +4,7 @@
 " author: mutantmonkey <mutantmonkey@gmail.com>
 " ##############################################################################
 
-set runtimepath=~/.config/vim/,/usr/share/vim/vimfiles/,$VIMRUNTIME
-source ~/.config/vim/vimrc
+let $VIMHOME="$HOME/.config/vim/"
+set runtimepath=$VIMHOME/,/usr/share/vim/vimfiles/,$VIMRUNTIME
+source $VIMHOME/vimrc
 
