@@ -158,7 +158,7 @@ set runtimepath+=$VIMHOME/plugin-git/snipmate/
 set runtimepath+=$VIMHOME/plugin-git/snipmate/after/
 let g:snips_author ='mutantmonkey'
 let g:snips_email = 'mutantmonkey@gmail.com'
-let g:snippets_dir = "$VIMHOME/snippets"
+let g:snippets_dir = "$HOME/.dotfiles/vim/snippets"
 
 " Sparkup
 autocmd FileType html source $VIMHOME/scripts/sparkup.vim
