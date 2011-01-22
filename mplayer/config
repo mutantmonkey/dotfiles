@@ -1,0 +1,78 @@
+################################################################################
+# .mplayer/config - mplayer configuration
+#
+# author: mutantmonkey <mutantmonkey@gmail.com>
+################################################################################
+
+# Audio {{{
+ao=oss
+
+# Fix A/V Sync
+mc=0.2
+autosync=30
+# }}}
+
+# Video {{{
+vo=vdpau
+
+zoom=1
+
+# double buffering (for subtitles)
+double=yes
+
+# drop frames nicely if necessary
+framedrop=1
+hardframedrop=0
+# }}}
+
+# Subtitles {{{
+# Load all sub files with same name as movie title
+sub-fuzziness=1
+
+# ASS subtitles
+ass=1
+ass-color=ffffff00
+ass-font-scale=1
+ass-line-spacing=0
+ass-substyles=styles.ass
+
+# Use fontconfig
+fontconfig=1
+font="DejaVu Sans"
+
+# Give subtitles a narrow black outline
+ffactor=1
+
+# Set font scale
+subfont-text-scale=4.4
+
+# Scale subtitles to movie width
+subfont-autoscale=2
+
+# Set font blur radios
+subfont-blur=2.0
+
+# Set font outline thickness
+subfont-outline=2.0
+
+# Position subs as low as possible
+subpos=100
+
+# Subtitle vertical alignment (2: bottom)
+subalign=2
+
+# Unicode
+subfont-encoding="unicode"
+unicode=yes
+utf8=yes
+# }}}
+
+# OSD {{{
+subfont-osd-scale=4.4
+# }}}
+
+# Disable screensaver {{{
+stop-xscreensaver=1
+heartbeat-cmd="gnome-screensaver-command -p &"
+# }}} 
+
