@@ -30,11 +30,11 @@ hardframedrop=0
 sub-fuzziness=1
 
 # ASS subtitles
-ass=1
+ass=0
 ass-color=ffffff00
 ass-font-scale=1
 ass-line-spacing=0
-ass-substyles=styles.ass
+ass-styles=styles.ass
 
 # Use fontconfig
 fontconfig=1
@@ -44,7 +44,8 @@ font="DejaVu Sans"
 ffactor=1
 
 # Set font scale
-subfont-text-scale=4.4
+#subfont-text-scale=4.4
+subfont-text-scale=2
 
 # Scale subtitles to movie width
 subfont-autoscale=2
@@ -55,8 +56,8 @@ subfont-blur=2.0
 # Set font outline thickness
 subfont-outline=2.0
 
-# Position subs as low as possible
-subpos=100
+# Position subs (0 = top of screen, 100 = bottom of screen)
+subpos=85
 
 # Subtitle vertical alignment (2: bottom)
 subalign=2
