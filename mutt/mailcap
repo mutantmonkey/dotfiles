@@ -1,5 +1,7 @@
 text/html;            firefox %s
 text/html;            elinks %s; nametemplate=%s.html
 text/html;            elinks -dump %s; nametemplate=%s.html; copiousoutput
-application/pdf;      evince %s
+application/pdf;      zathura %s
+audio/*;              mplayer %s
+video/*;              mplayer %s
 image/*;              eog %s
