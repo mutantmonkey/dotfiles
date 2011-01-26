@@ -72,6 +72,7 @@ zstyle ':completion:*:kill:*' force-list always
 
 # directory colors
 if [ "$TERM" != "dumb" ]; then
+	# directory colors
 	eval `dircolors -b`
 	alias ls='ls --color=auto -F'
 	alias dir='ls --color=auto -F'
@@ -111,8 +112,8 @@ export PROMPT2="$MAIN_COLOR... $RESET_COLOR"
 
 # Variables {{{
 
+export BROWSER=firefox
 export EDITOR=vim
-
 export PAGER=less
 export LESS="-iMx4"
 
