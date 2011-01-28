@@ -63,6 +63,8 @@ set number							" Show line numbers
 set showmatch						" Highlight matching pairs
 set matchpairs+=<:>					" Make < and > match
 
+set pastetoggle=<F2>				" Press F2 to toggle paste mode, turning off automatic indentation
+
 " }}}
 
 
