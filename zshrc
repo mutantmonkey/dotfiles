@@ -135,12 +135,11 @@ fi
 
 # SSH tunnels
 alias sshtunnel_home="ssh -D 4711 -N home.schwinabart.com"
-alias sshtunnel_torrents="ssh -L 9091:localhost:9091 -N home.schwinabart.com"
 alias net_connected='netstat -tuoceewp'
 alias net_listening='netstat -ntulp'
 alias pacs='clyde -Ss'
 alias strtx='startx & vlock'
-alias transm='transmission-remote-cli'
+alias tmuxa='tmux new-session -t0'
 
 alias -g li16998='li169-98.members.linode.com'
 
