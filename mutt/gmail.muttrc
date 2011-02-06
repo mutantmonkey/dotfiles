@@ -39,7 +39,7 @@ set pgp_autosign = yes
 color status brightwhite blue
 
 # set from address when sending mail to Virginia Tech addresses
-send-hook "~t ^.*\@vt\.edu$"			"set from = 'jschwinabart@vt.edu'"
+send-hook "~t ^.*\@vt\.edu$"			"set from = 'jschwina@vt.edu'; set signature = ~/.mutt/signatures/vt"
 
 # contacts and autocompletion
 set query_command = "goobook query '%s'"

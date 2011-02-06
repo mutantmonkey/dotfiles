@@ -34,6 +34,10 @@ set header_cache = ${HOME}/.mutt/cache
 set ssl_starttls  = yes
 set ssl_force_tls = yes
 
+# Do not use system certs, check manually
+set ssl_usesystemcerts	= no
+set certificate_file	= ~/.mutt/certificates
+
 # IMAP settings
 set imap_check_subscribed
 
