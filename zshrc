@@ -138,7 +138,7 @@ alias sshtunnel_home="ssh -D 4711 -N home.schwinabart.com"
 alias net_connected='netstat -tuoceewp'
 alias net_listening='netstat -ntulp'
 alias pacs='clyde -Ss'
-alias strtx='startx & vlock'
+alias strtx='xinit & vlock'
 alias tmuxa='tmux new-session -t0'
 
 alias -g li16998='li169-98.members.linode.com'
