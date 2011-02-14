@@ -13,7 +13,8 @@ autosync=30
 # }}}
 
 # Video {{{
-vo=vdpau
+#vo=vdpau
+vo=xv
 
 zoom=1
 

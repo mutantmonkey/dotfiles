@@ -115,8 +115,8 @@ myWorkspaces    = ["main", "web", "im"] ++ map show [4..9]
  
 -- Border colors for unfocused and focused windows, respectively.
 --
-myNormalBorderColor  = "#0f0f0f"
-myFocusedBorderColor = "#1f1f1f"
+myNormalBorderColor  = "#000000"
+myFocusedBorderColor = "#3d3d3d"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -245,10 +245,10 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 
 -- tabs
 tabTheme1 = defaultTheme { decoHeight = 16
-                         , activeColor = "#a6c292"
-                         , activeBorderColor = "#a6c292"
-                         , activeTextColor = "#000000"
-                         , inactiveBorderColor = "#000000"
+                         , activeColor = activeWsBg
+                         , activeBorderColor = activeWsBg
+                         , activeTextColor = activeWsFg
+                         , inactiveBorderColor = inactiveWsBg
                          }
 
 -- Layouts:
@@ -267,7 +267,7 @@ tabTheme1 = defaultTheme { decoHeight = 16
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = avoidStruts $ tiled ||| Mirror tiled ||| Full ||| tabbed shrinkText tabTheme1
+myLayout = smartBorders $ avoidStruts $ tiled ||| Mirror tiled ||| Full ||| tabbed shrinkText tabTheme1
   where
     -- default tiling algorithm partitions the screen into two panes
     tiled   = Tall nmaster delta ratio
@@ -306,7 +306,7 @@ myManageHook = composeAll
     , resource  =? "stalonetray"    --> doIgnore
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore
-    , isFullscreen                  --> doFullFloat
+	, isFullscreen                  --> doFullFloat
     , manageDocks
     ]
  
@@ -424,7 +424,7 @@ main = do
       -- hooks, layouts
         layoutHook         = myLayout,
         manageHook         = myManageHook,
-        handleEventHook    = myEventHook,
+        handleEventHook    = myEventHook <+> fullscreenEventHook,
         logHook            = myLogHook d,
         startupHook        = myStartupHook
     }

@@ -127,7 +127,7 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey }, ";", function () awful.util.spawn("dmenu_run -i" ..
 		" -nb '" .. beautiful.bg_normal .. "' -nf '" .. beautiful.fg_normal ..
 		"' -sb '" .. beautiful.bg_focus .. "' -sf '" .. beautiful.fg_focus ..
-		"' -fn '-*-dejavu sans mono-medium-r-normal--12-*-*-*-*-*-*-*'")
+		"' -fn 'xft:DejaVu Sans Mono-9'")
 		end),
 
 	-- Lock screen
