@@ -1,1 +1,8 @@
 mpd_music_dir = "/media/stuff/music"
+
+# use alternative UI
+user_interface = "alternative"
+
+# use columns display mode
+playlist_display_mode = "columns"
+browser_display_mode = "columns"
