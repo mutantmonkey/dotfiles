@@ -58,7 +58,7 @@ subfont-blur=2.0
 subfont-outline=2.0
 
 # Position subs (0 = top of screen, 100 = bottom of screen)
-subpos=85
+subpos=100
 
 # Subtitle vertical alignment (2: bottom)
 subalign=2
