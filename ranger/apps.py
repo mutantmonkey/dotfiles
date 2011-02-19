@@ -75,6 +75,8 @@ class CustomApplications(Applications):
 			if f.extension in ('odt', 'ods', 'odp', 'odf', 'odg',
 					'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx'):
 				return self.either(c, 'libreoffice', 'soffice', 'ooffice')
+			if f.extension in ('xoj', ):
+				return self.either(c, 'xournal')
 
 		if f.mimetype is not None:
 			if INTERPRETED_LANGUAGES.match(f.mimetype):
@@ -188,6 +190,11 @@ class CustomApplications(Applications):
 			return tup("totem", *c)
 		if c.mode is 1:
 			return tup("totem", "--fullscreen", *c)
+
+	@depends_on('xournal')
+	def app_xournal(self, c):
+		c.flags += 'd'
+		return tup('xournal', c.file.path)
 
 	@depends_on('mimeopen')
 	def app_mimeopen(self, c):
