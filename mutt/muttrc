@@ -24,6 +24,7 @@ source $alias_file
 source ${HOME}/.mutt/gmail.muttrc
 
 # keybindings to change mailbox
+macro generic,index,pager c "<change-folder>?"
 macro index <f5> "<enter-command>source ${HOME}/.mutt/gmail.muttrc<enter><change-folder>=INBOX<enter>"
 macro index <f6> "<enter-command>source ${HOME}/.mutt/xaos.muttrc<enter><change-folder>=INBOX<enter>"
 
