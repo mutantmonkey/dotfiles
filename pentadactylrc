@@ -1,1 +1,26 @@
+" #################################################################################
+" # .pentadactylrc - pentadactyl configuration
+" #
+" # author: mutantmonkey <mutantmonkey@gmail.com>
+" ################################################################################
+
 colors zenburn
+
+" Passkeys {{{
+
+" Gmail
+set passkeys+="mail\.google\.com":jkg
+
+" Google Calendar
+set passkeys+="https://www\.google\.com/calendar":jkg12345qrcnp
+
+" Google Reader
+set passkeys+="https://www\.google\.com/reader":nplmsSt
+
+" reddit
+set passkeys+="www\.reddit\.com":acfghijklnprsxz<Return>
+
+" Twitter
+set passkeys+="twitter\.com":jkg/?.nrm
+
+" }}}
