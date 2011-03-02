@@ -20,6 +20,8 @@ let mapleader=","					" Map the <Leader> key so plugins work properly
 
 " Color Settings {{{
 
+set t_Co=256						" Use 256 colors
+
 if $TERM =~ "256color" || has('gui_running')
 	colorscheme zenburn
 else
@@ -104,7 +106,7 @@ endif
 " }}}
 
 
-" File Formats {{{
+" File formats and syntax highlighting {{{
 
 " Unicode support
 set encoding=utf-8
@@ -118,6 +120,15 @@ filetype plugin on
 " Enable filetype-specific indentation
 filetype plugin indent on
 
+" Syntax highlighting
+syntax enable
+
+" Highlight HTML code inside of PHP
+let php_htmlInStrings=1
+
+" Highlight MySQL queries inside of PHP
+let php_sql_query=1
+
 " }}}
 
 
@@ -129,20 +140,6 @@ set hlsearch
 " Ignore case unless token contains uppercase
 set ignorecase
 set smartcase
-
-" }}}
-
-
-" Syntax Highlighting {{{
-
-" Syntax highlighting
-syntax enable
-
-" Highlight HTML code inside of PHP
-let php_htmlInStrings=1
-
-" Highlight MySQL queries inside of PHP
-let php_sql_query=1
 
 " }}}
 
