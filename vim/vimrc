@@ -146,23 +146,38 @@ set smartcase
 
 " Plugins {{{
 
-" NERDCommenter
+" NERDCommenter {{{
 set runtimepath+=$VIMHOME/plugin-git/nerdcommenter/
+" }}}
 
-" NERDTree
+" NERDTree {{{
 set runtimepath+=$VIMHOME/plugin-git/nerdtree/
-let g:NERDTreeChDirMode = 2
-let g:NERDTreeHighlightCursorline = 0
 
-" SnipMate
+" Have NERDTree change directory when we do
+let g:NERDTreeChDirMode = 2
+
+" Highlight selected entry in tree
+let g:NERDTreeHighlightCursorline = 1
+
+" Show hidden files
+let NERDTreeShowFiles=1
+let NERDTreeShowHidden=1
+
+" Don't display files we don't need to see
+let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$' , '\.swp$' ]
+
+nmap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
+nmap <leader>N :NERDTreeClose<CR>
+" }}}
+
+" SnipMate {{{
 set runtimepath+=$VIMHOME/plugin-git/snipmate/
 set runtimepath+=$VIMHOME/plugin-git/snipmate/after/
+
 let g:snips_author ='mutantmonkey'
 let g:snips_email = 'mutantmonkey@gmail.com'
 let g:snippets_dir = "$HOME/.dotfiles/vim/snippets"
-
-" Sparkup
-autocmd FileType html source $VIMHOME/scripts/sparkup.vim
+" }}}
 
 " }}}
 
