@@ -17,6 +17,11 @@ bindkey -e
 
 # Key bindings {{{
 
+#bindkey -v
+
+#bindkey '\e[A'  vi-history-search-backward
+#bindkey '\e[B'  vi-history-search-forward
+
 bindkey "\e[1~" beginning-of-line
 bindkey "\e[4~" end-of-line
 bindkey "\e[5~" beginning-of-history
@@ -100,7 +105,7 @@ esac
 # Prompt {{{
 
 MAIN_COLOR=$'%{\e[1;30m%}'
-USER_COLOR=$'%{\e[1;34m%}'
+USER_COLOR=$'%{\e[1;32m%}'
 DIR_COLOR=$'%{\e[0;37m%}'
 RESET_COLOR=$'%{\e[0;00m%}'
 
@@ -115,7 +120,7 @@ export PROMPT2="$MAIN_COLOR... $RESET_COLOR"
 export BROWSER=firefox
 export EDITOR=vim
 export PAGER=less
-export LESS="-iMx4"
+export LESS="-R -iMx4"
 
 # ensure terminal type is set properly for color-capable terminals
 if [[ "$COLORTERM" == "gnome-terminal" ]] || [[ "$COLORTERM" == "Terminal" ]] || [[ "$COLORTERM" == "roxterm" ]]; then
@@ -128,20 +133,22 @@ if [ -n "$TMUX" ]; then
 	export TERM=screen-256color
 fi
 
+# keychain
+#eval `keychain -q`
+
 # }}}
 
 
 # Aliases {{{
 
-# SSH tunnels
 alias sshtunnel_home="ssh -D 4711 -N home.schwinabart.com"
-alias net_connected='netstat -tuoceewp'
-alias net_listening='netstat -ntulp'
-alias pacs='clyde -Ss'
+
+alias net_connected='sudo netstat -tuoeewp'
+alias net_listening='sudo netstat -ntulp'
+alias pacs='pacman -Ss'
 alias strtx='xinit & vlock'
 alias tmuxa='tmux new-session -t0'
-
-alias -g li16998='li169-98.members.linode.com'
+alias vless='/usr/share/vim/vim73/macros/less.sh'
 
 # }}}
 
