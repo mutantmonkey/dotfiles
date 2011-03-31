@@ -7,8 +7,6 @@
 source ${HOME}/.mutt/gmail.imaprc
 
 # mailbox
-#set mbox_type = Maildir
-#set folder    = ${HOME}/.mail/gmail
 set folder    = "imaps://imap.gmail.com:993"
 set spoolfile = =INBOX
 set record    = "=[Gmail]/Sent Mail"
@@ -19,7 +17,6 @@ set imap_keepalive = 5
 
 # keybindings
 #macro index D "<save-message>+trash"       "move message to trash"
-#macro index S "<save-message>+spam"        "mark message as spam"
 macro index S "<save-message>=[Gmail]/Spam" "mark message as spam"
 
 # outgoing mail
@@ -43,14 +40,12 @@ send-hook "~t ^.*\@vt\.edu$"			"set from = 'jschwina@vt.edu'; set signature = ~/
 
 # contacts and autocompletion
 set query_command = "goobook query '%s'"
-bind editor <Tab> complete-query
 
 # signatures {{{
 set signature = ""
 
 # separate signature per address
 send-hook "~f james@schwinabart.com"   "set signature = ~/.mutt/signatures/personal"
-send-hook "~f jschwinabart@vt.edu"     "set signature = ~/.mutt/signatures/vt"
 send-hook "~f jschwina@vt.edu"         "set signature = ~/.mutt/signatures/vt"
 send-hook "~f jschwina@cs.vt.edu"      "set signature = ~/.mutt/signatures/vtcs"
 send-hook "~f mutantmonkey@gmail.com"  "set signature = ~/.mutt/signatures/mutantmonkey"
