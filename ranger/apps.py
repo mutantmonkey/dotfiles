@@ -75,6 +75,8 @@ class CustomApplications(Applications):
 			if f.extension in ('odt', 'ods', 'odp', 'odf', 'odg',
 					'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx'):
 				return self.either(c, 'libreoffice', 'soffice', 'ooffice')
+			if f.extension == 'sla':
+				return self.either(c, 'scribus')
 			if f.extension in ('xoj', ):
 				return self.either(c, 'xournal')
 
@@ -190,6 +192,11 @@ class CustomApplications(Applications):
 			return tup("totem", *c)
 		if c.mode is 1:
 			return tup("totem", "--fullscreen", *c)
+
+	@depends_on('scribus')
+	def app_scribus(self, c):
+		c.flags += 'd'
+		return tup('scribus', c.file.path)
 
 	@depends_on('xournal')
 	def app_xournal(self, c):
