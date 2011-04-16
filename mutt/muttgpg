@@ -18,6 +18,3 @@ set pgp_sign_as=0x6C498CA9
 set pgp_replyencrypt=yes
 set pgp_timeout=30
 set pgp_good_sign="^gpg: Good signature from"
-
-my_hdr X-GPG-Key: https://james.schwinabart.com/static/files/6C498CA9.asc
-my_hdr X-GPG-Fingerprint: 1116 861B A82E 27DE 2745 57F3 D362 3BA3 6C49 8CA9
