@@ -6,3 +6,6 @@ user_interface = "alternative"
 # use columns display mode
 playlist_display_mode = "columns"
 browser_display_mode = "columns"
+
+# mouse wheel should not scroll entire page
+mouse_list_scroll_whole_page = no
