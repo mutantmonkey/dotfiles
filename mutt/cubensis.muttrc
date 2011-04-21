@@ -22,10 +22,10 @@ mailboxes =logwatch =nagios
 mailboxes =virginiatech
 mailboxes =virginiatech/academic-affairs =virginiatech/alumni-association =virginiatech/athletics =virginiatech/cns =virginiatech/dshield =virginiatech/financial-aid =virginiatech/galileo-and-hypatia =virginiatech/news-and-alerts =virginiatech/residence-life =virginiatech/hokie-passport
 mailboxes =virginiatech/courses =virginiatech/courses/chem1035 =virginiatech/courses/cs2104 =virginiatech/courses/cs2506 =virginiatech/courses/cs3214 =virginiatech/courses/enge1104 =virginiatech/courses/geog1014 =virginiatech/courses/math1224 =virginiatech/courses/math2114 =virginiatech/courses/math2214 =virginiatech/courses/math2534 =virginiatech/courses/phys2306 =virginiatech/courses/ppws2004
-mailboxes =virginiatech/computer-science =virginiatech/sec =virginiatech/sga =virginiatech/vtcybsec =virginiatech/vtluug =virginiatech/vtluug/administration
+mailboxes =virginiatech/computer-science =virginiatech/cybersecurity =virginiatech/sec =virginiatech/sga =virginiatech/vtluug =virginiatech/vtluug/administration
 mailboxes =lists/full-disclosure =lists/mappingdc =lists/novalug =lists/opennic =lists/opennic/dns-operations
-mailboxes =accounts =accounts/linode =aur =concerts =marketing =politics =shopping =shopping/deals
-mailboxes =bugs
+mailboxes =work
+mailboxes =accounts =accounts/linode =aur =bugs =concerts =marketing =politics =shopping =shopping/deals
 #mailboxes =spam
 
 # keybindings
@@ -37,7 +37,7 @@ set realname  = "James Schwinabart"
 # outgoing addresses {{{
 #set from      = "james@schwinabart.com"
 set from      = "mutantmonkey@mutantmonkey.in"
-alternates      "jschwinabart@vt.edu|jschwina@vt.edu|jschwina@cs.vt.edu|james@schwinabart.com|mutantmonkey@gmail.com"
+alternates      "jschwinabart@vt.edu|jschwina@vt.edu|jschwina@cs.vt.edu|james@schwinabart.com|mutantmonkey@gmail.com|james@vtluug.org"
 
 send-hook .		"set from = 'mutantmonkey@mutantmonkey.in'"
 # }}}
