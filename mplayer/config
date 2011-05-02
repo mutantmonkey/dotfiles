@@ -75,6 +75,6 @@ subfont-osd-scale=4.4
 
 # Disable screensaver {{{
 stop-xscreensaver=1
-heartbeat-cmd="gnome-screensaver-command -p &"
+#heartbeat-cmd="gnome-screensaver-command -p &"
 # }}} 
 
