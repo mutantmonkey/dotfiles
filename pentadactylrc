@@ -27,6 +27,7 @@ set passkeys+="twitter\.com":jkg/?.nrm
 " }}}
 
 " Quickmarks {{{
+silent qmark f https://www.facebook.com
 silent qmark g https://www.google.com/reader/view
 silent qmark h news.ycombinator.com
 silent qmark r reddit.com
