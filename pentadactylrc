@@ -4,6 +4,7 @@
 " # author: mutantmonkey <mutantmonkey@gmail.com>
 " ################################################################################
 
+" Set color scheme
 colors zenburn
 
 " Passkeys {{{
@@ -24,3 +25,17 @@ set passkeys+="www\.reddit\.com":acfghijklnprsxz<Return>
 set passkeys+="twitter\.com":jkg/?.nrm
 
 " }}}
+
+" Quickmarks {{{
+silent qmark g https://www.google.com/reader/view
+silent qmark h news.ycombinator.com
+silent qmark r reddit.com
+silent qmark t https://twitter.com
+" }}}
+
+" Remap scroll keys
+nnoremap j 5j
+nnoremap k 5k
+nnoremap l 5l
+nnoremap h 5h
+
