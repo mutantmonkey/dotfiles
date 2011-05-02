@@ -19,7 +19,7 @@ set passkeys+="https://www\.google\.com/calendar":jkg12345qrcnp
 set passkeys+="https://www\.google\.com/reader":nplmsSt
 
 " reddit
-set passkeys+="www\.reddit\.com":acfghijklnprsxz<Return>
+set passkeys+="www\.reddit\.com":acfhijklnprsxz<Return>
 
 " Twitter
 set passkeys+="twitter\.com":jkg/?.nrm
