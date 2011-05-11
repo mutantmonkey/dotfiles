@@ -58,6 +58,7 @@ set backspace=indent,eol,start		" Make backspace key behave normally
 set esckeys							" Allow use of arrow keys while in insert mode
 set noinsertmode					" Don't stay in insert mode
 set spell							" Enable spell checking
+set spellfile=~/.dotfiles/vim/spell/spell.add
 
 set cursorline						" Highlight current line
 set number							" Show line numbers
