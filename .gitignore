@@ -1,0 +1,13 @@
+/mutt/aliases
+/mutt/cache
+/mutt/certificates
+/mutt/groups
+/mutt/hcache
+/mutt/*.imaprc
+/mutt/beneathvt.muttrc
+/mutt/signatures/beneathvt
+/vim/spell/*.spl
+/xmonad/xmonad-x86_64-linux
+/xmonad/xmonad.errors
+/xmonad/xmonad.hi
+
