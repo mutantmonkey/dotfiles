@@ -75,7 +75,8 @@ set pipe_decode
 
 # Presentation {{{
 # order of preferred mime types
-alternative_order text/plain text/enriched text/html
+#alternative_order text/plain text/enriched text/html
+alternative_order text/html text/enriched text/plain
 auto_view text/html
 # }}}
 
