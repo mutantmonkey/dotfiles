@@ -1,0 +1,135 @@
+################################################################################
+# i3/config - i3 configuration (tree branch)
+#
+# author: mutantmonkey <mutantmonkey@gmail.com>
+################################################################################
+
+# font for window titles. ISO 10646 = Unicode
+font -misc-terminus-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+new_window border_style 1pixel
+
+assign firefox 2
+
+for_window [class="roxterm"] border 1pixel
+
+# Colors {{{
+
+client.focused #6f6f6f #6f6f6f #dcdccc
+client.focused_inactive #3f3f3f #3f3f3f #dcdccc
+client.unfocused #3f3f3f #3f3f3f #dcdccc
+
+client.background #3f3f3f
+
+# }}}
+
+# Keybindings {{{
+set $m Mod4
+
+# use Mouse+$m to drag floating windows to their wanted position
+floating_modifier $m
+
+# start a terminal
+bindsym $m+Shift+Return exec /usr/bin/roxterm
+
+# kill focused window
+bindsym $m+c kill
+
+# border styles
+bindsym $m+a border 1pixel
+bindsym $m+s border normal
+
+# start dmenu (a program launcher)
+bindsym $m+p exec /usr/bin/dmenu_run -fn 'DejaVu Sans Mono-9' -nb '#3f3f3f' -nf '#dcdccc' -sb '#1e2320' -sf '#f0dfaf'
+
+# lock screen with $m+x
+bindsym $m+x exec /usr/bin/i3lock -c 000000
+
+# screenshot with PrintScrn
+bindsym Print exec /usr/bin/scrot
+
+# volume keys
+bindsym XF86AudioRaiseVolume exec ~/bin/pavol.sh up
+bindsym XF86AudioLowerVolume exec ~/bin/pavol.sh down
+bindsym XF86AudioMute exec ~/bin/pavol.sh mute
+
+# change focus
+bindsym $m+n focus left
+bindsym $m+r focus down
+bindsym $m+t focus up
+bindsym $m+d focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $m+Left focus left
+bindsym $m+Down focus down
+bindsym $m+Up focus up
+bindsym $m+Right focus right
+
+# move focused window
+bindsym $m+Shift+n move left
+bindsym $m+Shift+r move down
+bindsym $m+Shift+t move up
+bindsym $m+Shift+d move right
+
+# alternatively, you can use the cursor keys:
+bindsym $m+Shift+Left move left
+bindsym $m+Shift+Right move right
+bindsym $m+Shift+Down move down
+bindsym $m+Shift+Up move up
+
+# split in horizontal orientation
+bindsym $m+h split h
+
+# split in vertical orientation
+bindsym $m+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $m+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym $m+s layout stacking
+bindsym $m+w layout tabbed
+bindsym $m+l layout default
+
+# toggle tiling / floating
+bindsym $m+Shift+space floating toggle
+
+# focus the parent container
+bindsym $m+u focus parent
+
+# focus the child container
+#bindsym $m+d focus child
+
+# switch to workspace
+bindsym $m+1 workspace 1
+bindsym $m+2 workspace 2
+bindsym $m+3 workspace 3
+bindsym $m+4 workspace 4
+bindsym $m+5 workspace 5
+bindsym $m+6 workspace 6
+bindsym $m+7 workspace 7
+bindsym $m+8 workspace 8
+bindsym $m+9 workspace 9
+bindsym $m+0 workspace 10
+
+# move focused container to workspace
+bindsym $m+Shift+1 move workspace 1
+bindsym $m+Shift+2 move workspace 2
+bindsym $m+Shift+3 move workspace 3
+bindsym $m+Shift+4 move workspace 4
+bindsym $m+Shift+5 move workspace 5
+bindsym $m+Shift+6 move workspace 6
+bindsym $m+Shift+7 move workspace 7
+bindsym $m+Shift+8 move workspace 8
+bindsym $m+Shift+9 move workspace 9
+bindsym $m+Shift+0 move workspace 10
+
+# reload the configuration file
+bindsym $m+Shift+j reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $m+Shift+c restart
+# exit i3 (logs you out of your X session)
+bindsym $m+Shift+l exit
+# }}}
+
+exec ~/bin/start_bars.sh
