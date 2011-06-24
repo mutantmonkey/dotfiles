@@ -54,10 +54,10 @@ bindsym XF86AudioLowerVolume exec ~/bin/pavol.sh down
 bindsym XF86AudioMute exec ~/bin/pavol.sh mute
 
 # change focus
-bindsym $m+n focus left
-bindsym $m+r focus down
-bindsym $m+t focus up
-bindsym $m+d focus right
+bindsym $m+h focus left
+bindsym $m+j focus down
+bindsym $m+k focus up
+bindsym $m+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $m+Left focus left
@@ -78,18 +78,18 @@ bindsym $m+Shift+Down move down
 bindsym $m+Shift+Up move up
 
 # split in horizontal orientation
-bindsym $m+h split h
+bindsym $m+i split h
 
 # split in vertical orientation
-bindsym $m+v split v
+bindsym $m+o split v
 
 # enter fullscreen mode for the focused container
 bindsym $m+f fullscreen
 
 # change container layout (stacked, tabbed, default)
-bindsym $m+s layout stacking
+bindsym $m+q layout stacking
 bindsym $m+w layout tabbed
-bindsym $m+l layout default
+bindsym $m+e layout default
 
 # toggle tiling / floating
 bindsym $m+Shift+space floating toggle
