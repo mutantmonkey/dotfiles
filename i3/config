@@ -5,12 +5,16 @@
 ################################################################################
 
 # font for window titles. ISO 10646 = Unicode
-font -misc-terminus-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 new_window border_style 1pixel
 
 assign firefox 2
 
+for_window [class="chromium"] border 1pixel
+for_window [class="firefox"] border 1pixel
+for_window [class="keepassx"] border 1pixel
+for_window [class="mplayer"] border 1pixel
 for_window [class="roxterm"] border 1pixel
 
 # Colors {{{
@@ -19,7 +23,7 @@ client.focused #6f6f6f #6f6f6f #dcdccc
 client.focused_inactive #3f3f3f #3f3f3f #dcdccc
 client.unfocused #3f3f3f #3f3f3f #dcdccc
 
-client.background #3f3f3f
+#client.background #3f3f3f
 
 # }}}
 
@@ -40,13 +44,15 @@ bindsym $m+a border 1pixel
 bindsym $m+s border normal
 
 # start dmenu (a program launcher)
-bindsym $m+p exec /usr/bin/dmenu_run -fn 'DejaVu Sans Mono-9' -nb '#3f3f3f' -nf '#dcdccc' -sb '#1e2320' -sf '#f0dfaf'
+bindsym $m+semicolon exec /usr/bin/dmenu_run -fn 'DejaVu Sans Mono-9' -nb '#3f3f3f' -nf '#dcdccc' -sb '#1e2320' -sf '#f0dfaf'
 
 # lock screen with $m+x
 bindsym $m+x exec /usr/bin/i3lock -c 000000
 
 # screenshot with PrintScrn
 bindsym Print exec /usr/bin/scrot
+
+bindsym $m+p exec /usr/bin/mpc toggle
 
 # volume keys
 bindsym XF86AudioRaiseVolume exec ~/bin/pavol.sh up
@@ -66,10 +72,10 @@ bindsym $m+Up focus up
 bindsym $m+Right focus right
 
 # move focused window
-bindsym $m+Shift+n move left
-bindsym $m+Shift+r move down
-bindsym $m+Shift+t move up
-bindsym $m+Shift+d move right
+bindsym $m+Shift+h move left
+bindsym $m+Shift+j move down
+bindsym $m+Shift+k move up
+bindsym $m+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $m+Shift+Left move left
@@ -87,9 +93,9 @@ bindsym $m+o split v
 bindsym $m+f fullscreen
 
 # change container layout (stacked, tabbed, default)
-bindsym $m+q layout stacking
-bindsym $m+w layout tabbed
-bindsym $m+e layout default
+bindsym $m+r layout stacking
+bindsym $m+t layout tabbed
+bindsym $m+y layout default
 
 # toggle tiling / floating
 bindsym $m+Shift+space floating toggle
@@ -125,11 +131,12 @@ bindsym $m+Shift+9 move workspace 9
 bindsym $m+Shift+0 move workspace 10
 
 # reload the configuration file
-bindsym $m+Shift+j reload
+bindsym $m+Shift+w reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $m+Shift+c restart
+bindsym $m+Shift+e restart
 # exit i3 (logs you out of your X session)
-bindsym $m+Shift+l exit
+bindsym $m+Shift+q exit
 # }}}
 
 exec ~/bin/start_bars.sh
+exec /usr/bin/dex -a
