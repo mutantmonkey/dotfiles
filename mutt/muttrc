@@ -1,7 +1,7 @@
 #################################################################################
 # .mutt/muttrc - mutt configuration
 #
-# author: mutantmonkey <mutantmonkey@gmail.com>
+# author: mutantmonkey <mutantmonkey@mutantmonkey.in>
 ################################################################################
 
 source ${HOME}/.mutt/muttcolors
@@ -23,15 +23,6 @@ source $alias_file
 set query_command = "lbdbq '%s'"
 bind editor <Tab> complete-query
 
-# default mailbox
-#source ${HOME}/.mutt/gmail.muttrc
-source ${HOME}/.mutt/cubensis.muttrc
-
-# keybindings to change mailbox
-#macro generic,index,pager c "<change-folder>?"
-#macro index <f5> "<enter-command>source ${HOME}/.mutt/gmail.muttrc<enter><change-folder>=INBOX<enter>"
-#macro index <f6> "<enter-command>source ${HOME}/.mutt/xaos.muttrc<enter><change-folder>=INBOX<enter>"
-
 # header cache
 set header_cache = ${HOME}/.mutt/cache
 
@@ -45,6 +36,64 @@ set certificate_file	= ~/.mutt/certificates
 
 # IMAP settings
 set imap_check_subscribed
+set imap_delim_chars = "/"
+
+source ${HOME}/.mutt/cubensis.imaprc
+
+# mailbox
+set folder    = "imap://cubensis.mutantmonkey.in"
+set spoolfile = =INBOX
+set record    = =sent
+set postponed = =drafts
+
+# mailboxes {{{
+mailboxes =INBOX
+mailboxes =personal/finance
+mailboxes =logwatch =nagios
+mailboxes =virginiatech
+mailboxes =virginiatech/academic-affairs =virginiatech/alumni-association =virginiatech/athletics =virginiatech/cns =virginiatech/dshield =virginiatech/financial-aid =virginiatech/galileo-and-hypatia =virginiatech/news-and-alerts =virginiatech/residence-life =virginiatech/hokie-passport
+mailboxes =virginiatech/courses =virginiatech/courses/chem1035 =virginiatech/courses/cs2104 =virginiatech/courses/cs2506 =virginiatech/courses/cs3214 =virginiatech/courses/enge1104 =virginiatech/courses/geog1014 =virginiatech/courses/math1224 =virginiatech/courses/math2114 =virginiatech/courses/math2214 =virginiatech/courses/math2534 =virginiatech/courses/phys2306 =virginiatech/courses/ppws2004
+mailboxes =virginiatech/computer-science =virginiatech/cybersecurity =virginiatech/freethinkers =virginiatech/ipv6 =virginiatech/open-source =virginiatech/scholar-information =virginiatech/sec =virginiatech/sga =virginiatech/techsupport =virginiatech/vtluug =virginiatech/vtluug/administration =virginiatech/vtluug/twitter
+mailboxes =lists/full-disclosure =lists/mappingdc =lists/novalug =lists/opennic =lists/opennic/dns-operations =lists/openstreetmap/announce
+mailboxes =work
+mailboxes =accounts =accounts/campusfood =accounts/facebook =accounts/linode =aur =bugs =concerts =marketing =politics =shopping =shopping/deals
+#mailboxes =spam
+# }}}
+
+# keybindings
+macro index S "<save-message>=spam<enter>" "mark message as spam"
+
+# outgoing mail
+set realname  = "James Schwinabart"
+
+# outgoing addresses {{{
+#set from      = "james@schwinabart.com"
+set from      = "mutantmonkey@mutantmonkey.in"
+alternates      "jschwinabart@vt.edu|jschwina@vt.edu|jschwina@cs.vt.edu|james@schwinabart.com|james@vtluug.org"
+
+send-hook .		"set from = 'mutantmonkey@mutantmonkey.in'"
+# }}}
+
+# sign emails
+set pgp_autosign = yes
+
+# status bar color
+color status brightwhite blue
+
+# signatures {{{
+set signature = ""
+
+# separate signature per address
+send-hook "~f james@schwinabart.com"		"set signature = ~/.mutt/signatures/personal"
+send-hook "~f jschwina@vt.edu"				"set signature = ~/.mutt/signatures/vt"
+send-hook "~f jschwina@cs.vt.edu"			"set signature = ~/.mutt/signatures/vtcs"
+send-hook "~f mutantmonkey@mutantmonkey.in"	"set signature = ~/.mutt/signatures/mutantmonkey"
+# }}}
+
+# set from address and signature when sending email to specific addresses
+send-hook "~t ^.*\@(.*\.)?vt\.edu$"			"set from = 'jschwina@vt.edu'; set signature = ~/.mutt/signatures/vt"
+send-hook "~t ^.*\@cs\.vt\.edu$"			"set from = 'jschwina@cs.vt.edu'; set signature = ~/.mutt/signatures/vtcs"
+send-hook "~t aschwinabart@msn.com"			"set from = 'james@schwinabart.com'; set signature = ~/.mutt/signatures/personal"
 
 # polling frequency
 set mail_check   = 60
