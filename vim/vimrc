@@ -1,7 +1,7 @@
 " ##############################################################################
 " .config/vim/vimrc - Vim configuration
 "
-" author: mutantmonkey <mutantmonkey@gmail.com>
+" author: mutantmonkey <mutantmonkey@mutantmonkey.in>
 " ##############################################################################
 
 " General Settings {{{
@@ -176,8 +176,8 @@ set runtimepath+=$VIMHOME/plugin-git/snipmate/
 set runtimepath+=$VIMHOME/plugin-git/snipmate/after/
 
 let g:snips_author ='mutantmonkey'
-let g:snips_email = 'mutantmonkey@gmail.com'
-let g:snippets_dir = "$HOME/.dotfiles/vim/snippets"
+let g:snips_email = 'mutantmonkey@mutantmonkey.in'
+let g:snippets_dir = "/home/mutantmonkey/.dotfiles/vim/snippets"
 " }}}
 
 " }}}
