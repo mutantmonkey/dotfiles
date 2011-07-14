@@ -79,6 +79,8 @@ class CustomApplications(Applications):
 				return self.either(c, 'scribus')
 			if f.extension in ('xoj', ):
 				return self.either(c, 'xournal')
+			if f.extension in ('gif', 'jpg', 'jpeg', 'png', ):
+				return self.either(c, 'sxiv')
 
 		if f.mimetype is not None:
 			if INTERPRETED_LANGUAGES.match(f.mimetype):
