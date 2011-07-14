@@ -16,6 +16,8 @@ for_window [class="firefox"] border 1pixel
 for_window [class="keepassx"] border 1pixel
 for_window [class="mplayer"] border 1pixel
 for_window [class="roxterm"] border 1pixel
+for_window [class="sxiv"] border 1pixel
+for_window [class="zathura"] border 1pixel
 
 # Colors {{{
 
