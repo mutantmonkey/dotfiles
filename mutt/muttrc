@@ -56,7 +56,7 @@ mailboxes =virginiatech/courses =virginiatech/courses/chem1035 =virginiatech/cou
 mailboxes =virginiatech/computer-science =virginiatech/cybersecurity =virginiatech/freethinkers =virginiatech/ipv6 =virginiatech/open-source =virginiatech/scholar-information =virginiatech/sec =virginiatech/sga =virginiatech/techsupport =virginiatech/vtluug =virginiatech/vtluug/administration =virginiatech/vtluug/twitter
 mailboxes =lists/full-disclosure =lists/mappingdc =lists/novalug =lists/opennic =lists/opennic/dns-operations =lists/openstreetmap/announce
 mailboxes =work
-mailboxes =accounts =accounts/campusfood =accounts/facebook =accounts/linode =aur =bugs =concerts =marketing =politics =shopping =shopping/deals
+mailboxes =accounts =accounts/campusfood =accounts/dwolla =accounts/facebook =accounts/linode =aur =bugs =concerts =marketing =politics =shopping =shopping/deals
 #mailboxes =spam
 # }}}
 
