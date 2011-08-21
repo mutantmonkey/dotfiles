@@ -29,7 +29,7 @@ set passkeys+="twitter\.com":jkg/?.m
 " Quickmarks {{{
 silent qmark f https://www.facebook.com
 silent qmark g https://www.google.com/reader/view
-silent qmark h news.ycombinator.com
+silent qmark h https://news.ycombinator.com
 silent qmark p https://plus.google.com
 silent qmark r reddit.com
 silent qmark t https://twitter.com
