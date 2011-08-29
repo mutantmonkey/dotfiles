@@ -5,19 +5,22 @@
 ################################################################################
 
 # font for window titles. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font -misc-dejavu sans mono-medium-r-normal--12-0-0-0-m-0-iso10646-1
 
-new_window border_style 1pixel
+#new_window border_style 1pixel
 
 assign firefox 2
 
 for_window [class="chromium"] border 1pixel
-for_window [class="firefox"] border 1pixel
+for_window [class="firefox"]  border 1pixel
+for_window [class="jumanji"]  border 1pixel
 for_window [class="keepassx"] border 1pixel
-for_window [class="mplayer"] border 1pixel
-for_window [class="roxterm"] border 1pixel
-for_window [class="sxiv"] border 1pixel
-for_window [class="zathura"] border 1pixel
+for_window [class="mplayer"]  border 1pixel
+for_window [class="roxterm"]  border 1pixel
+for_window [class="sxiv"]     border 1pixel
+for_window [class="xournal"]  border 1pixel
+for_window [class="zathura"]  border 1pixel
 
 # Colors {{{
 
@@ -36,7 +39,7 @@ set $m Mod4
 floating_modifier $m
 
 # start a terminal
-bindsym $m+Shift+Return exec /usr/bin/roxterm
+bindsym $m+Shift+Return exec /usr/bin/roxterm --maximize
 
 # kill focused window
 bindsym $m+c kill
