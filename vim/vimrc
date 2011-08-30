@@ -82,7 +82,7 @@ set smartindent						" Smart indentation based on typed code
 set smarttab						" Tabs based on shiftwidth, not tabstop
 set cindent							" Automatically indent code
 
-set noexpandtab						" Use real tab characters
+set expandtab						" Use spaces instead of tabs
 
 " Tab width
 set softtabstop=0
