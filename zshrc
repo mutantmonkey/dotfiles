@@ -142,19 +142,8 @@ export EDITOR=vim
 export PAGER=less
 export LESS="-R -iMx4"
 
-# ensure terminal type is set properly for color-capable terminals
-if [[ "$COLORTERM" == "gnome-terminal" ]] || [[ "$COLORTERM" == "Terminal" ]] || [[ "$COLORTERM" == "roxterm" ]]; then
-    # make sure $TERM is xterm-256color if the terminal supports 256 colors
-    export TERM=xterm-256color
-fi
-
-if [ -n "$TMUX" ]; then
-    # set $TERM for tmux
-    export TERM=screen-256color
-fi
-
-# keychain
-#eval `keychain -q`
+# Java settings
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd_vrgb -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 
 # }}}
 
@@ -169,6 +158,7 @@ alias pacs='pacman -Ss'
 alias strtx='startx & vlock'
 alias tmuxa='tmux new-session -t0'
 alias vless='/usr/share/vim/vim73/macros/less.sh'
+alias flvplay='quvi --exec "mplayer %u"'
 
 # }}}
 

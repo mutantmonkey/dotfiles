@@ -1,4 +1,4 @@
-mpd_music_dir = "/media/stuff/music"
+#mpd_music_dir = "/media/stuff/music"
 
 # use alternative UI
 user_interface = "alternative"
@@ -9,3 +9,7 @@ browser_display_mode = "columns"
 
 # mouse wheel should not scroll entire page
 mouse_list_scroll_whole_page = no
+
+display_volume_level = no
+ignore_leading_the = yes
+display_screens_numbers_on_start = no
