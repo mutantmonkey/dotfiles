@@ -1,7 +1,7 @@
 ################################################################################
 # .zshrc - ZSH configuration
 #
-# author: mutantmonkey <mutantmonkey@gmail.com>
+# author: mutantmonkey <mutantmonkey@mutantmonkey.in>
 ################################################################################
 
 # History {{{
@@ -77,14 +77,34 @@ zstyle ':completion:*:kill:*' force-list always
 
 # directory colors
 if [ "$TERM" != "dumb" ]; then
-	# directory colors
-	eval `dircolors -b`
-	alias ls='ls --color=auto -F'
-	alias dir='ls --color=auto -F'
+    # directory colors
+    eval `dircolors -b`
+    alias ls='ls --color=auto -F'
+    alias dir='ls --color=auto -F'
 
-	# grep color
-	export GREP_COLOR="1;33"
-	alias grep='grep --color=auto'
+    # grep color
+    export GREP_COLOR="1;33"
+    alias grep='grep --color=auto'
+fi
+
+# Zenburn colors for console
+if [ "$TERM" = "linux" ]; then
+    echo -en "\e]P03f3f3f" # zenburn black (normal black)
+    echo -en "\e]P8709080" # bright-black  (darkgrey)
+    echo -en "\e]P1705050" # red           (darkred)
+    echo -en "\e]P9dca3a3" # bright-red    (red)
+    echo -en "\e]P260b48a" # green         (darkgreen)
+    echo -en "\e]PAc3bf9f" # bright-green  (green)
+    echo -en "\e]P3dfaf8f" # yellow        (brown)
+    echo -en "\e]PBf0dfaf" # bright-yellow (yellow)
+    echo -en "\e]P4506070" # blue          (darkblue)
+    echo -en "\e]PC94bff3" # bright-blue   (blue)
+    echo -en "\e]P5dc8cc3" # purple        (darkmagenta)
+    echo -en "\e]PDec93d3" # bright-purple (magenta)
+    echo -en "\e]P68cd0d3" # cyan          (darkcyan)
+    echo -en "\e]PE93e0e3" # bright-cyan   (cyan)
+    echo -en "\e]P7dcdccc" # white         (lightgrey)
+    echo -en "\e]PFffffff" # bright-white  (white)
 fi
 
 # }}}
@@ -94,8 +114,8 @@ fi
 
 # user@host:dir
 case "$TERM" in
-	xterm*|rxvt*)
-	    precmd () {print -Pn "\e]0;%n@%m: %~\a"}
+    xterm*|rxvt*)
+        precmd () {print -Pn "\e]0;%n@%m: %~\a"}
     ;;
 esac
 
@@ -122,17 +142,6 @@ export EDITOR=vim
 export PAGER=less
 export LESS="-R -iMx4"
 
-# ensure terminal type is set properly for color-capable terminals
-#if [[ "$COLORTERM" == "gnome-terminal" ]] || [[ "$COLORTERM" == "Terminal" ]] || [[ "$COLORTERM" == "roxterm" ]]; then
-	# make sure $TERM is xterm-256color if the terminal supports 256 colors
-#	export TERM=xterm-256color
-#fi
-
-#if [ -n "$TMUX" ]; then
-	# set $TERM for tmux
-#	export TERM=screen-256color
-#fi
-
 # Java settings
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd_vrgb -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 
@@ -146,9 +155,10 @@ alias sshtunnel_home="ssh -D 4711 -N home.schwinabart.com"
 alias net_connected='sudo netstat -tuoeewp'
 alias net_listening='sudo netstat -ntulp'
 alias pacs='pacman -Ss'
-alias strtx='xinit & vlock'
+alias strtx='startx & vlock'
 alias tmuxa='tmux new-session -t0'
 alias vless='/usr/share/vim/vim73/macros/less.sh'
+alias flvplay='quvi --exec "mplayer %u"'
 
 # }}}
 

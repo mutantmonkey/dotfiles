@@ -122,7 +122,6 @@ sdc:$alignr${diskio sdc}
 ${diskiograph sdc 20,160 ffffff}
 
 NETWORK ${hr 2}
-${if_up eth0}Local IP:$alignr${addr eth0}
 Up:$alignr${upspeedf eth0} kb/s
 ${upspeedgraph eth0 20,160 ffffff}
 Down:$alignr${downspeedf eth0}kb/s${color}

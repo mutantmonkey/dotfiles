@@ -53,10 +53,10 @@ mailboxes =cron =logwatch =nagios
 mailboxes =virginiatech
 mailboxes =virginiatech/academic-affairs =virginiatech/alumni-association =virginiatech/athletics =virginiatech/cns =virginiatech/dshield =virginiatech/financial-aid =virginiatech/galileo-and-hypatia =virginiatech/news-and-alerts =virginiatech/residence-life =virginiatech/hokie-passport
 mailboxes =virginiatech/courses =virginiatech/courses/chem1035 =virginiatech/courses/cs2104 =virginiatech/courses/cs2506 =virginiatech/courses/cs3214 =virginiatech/courses/enge1104 =virginiatech/courses/geog1014 =virginiatech/courses/math1224 =virginiatech/courses/math2114 =virginiatech/courses/math2214 =virginiatech/courses/math2534 =virginiatech/courses/phys2306 =virginiatech/courses/ppws2004
-mailboxes =virginiatech/computer-science =virginiatech/cybersecurity =virginiatech/freethinkers =virginiatech/ipv6 =virginiatech/open-source =virginiatech/scholar-information =virginiatech/sec =virginiatech/sga =virginiatech/techsupport =virginiatech/vtluug =virginiatech/vtluug/administration =virginiatech/vtluug/twitter
+mailboxes =virginiatech/computer-science =virginiatech/cybersecurity =virginiatech/dnet =virginiatech/freethinkers =virginiatech/ipv6 =virginiatech/open-source =virginiatech/parking =virginiatech/scholar-information =virginiatech/sec =virginiatech/sga =virginiatech/techsupport =virginiatech/vtluug =virginiatech/vtluug/administration =virginiatech/vtluug/twitter
 mailboxes =lists/cryptography =lists/full-disclosure =lists/mappingdc =lists/novalug =lists/opennic =lists/opennic/dns-operations =lists/openstreetmap/announce
 mailboxes =work
-mailboxes =accounts =accounts/campusfood =accounts/dwolla =accounts/facebook =accounts/linode =aur =bugs =concerts =marketing =politics =shopping =shopping/deals
+mailboxes =accounts =accounts/campusfood =accounts/dwolla =accounts/facebook =accounts/linode =aur =bugs =music =politics =shopping =shopping/deals
 #mailboxes =spam
 # }}}
 
