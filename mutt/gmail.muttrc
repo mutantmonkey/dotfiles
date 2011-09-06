@@ -4,20 +4,35 @@
 # author: mutantmonkey <mutantmonkey@gmail.com>
 ################################################################################
 
-source ${HOME}/.mutt/gmail.imaprc
+source ${HOME}/.mutt/zenburn
+source ${HOME}/.mutt/muttgpg
 
-# mailbox
-set folder    = "imaps://imap.gmail.com:993"
+source ${HOME}/.mutt/groups
+source ${HOME}/.mutt/lists
+
+# mailcap
+set mailcap_path = ${HOME}/.mutt/mailcap
+
+# aliases
+set alias_file = ${HOME}/.mutt/aliases
+set sort_alias = alias
+set reverse_alias = yes
+source $alias_file
+
+# mailbox {{{
+#set folder    = "imaps://imap.gmail.com:993"
+set folder    = "~/mail/gmail"
 set spoolfile = =INBOX
 set record    = "=[Gmail]/Sent Mail"
 set postponed = "=[Gmail]/Drafts"
+# }}}
 
-# IMAP settings
-set imap_keepalive = 5
+# don't even think about moving mail
+set move          = no
 
 # keybindings
 #macro index D "<save-message>+trash"       "move message to trash"
-macro index S "<save-message>=[Gmail]/Spam" "mark message as spam"
+#macro index S "<save-message>=[Gmail]/Spam" "mark message as spam"
 
 # outgoing mail
 set realname   = "James Schwinabart"
@@ -29,25 +44,21 @@ alternates      "jschwinabart@vt.edu|jschwina@vt.edu|jschwina@cs.vt.edu|mutantmo
 send-hook .		"set from = 'james@schwinabart.com'"
 # }}}
 
+# sorting
+set sort      = threads
+set sort_aux  = reverse-last-date-received
+
+# hide unimportant headers
+ignore *
+unignore from date subject to cc
+
+# decode messages before piping
+set pipe_decode
+
+
 # sign emails
 set pgp_autosign = yes
 
 # status bar color
 color status brightwhite blue
-
-# set from address when sending mail to Virginia Tech addresses
-send-hook "~t ^.*\@(.*\.)?vt\.edu$"			"set from = 'jschwina@vt.edu'; set signature = ~/.mutt/signatures/vt"
-
-# contacts and autocompletion
-set query_command = "goobook query '%s'"
-
-# signatures {{{
-set signature = ""
-
-# separate signature per address
-send-hook "~f james@schwinabart.com"   "set signature = ~/.mutt/signatures/personal"
-send-hook "~f jschwina@vt.edu"         "set signature = ~/.mutt/signatures/vt"
-send-hook "~f jschwina@cs.vt.edu"      "set signature = ~/.mutt/signatures/vtcs"
-send-hook "~f mutantmonkey@gmail.com"  "set signature = ~/.mutt/signatures/mutantmonkey"
-# }}}
 
