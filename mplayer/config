@@ -8,8 +8,8 @@
 ao=pulse
 
 # Fix A/V Sync
-mc=0.2
-autosync=30
+#mc=0.2
+#autosync=30
 # }}}
 
 # Video {{{

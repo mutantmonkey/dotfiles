@@ -70,6 +70,13 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*' force-list always
 
+zstyle -e ':completion:*:(ssh|scp|ping|host|nmap|rsync):*' hosts 'reply=(
+	${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) \
+            	/dev/null)"}%%[#| ]*}//,/ }
+	${=${(f)"$(cat /etc/hosts(|)(N) <<(ypcat hosts 2>/dev/null))"}%%\#*}
+	${=${${${${(@M)${(f)"$(<~/.ssh/config)"}:#Host *}#Host }:#*\**}:#*\?*}}
+	)'
+
 # }}}
 
 
@@ -143,6 +150,7 @@ export PAGER=less
 export LESS="-R -iMx4"
 
 # Java settings
+export _JAVA_AWT_WM_NONREPARENTING=1
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd_vrgb -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 
 # }}}
@@ -158,7 +166,7 @@ alias pacs='pacman -Ss'
 alias strtx='startx & vlock'
 alias tmuxa='tmux new-session -t0'
 alias vless='/usr/share/vim/vim73/macros/less.sh'
-alias flvplay='quvi --exec "mplayer %u"'
+alias flvplay="quvi --exec 'mplayer %u'"
 
 # }}}
 
