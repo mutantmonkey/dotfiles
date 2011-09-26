@@ -180,5 +180,9 @@ let g:snips_email = 'mutantmonkey@mutantmonkey.in'
 let g:snippets_dir = "/home/mutantmonkey/.dotfiles/vim/snippets"
 " }}}
 
+" vimwiki {{{
+let g:vimwiki_badsyms = ' '
+" }}}
+
 " }}}
 
