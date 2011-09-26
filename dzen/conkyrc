@@ -1,7 +1,7 @@
 ################################################################################
 # /home/mutantmonkey/.config/dzen/conkyrc - Conky/home/mutantmonkey/.configuration for Dzen
 #
-# author: mutantmonkey <mutantmonkey@gmail.com>
+# author: mutantmonkey <mutantmonkey@mail.com>
 ################################################################################
 
 background no
@@ -13,4 +13,4 @@ total_run_times 0
 mpd_host ::1
 
 TEXT
-${if_mpd_playing}^i(.config/dzen/icons/note.xbm) ${mpd_smart}  ${endif}${if_match ${head /dev/shm/greader-mutantmonkey 1 2} > 4}^fg(\#dfaf8f)^i(.config/dzen/icons/shroom.xbm) ${head /dev/shm/greader-mutantmonkey 1 2}${else}^fg() ^i(.config/dzen/icons/shroom.xbm) ${head /dev/shm/greader-mutantmonkey 1 2}${endif}^fg()  ${if_match ${head /dev/shm/gmail-mutantmonkey 1 2} > 0}^fg(\#dfaf8f)^i(.config/dzen/icons/mail.xbm) ${head /dev/shm/gmail-mutantmonkey 1 2}${else}^fg()^i(.config/dzen/icons/mail.xbm) ${head /dev/shm/gmail-mutantmonkey 1 2}${endif}^fg()  ^i(.config/dzen/icons/temp.xbm) ${execi 900 weather.sh 24060}^fg() ^i(.config/dzen/icons/clock.xbm) ${time %a %b %d %H:%M} 
+${if_mpd_playing}^i(.config/dzen/icons/note.xbm) ${mpd_smart}  ${endif}^fg()${if_match ${head /dev/shm/gvoice-mutantmonkey 1 2} > 0}^fg(\#dfaf8f)^i(.config/dzen/icons/dish.xbm) ${head /dev/shm/gvoice-mutantmonkey 1 2}${else}^i(.config/dzen/icons/dish.xbm) ${head /dev/shm/gvoice-mutantmonkey 1 2}${endif}^fg()  ${if_match ${head /dev/shm/greader-mutantmonkey 1 2} > 4}^fg(\#dfaf8f)^i(.config/dzen/icons/shroom.xbm) ${head /dev/shm/greader-mutantmonkey 1 2}${else}^fg() ^i(.config/dzen/icons/shroom.xbm) ${head /dev/shm/greader-mutantmonkey 1 2}${endif}^fg()  ${if_match ${head /dev/shm/mail-mutantmonkey 1 2} > 0}^fg(\#dfaf8f)^i(.config/dzen/icons/mail.xbm) ${head /dev/shm/mail-mutantmonkey 1 2}${else}^fg()^i(.config/dzen/icons/mail.xbm) ${head /dev/shm/mail-mutantmonkey 1 2}${endif}^fg()  ^i(.config/dzen/icons/temp.xbm) ${execi 900 weather.sh 24060}^fg()  ^i(.config/dzen/icons/clock.xbm) ${time %a %b %d %H:%M} 
