@@ -4,8 +4,9 @@
 /mutt/groups
 /mutt/hcache
 /mutt/*.imaprc
-/mutt/beneathvt.muttrc
-/mutt/signatures/beneathvt
+/mutt/mailboxes
+/mutt/personal
+/mutt/signatures/
 /vim/spell/*.spl
 /xmonad/xmonad-x86_64-linux
 /xmonad/xmonad.errors
