@@ -6,5 +6,6 @@ endif
 augroup filetypedetect
 
 au BufRead,BufNewFile /etc/nginx/conf/* set ft=nginx
+au BufRead,BufNewFile *.md set ft=markdown
 
 augroup END
