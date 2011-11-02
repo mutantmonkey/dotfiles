@@ -60,7 +60,7 @@ class CustomApplications(Applications):
 		if f.extension is not None:
 			if f.extension in ('pdf', ):
 				c.flags += 'd'
-				return self.either(c, 'zathura', 'evince', 'apvlv')
+				return self.either(c, 'evince', 'apvlv') # zathura
 			if f.extension in ('xml', ):
 				return self.either(c, 'editor')
 			if f.extension in ('html', 'htm', 'xhtml'):
@@ -79,8 +79,6 @@ class CustomApplications(Applications):
 				return self.either(c, 'scribus')
 			if f.extension in ('xoj', ):
 				return self.either(c, 'xournal')
-			if f.extension in ('gif', 'jpg', 'jpeg', 'png', ):
-				return self.either(c, 'sxiv')
 
 		if f.mimetype is not None:
 			if INTERPRETED_LANGUAGES.match(f.mimetype):
@@ -95,7 +93,7 @@ class CustomApplications(Applications):
 			return self.either(c, 'mplayer', 'smplayer', 'vlc', 'totem')
 
 		if f.image:
-			return self.either(c, 'feh', 'eog', 'mirage')
+			return self.either(c, 'sxiv', 'feh', 'eog', 'mirage')
 
 		if f.document or f.filetype.startswith('text') or f.size == 0:
 			return self.either(c, 'editor')
@@ -195,16 +193,6 @@ class CustomApplications(Applications):
 		if c.mode is 1:
 			return tup("totem", "--fullscreen", *c)
 
-	@depends_on('scribus')
-	def app_scribus(self, c):
-		c.flags += 'd'
-		return tup('scribus', c.file.path)
-
-	@depends_on('xournal')
-	def app_xournal(self, c):
-		c.flags += 'd'
-		return tup('xournal', c.file.path)
-
 	@depends_on('mimeopen')
 	def app_mimeopen(self, c):
 		if c.mode is 0:
@@ -227,11 +215,12 @@ CustomApplications.generic('vim', 'fceux', 'elinks', 'wine',
 
 # By setting flags='d', this programs will not block ranger's terminal:
 CustomApplications.generic('opera', 'firefox', 'apvlv', 'evince',
-		'zathura', 'gimp', 'mirage', 'eog', flags='d')
+		'zathura', 'gimp', 'mirage', 'eog', 'libreoffice', 'sxiv',
+		'xournal', 'scribus', flags='d')
 
 # What filetypes are recognized as scripts for interpreted languages?
 # This regular expression is used in app_default()
 INTERPRETED_LANGUAGES = re.compile(r'''
 	^(text|application)/x-(
-		haskell|perl|python|ruby|sh
+		haskell|perl|python|ruby|sh|shellscript
 	)$''', re.VERBOSE)

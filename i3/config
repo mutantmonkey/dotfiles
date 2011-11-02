@@ -14,6 +14,7 @@ assign firefox 2
 
 for_window [class="Aurora"]   border 1pixel
 for_window [class="chromium"] border 1pixel
+for_window [class="evilvte"]  border 1pixel
 for_window [class="firefox"]  border 1pixel
 for_window [class="jumanji"]  border 1pixel
 for_window [class="keepassx"] border 1pixel
