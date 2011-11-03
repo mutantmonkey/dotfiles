@@ -15,6 +15,8 @@ set title							" Update window title
 
 let mapleader=","					" Map the <Leader> key so plugins work properly
 
+set clipboard=unnamedplus           " Use X11 clipboard for + register
+
 " }}}
 
 
@@ -66,9 +68,12 @@ set number							" Show line numbers
 set showmatch						" Highlight matching pairs
 set matchpairs+=<:>					" Make < and > match
 
-set pastetoggle=<F2>				" Press F2 to toggle paste mode, turning off automatic indentation
+set pastetoggle=<F2>				" Toggle paste mode (no automatic indents)
 
-set formatoptions+=tcrqn			" Automatic formatting; carry *'s
+" Automatic formatting; auto-wrap text, comments; automatically insert current
+" comment leader when hitting enter in insert mode allow formatting of
+" comments with gq; recognize lists
+set formatoptions+=tcrqn
 
 " }}}
 
@@ -148,11 +153,11 @@ set smartcase
 " Plugins {{{
 
 " NERDCommenter {{{
-set runtimepath+=$VIMHOME/plugin-git/nerdcommenter/
+set runtimepath+=/home/mutantmonkey/.dotfiles/vim/plugin-git/nerdcommenter/
 " }}}
 
 " NERDTree {{{
-set runtimepath+=$VIMHOME/plugin-git/nerdtree/
+set runtimepath+=/home/mutantmonkey/.dotfiles/vim/plugin-git/nerdtree/
 
 " Have NERDTree change directory when we do
 let g:NERDTreeChDirMode = 2
@@ -172,8 +177,8 @@ nmap <leader>N :NERDTreeClose<CR>
 " }}}
 
 " SnipMate {{{
-set runtimepath+=$VIMHOME/plugin-git/snipmate/
-set runtimepath+=$VIMHOME/plugin-git/snipmate/after/
+set runtimepath+=/home/mutantmonkey/.dotfiles/vim/plugin-git/snipmate/
+set runtimepath+=/home/mutantmonkey/.dotfiles/vim/plugin-git/snipmate/after/
 
 let g:snips_author ='mutantmonkey'
 let g:snips_email = 'mutantmonkey@mutantmonkey.in'

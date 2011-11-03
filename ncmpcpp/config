@@ -11,5 +11,10 @@ browser_display_mode = "columns"
 mouse_list_scroll_whole_page = no
 
 display_volume_level = no
-ignore_leading_the = yes
 display_screens_numbers_on_start = no
+
+# ignore leading the when sorting
+ignore_leading_the = yes
+
+default_find_mode = wrapped
+default_space_mode = add
