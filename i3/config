@@ -7,6 +7,7 @@
 # font for window titles. ISO 10646 = Unicode
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font -misc-dejavu sans mono-medium-r-normal--12-0-0-0-m-0-iso10646-1
+font -schumacher-clean-medium-r-normal--12-*-*-*-*-*-*-*
 
 #new_window border_style 1pixel
 
@@ -26,11 +27,13 @@ for_window [class="zathura"]  border 1pixel
 
 # Colors {{{
 
-client.focused #6f6f6f #6f6f6f #dcdccc
-client.focused_inactive #3f3f3f #3f3f3f #dcdccc
-client.unfocused #3f3f3f #3f3f3f #dcdccc
+# class                 border  bg      fg
+client.focused          #5b605e #5b605e #262626
+client.focused_inactive #3f3f3f #3f3f3f #5b605e
+client.unfocused        #3f3f3f #3f3f3f #5b605e
+client.urgent           #dca3a3 #3f3f3f #dca3a3
 
-#client.background #3f3f3f
+client.background       #000000
 
 # }}}
 
