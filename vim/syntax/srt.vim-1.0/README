@@ -1,0 +1,32 @@
+
+
+QUICK INSTALL:
+
+1. Copy srt.vim file to /usr/share/vim/vim61/syntax directory (path depends
+   on version of vim you are using).
+2. Add those lines to your ~/.vimrc file:
+   " Syntax highlighting for subtitle files in Subrip (srt) format
+   au BufNewFile,BufRead *.srt setf srt
+3. Now you can open some .srt file and syntax highlighting should be working.
+
+
+Vim is extended and improved version of one of the first full screen text
+editors which today comes with all unix like systems. Among huge number of
+options which makes vim very powerful text editor, vim also supports syntax
+highlighting which is implemented on the way which makes creating new, or
+modifying existing highlighting extensions very easy.
+
+I was playing with divx for some time and sometimes I had to modify .srt
+files. Some specialized editors for .srt files imports their own extensions
+which could not be understood by divx players I used. To make errors like this
+or missing brackets easier to encounter, I wrote a syntax file for vim, which
+helped me a lot and maybe will be of use to somebody else.
+srt.vim is a project similar to sub.vim but sub.vim has been written a long
+before srt.vim. This is the reason for having two projects for similar things.
+
+To make coloring syntax of .srt files working, you just have to copy srt.vim
+to the /usr/share/vim/vim61/syntax directory (path depends on version of vim
+you have) and to add those lines to your ~/.vimrc file:
+  " Syntax highlighting for subtitle files in Subrip (srt) format
+  au BufNewFile,BufRead *.srt setf srt
+
