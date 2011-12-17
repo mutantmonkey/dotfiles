@@ -7,6 +7,10 @@
 " Set color scheme
 colors zenburn
 
+" Short URLs {{{
+set yankshort+=linx.li
+" }}}
+
 " Passkeys {{{
 
 " Gmail
@@ -19,7 +23,7 @@ set passkeys+="https://www\.google\.com/calendar":jkg12345qc
 set passkeys+="https://www\.google\.com/reader":lmsSt
 
 " reddit
-set passkeys+="www\.reddit\.com":achijklrsxz<Return>
+set passkeys+="www\.reddit\.com":achijklsxz<Return>
 
 " Twitter
 set passkeys+="twitter\.com":jkg/?.m
@@ -40,4 +44,3 @@ nnoremap j 5j
 nnoremap k 5k
 nnoremap l 5l
 nnoremap h 5h
-
