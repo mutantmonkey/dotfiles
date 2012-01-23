@@ -7,32 +7,29 @@
 " Set color scheme
 colors zenburn
 
+" Short URLs {{{
+set yankshort+=linx.li
+" }}}
+
 " Passkeys {{{
 
-" Gmail
-set passkeys+="mail\.google\.com":jkg
-
 " Google Calendar
-set passkeys+="https://www\.google\.com/calendar":jkg12345qc
-
-" Google Reader
-set passkeys+="https://www\.google\.com/reader":lmsSt
+set passkeys+="https://www\.google\.com/calendar":jk12345qc
 
 " reddit
-set passkeys+="www\.reddit\.com":achijklrsxz<Return>
+set passkeys+="www\.reddit\.com":achijklsxz<Return>
 
 " Twitter
-set passkeys+="twitter\.com":jkg/?.m
+set passkeys+="twitter\.com":jk/?.m
 
 " }}}
 
 " Quickmarks {{{
-silent qmark f https://www.facebook.com
-silent qmark g https://www.google.com/reader/view
 silent qmark h https://news.ycombinator.com
 silent qmark p https://plus.google.com
-silent qmark r reddit.com
+silent qmark r https://pay.reddit.com
 silent qmark t https://twitter.com
+silent qmark w http://www.wubel.com
 " }}}
 
 " Remap scroll keys
@@ -40,4 +37,3 @@ nnoremap j 5j
 nnoremap k 5k
 nnoremap l 5l
 nnoremap h 5h
-

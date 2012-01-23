@@ -10,10 +10,8 @@ HISTFILE=~/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000
 setopt appendhistory
-bindkey -e
 
 # }}}
-
 
 # Key bindings {{{
 
@@ -21,20 +19,6 @@ bindkey -v
 
 bindkey '^[[A'  vi-up-line-or-history
 bindkey '^[[B'  vi-down-line-or-history
-
-#bindkey "\e[1~" beginning-of-line
-#bindkey "\e[4~" end-of-line
-#bindkey "\e[5~" beginning-of-history
-#bindkey "\e[6~" end-of-history
-#bindkey "\e[3~" delete-char
-#bindkey "\e[2~" quoted-insert
-#bindkey "\e[5C" forward-word
-#bindkey "\eOc" emacs-forward-word
-#bindkey "\e[5D" backward-word
-#bindkey "\eOd" emacs-backward-word
-#bindkey "\e\e[C" forward-word
-#bindkey "\e\e[D" backward-word
-#bindkey "^H" backward-delete-word
 
 ## for rxvt
 #bindkey "\e[8~" end-of-line
@@ -52,7 +36,6 @@ bindkey '^[[B'  vi-down-line-or-history
 #bindkey '^i' expand-or-complete-prefix
 
 # }}}
-
 
 # Auto completion {{{
 
@@ -78,7 +61,6 @@ zstyle -e ':completion:*:(ssh|scp|ping|host|nmap|rsync):*' hosts 'reply=(
 	)'
 
 # }}}
-
 
 # Terminal colors {{{
 
@@ -116,7 +98,6 @@ fi
 
 # }}}
 
-
 # Window title {{{
 
 # user@host:dir
@@ -127,7 +108,6 @@ case "$TERM" in
 esac
 
 # }}}
-
 
 # Prompt {{{
 
@@ -141,9 +121,7 @@ export PROMPT2="$MAIN_COLOR... $RESET_COLOR"
 
 # }}}
 
-
 # Variables {{{
-
 export BROWSER=firefox
 export EDITOR=vim
 export PAGER=less
@@ -155,18 +133,34 @@ export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd_vrgb -Dswing.defaultlaf=
 
 # }}}
 
-
 # Aliases {{{
 
-alias sshtunnel_home="ssh -D 4711 -N home.schwinabart.com"
-
-alias net_connected='sudo netstat -tuoeewp'
-alias net_listening='sudo netstat -ntulp'
+alias flvplay="quvi --exec 'mplayer %u'"
+alias net_connected='sudo lsof -i -n | grep -v LISTEN'
+alias net_listening='sudo lsof -i -n | grep LISTEN'
+alias mpdstream='mplayer --prefer-ipv4 http://localhost:8000'
 alias pacs='pacman -Ss'
 alias strtx='startx & vlock'
-alias tmuxa='tmux new-session -t0'
 alias vless='/usr/share/vim/vim73/macros/less.sh'
-alias flvplay="quvi --exec 'mplayer %u'"
+
+# Live media streams
+RTMP_CACHE=1024
+MMS_CACHE=$RTMP_CACHE
+
+# Video
+alias abc24au="rtmpdump -v -r rtmp://cp103653.live.edgefcs.net/live/international_medium@36382 | mplayer -cache $RTMP_CACHE -"
+alias alj="rtmpdump -v -r 'rtmp://aljazeeraflashlivefs.fplive.net/aljazeeraflashlive-live/aljazeera_eng_med' | mplayer -cache $RTMP_CACHE -"
+alias cspan1="rtmpdump -v -r rtmp://cp82346.live.edgefcs.net:1935/live/CSPAN1@14845 | mplayer -cache $RTMP_CACHE -"
+alias france24="rtmpdump -v -r rtmp://stream2.france24.yacast.net/france24_live/en -a france24_live/en -W http://www.france24.com/en/sites/all/modules/maison/aef_player/flash/player.swf -p http://www.france24.com/en/aef_player_popup/france24_player -y f24_liveen | mplayer -cache $RTMP_CACHE -"
+alias rt="rtmpdump -v -r rtmp://fms5.visionip.tv/live -a live -W http://rt.com/s/swf/player5.4.viral.swf -p http://rt.com/on-air/ -y RT_3 | mplayer -cache $RTMP_CACHE -"
+alias skynews="mplayer -cache $MMS_CACHE mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k"
+
+# Radio
+alias echofm='mplayer -playlist http://xgrid04.ruf.uni-freiburg.de/echofm.m3u'
+alias radioq='mplayer http://stream.radioq.de:8000/gross.mp3'
+alias startfm='mplayer -playlist http://www.startfm.lt/startfm.m3u'
+alias wuvt='mplayer -playlist http://www.wuvt.vt.edu/liveplayer/wuvtstream_hi.m3u'
+alias wvtf='mplayer -playlist http://www.wvtf.org/images/stories/wvtf_high.m3u'
+alias wwvt='mplayer -playlist http://www.wvtf.org/images/stories/riq_high.m3u'
 
 # }}}
-
