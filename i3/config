@@ -5,22 +5,27 @@
 ################################################################################
 
 # font for window titles. ISO 10646 = Unicode
-#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-#font -misc-dejavu sans mono-medium-r-normal--12-0-0-0-m-0-iso10646-1
 font -schumacher-clean-medium-r-normal--12-*-*-*-*-*-*-*
 
+# Window placement
 assign [class="Firefox"] 2
 
-for_window [class="Aurora"]   border 1pixel
-for_window [class="Chromium"] border 1pixel
-for_window [class="evilvte"]  border 1pixel
-for_window [class="Firefox"]  border 1pixel
-for_window [class="Jumanji"]  border 1pixel
-for_window [class="MPlayer"]  border 1pixel
-for_window [class="Roxterm"]  border 1pixel
-for_window [class="sxiv"]     border 1pixel
-for_window [class="Xournal"]  border 1pixel
-for_window [class="Zathura"]  border 1pixel
+# Window styles
+for_window [class="Aurora"]     border 1pixel
+for_window [class="Chromium"]   border 1pixel
+for_window [class="evilvte"]    border 1pixel
+for_window [class="Firefox"]    border 1pixel
+for_window [class="Gvim"]       border 1pixel
+for_window [class="Jumanji"]    border 1pixel
+for_window [class="MPlayer"]    border 1pixel
+for_window [class="mplayer2"]   border 1pixel
+for_window [class="openarena"]  border 1pixel
+for_window [class="Roxterm"]    border 1pixel
+for_window [class="sxiv"]       border 1pixel
+for_window [class="Xournal"]    border 1pixel
+for_window [class="Zathura"]    border 1pixel
+
+for_window [instance="Steam.exe"]   border 1pixel
 
 # Colors {{{
 
