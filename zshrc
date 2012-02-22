@@ -158,7 +158,7 @@ alias skynews="mplayer -cache $MMS_CACHE mms://live1.wm.skynews.servecast.net/sk
 alias echofm='mplayer -playlist http://xgrid04.ruf.uni-freiburg.de/echofm.m3u'
 alias radioq='mplayer http://stream.radioq.de:8000/gross.mp3'
 alias startfm='mplayer -playlist http://www.startfm.lt/startfm.m3u'
-alias wuvt='mplayer -playlist http://www.wuvt.vt.edu/liveplayer/wuvtstream_hi.m3u'
+alias wuvt='mplayer http://engine.collegemedia.vt.edu:8000/wuvt.ogg'
 alias wvtf='mplayer -playlist http://www.wvtf.org/images/stories/wvtf_high.m3u'
 alias wwvt='mplayer -playlist http://www.wvtf.org/images/stories/riq_high.m3u'
 
