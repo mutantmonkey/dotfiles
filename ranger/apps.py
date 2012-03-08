@@ -79,6 +79,10 @@ class CustomApplications(Applications):
 				return self.either(c, 'scribus')
 			if f.extension in ('xoj', ):
 				return self.either(c, 'xournal')
+			if f.extension in ('chm', ):
+			    return self.either(c, 'chmsee')
+			if f.extension in ('djvu', ):
+			    return self.either(c, 'evince', 'apvlv', 'djview')
 
 		if f.mimetype is not None:
 			if INTERPRETED_LANGUAGES.match(f.mimetype):
@@ -141,7 +145,7 @@ class CustomApplications(Applications):
 			return tup('mplayer', '-mixer', 'software', *c)
 
 		else:
-			return tup('mplayer', *c)
+			return tup('mplayer', '-noconsolecontrols', *c)
 
 	@depends_on('feh')
 	def app_feh(self, c):
@@ -216,7 +220,7 @@ CustomApplications.generic('vim', 'fceux', 'elinks', 'wine',
 # By setting flags='d', this programs will not block ranger's terminal:
 CustomApplications.generic('opera', 'firefox', 'apvlv', 'evince',
 		'zathura', 'gimp', 'mirage', 'eog', 'libreoffice', 'sxiv',
-		'xournal', 'scribus', flags='d')
+		'xournal', 'scribus', 'chmsee', flags='d')
 
 # What filetypes are recognized as scripts for interpreted languages?
 # This regular expression is used in app_default()
