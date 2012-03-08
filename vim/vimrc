@@ -165,7 +165,7 @@ let g:snippets_dir = "/home/mutantmonkey/.dotfiles/vim/snippets"
 let g:vimwiki_badsyms = ' '
 " }}}
 
-set runtimepath+=$VIMHOME/ftplugin/
+set runtimepath+=$VIMHOME/after/
 
 " }}}
 
