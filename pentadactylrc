@@ -8,7 +8,9 @@
 colors zenburn
 
 " Short URLs {{{
+set yankshort+=filesha.re
 set yankshort+=linx.li
+set yankshort+=nullpaste.com
 " }}}
 
 " Passkeys {{{
