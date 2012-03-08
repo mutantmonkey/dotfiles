@@ -5,7 +5,6 @@
 " ##############################################################################
 
 " General Settings {{{
-
 set nocompatible					" Disable vi-compatible mode
 set hidden							" Switch buffers without saving
 set nobackup						" Disable backup files
@@ -16,12 +15,9 @@ set title							" Update window title
 let mapleader=","					" Map the <Leader> key so plugins work properly
 
 set clipboard=unnamedplus           " Use X11 clipboard for + register
-
 " }}}
 
-
 " Color Settings {{{
-
 set t_Co=256						" Use 256 colors
 
 if $TERM =~ "256color" || has('gui_running')
@@ -29,12 +25,9 @@ if $TERM =~ "256color" || has('gui_running')
 else
 	colorscheme darkdot
 endif
-
 " }}}
 
-
 " GUI Settings {{{
-
 if has("gui_running")
 	set guioptions-=t				" Disable tear-off menus
 
@@ -50,12 +43,9 @@ if has("gui_running")
 	set columns=100
 	set lines=40
 endif
-
 " }}}
 
-
 " Editing {{{
-
 set backspace=indent,eol,start		" Make backspace key behave normally
 set esckeys							" Allow use of arrow keys while in insert mode
 set noinsertmode					" Don't stay in insert mode
@@ -74,12 +64,9 @@ set pastetoggle=<F2>				" Toggle paste mode (no automatic indents)
 " comment leader when hitting enter in insert mode allow formatting of
 " comments with gq; recognize lists
 set formatoptions+=tcrqn
-
 " }}}
 
-
 " Indentation {{{
-
 set autoindent						" Automatic indentation on new lines
 set copyindent						" Copy existing indentation structure on autoindent
 set preserveindent					" Preserve indentation structure for existing lines
@@ -93,12 +80,9 @@ set expandtab						" Use spaces instead of tabs
 set softtabstop=0
 set tabstop=4
 set shiftwidth=4
-
 " }}}
 
-
 " Folding {{{
-
 if has('folding')
 	set foldenable				" Enable folding
 	set foldmethod=marker		" Fold on marker
@@ -108,12 +92,9 @@ if has('folding')
 	set foldmarker={{{,}}}		" Use default fold marker
 	set foldcolumn=0			" Do not use a fold column
 endif
-
 " }}}
 
-
 " File formats and syntax highlighting {{{
-
 " Unicode support
 set encoding=utf-8
 
@@ -134,21 +115,16 @@ let php_htmlInStrings=1
 
 " Highlight MySQL queries inside of PHP
 let php_sql_query=1
-
 " }}}
 
-
 " Searching {{{
-
-" Highlight
+" Highlight results
 set hlsearch
 
 " Ignore case unless token contains uppercase
 set ignorecase
 set smartcase
-
 " }}}
-
 
 " Plugins {{{
 
@@ -188,6 +164,8 @@ let g:snippets_dir = "/home/mutantmonkey/.dotfiles/vim/snippets"
 " vimwiki {{{
 let g:vimwiki_badsyms = ' '
 " }}}
+
+set runtimepath+=$VIMHOME/ftplugin/
 
 " }}}
 
