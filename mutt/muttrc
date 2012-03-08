@@ -71,7 +71,7 @@ set mail_check   = 60
 set timeout      = 10
 
 # outgoing mail
-set sendmail      = "/usr/bin/msmtp"
+set sendmail      = "/usr/bin/msmtp -C $HOME/.config/msmtp/msmtprc"
 set envelope_from = "yes"
 set edit_headers  = "yes"
 
