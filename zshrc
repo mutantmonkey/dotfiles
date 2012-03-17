@@ -142,16 +142,20 @@ alias pacs='pacman -Ss'
 alias strtx='startx & vlock'
 alias vless='/usr/share/vim/vim73/macros/less.sh'
 
+alias canto="canto -D $XDG_CONFIG_HOME/canto/ -L $XDG_DATA_HOME/canto/log -F $XDG_DATA_HOME/canto/feeds/ -S $XDG_CONFIG_HOME/canto/scripts/"
+
 # Live media streams
 RTMP_CACHE=1024
 MMS_CACHE=$RTMP_CACHE
 
 # Video
-alias abc24au="rtmpdump -v -r rtmp://cp103653.live.edgefcs.net/live/international_medium@36382 | mplayer -cache $RTMP_CACHE -"
-alias alj="rtmpdump -v -r 'rtmp://aljazeeraflashlivefs.fplive.net/aljazeeraflashlive-live/aljazeera_eng_med' | mplayer -cache $RTMP_CACHE -"
-alias cspan1="rtmpdump -v -r rtmp://cp82346.live.edgefcs.net:1935/live/CSPAN1@14845 | mplayer -cache $RTMP_CACHE -"
-alias france24="rtmpdump -v -r rtmp://stream2.france24.yacast.net/france24_live/en -a france24_live/en -W http://www.france24.com/en/sites/all/modules/maison/aef_player/flash/player.swf -p http://www.france24.com/en/aef_player_popup/france24_player -y f24_liveen | mplayer -cache $RTMP_CACHE -"
-alias rt="rtmpdump -v -r rtmp://fms5.visionip.tv/live -a live -W http://rt.com/s/swf/player5.4.viral.swf -p http://rt.com/on-air/ -y RT_3 | mplayer -cache $RTMP_CACHE -"
+alias abc24au="mplayer -framedrop -cache $RTMP_CACHE rtmp://cp103653.live.edgefcs.net/live/international_medium@36382"
+alias alj="mplayer -framedrop -cache $RTMP_CACHE rtmp://aljazeeraflashlivefs.fplive.net/aljazeeraflashlive-live/aljazeera_eng_med"
+alias cspan1="mplayer -framedrop -cache $RTMP_CACHE rtmp://cp82346.live.edgefcs.net:1935/live/CSPAN1@14845"
+alias cspan2="mplayer -framedrop -cache $RTMP_CACHE rtmp://cp82347.live.edgefcs.net:1935/live/CSPAN2@14846"
+alias cspan3="mplayer -framedrop -cache $RTMP_CACHE rtmp://cp82348.live.edgefcs.net:1935/live/CSPAN3@14847"
+alias france24="rtmpdump -v -r rtmp://stream2.france24.yacast.net/france24_live/en -a france24_live/en -W http://www.france24.com/en/sites/all/modules/maison/aef_player/flash/player.swf -p http://www.france24.com/en/aef_player_popup/france24_player -y f24_liveen | mplayer -framedrop -cache $RTMP_CACHE -"
+alias rt="rtmpdump -v -r rtmp://fms5.visionip.tv/live -a live -W http://rt.com/s/swf/player5.4.viral.swf -p http://rt.com/on-air/ -y RT_3 | mplayer -framedrop -cache $RTMP_CACHE -"
 alias skynews="mplayer -cache $MMS_CACHE mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k"
 
 # Radio
