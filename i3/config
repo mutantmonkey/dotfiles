@@ -21,6 +21,7 @@ for_window [class="MPlayer"]    border 1pixel
 for_window [class="mplayer2"]   border 1pixel
 for_window [class="openarena"]  border 1pixel
 for_window [class="Roxterm"]    border 1pixel
+for_window [class="Sakura"]     border 1pixel
 for_window [class="sxiv"]       border 1pixel
 for_window [class="Xournal"]    border 1pixel
 for_window [class="Zathura"]    border 1pixel
@@ -46,7 +47,7 @@ set $m Mod4
 floating_modifier $m
 
 # start a terminal
-bindsym $m+Shift+Return exec /usr/bin/roxterm --maximize
+bindsym $m+Shift+Return exec /usr/bin/sakura
 
 # kill focused window
 bindsym $m+c kill
