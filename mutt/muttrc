@@ -45,6 +45,7 @@ set certificate_file	= ~/.mutt/certificates
 # IMAP settings
 set imap_check_subscribed
 set imap_delim_chars = "/"
+set imap_idle
 
 # mailbox
 set folder    = "imap://cubensis.mutantmonkey.in"
@@ -52,7 +53,6 @@ set spoolfile = =INBOX
 set record    = =sent
 set postponed = =drafts
 
-source ${HOME}/.mutt/mailboxes
 source ${HOME}/.mutt/personal
 
 # keybindings
@@ -67,7 +67,7 @@ set pgp_autosign = yes
 color status white blue
 
 # polling frequency
-set mail_check   = 60
+set mail_check   = 3600
 set timeout      = 10
 
 # outgoing mail

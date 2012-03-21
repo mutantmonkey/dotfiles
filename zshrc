@@ -44,21 +44,38 @@ zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 
-# allow approximate
-zstyle ':completion:*' completer _complete _match _approximate
-zstyle ':completion:*:match:*' original only
-zstyle ':completion:*:approximate:*' max-errors 1 numeric
+unsetopt menu_complete   # do not autoselect the first completion entry
+unsetopt flowcontrol
+setopt auto_menu         # show completion menu on succesive tab press
+setopt complete_in_word
+setopt always_to_end
 
-# tab completion for PID :D
-zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:kill:*' force-list always
+WORDCHARS=''
 
-zstyle -e ':completion:*:(ssh|scp|ping|host|nmap|rsync):*' hosts 'reply=(
-	${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) \
-            	/dev/null)"}%%[#| ]*}//,/ }
-	${=${(f)"$(cat /etc/hosts(|)(N) <<(ypcat hosts 2>/dev/null))"}%%\#*}
-	${=${${${${(@M)${(f)"$(<~/.ssh/config)"}:#Host *}#Host }:#*\**}:#*\?*}}
-	)'
+zmodload -i zsh/complist
+
+## case-insensitive (all),partial-word and then substring completion
+zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+unset CASE_SENSITIVE
+#zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+zstyle ':completion:*' list-colors ''
+
+# should this be in keybindings?
+bindkey -M menuselect '^o' accept-and-infer-next-history
+
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
+
+# disable named-directories autocompletion
+zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
+cdpath=(.)
+
+# use /etc/hosts and known_hosts for hostname completion
+[ -r /etc/ssh/ssh_known_hosts ] && _global_ssh_hosts=(${${${${(f)"$(</etc/ssh/ssh_known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
+[ -r ~/.ssh/known_hosts ] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
+[ -r /etc/hosts ] && : ${(A)_etc_hosts:=${(s: :)${(ps:\t:)${${(f)~~"$(</etc/hosts)"}%%\#*}##[:blank:]#[^[:blank:]]#}}} || _etc_hosts=()
 
 # }}}
 
@@ -143,16 +160,20 @@ alias pacs='pacman -Ss'
 alias strtx='startx & vlock'
 alias vless='/usr/share/vim/vim73/macros/less.sh'
 
+alias canto="canto -D $XDG_CONFIG_HOME/canto/ -L $XDG_DATA_HOME/canto/log -F $XDG_DATA_HOME/canto/feeds/ -S $XDG_CONFIG_HOME/canto/scripts/"
+
 # Live media streams
 RTMP_CACHE=1024
 MMS_CACHE=$RTMP_CACHE
 
 # Video
-alias abc24au="rtmpdump -v -r rtmp://cp103653.live.edgefcs.net/live/international_medium@36382 | mplayer -cache $RTMP_CACHE -"
-alias alj="rtmpdump -v -r 'rtmp://aljazeeraflashlivefs.fplive.net/aljazeeraflashlive-live/aljazeera_eng_med' | mplayer -cache $RTMP_CACHE -"
-alias cspan1="rtmpdump -v -r rtmp://cp82346.live.edgefcs.net:1935/live/CSPAN1@14845 | mplayer -cache $RTMP_CACHE -"
-alias france24="rtmpdump -v -r rtmp://stream2.france24.yacast.net/france24_live/en -a france24_live/en -W http://www.france24.com/en/sites/all/modules/maison/aef_player/flash/player.swf -p http://www.france24.com/en/aef_player_popup/france24_player -y f24_liveen | mplayer -cache $RTMP_CACHE -"
-alias rt="rtmpdump -v -r rtmp://fms5.visionip.tv/live -a live -W http://rt.com/s/swf/player5.4.viral.swf -p http://rt.com/on-air/ -y RT_3 | mplayer -cache $RTMP_CACHE -"
+alias abc24au="mplayer -framedrop -cache $RTMP_CACHE rtmp://cp103653.live.edgefcs.net/live/international_medium@36382"
+alias alj="mplayer -framedrop -cache $RTMP_CACHE rtmp://aljazeeraflashlivefs.fplive.net/aljazeeraflashlive-live/aljazeera_eng_med"
+alias cspan1="mplayer -framedrop -cache $RTMP_CACHE rtmp://cp82346.live.edgefcs.net:1935/live/CSPAN1@14845"
+alias cspan2="mplayer -framedrop -cache $RTMP_CACHE rtmp://cp82347.live.edgefcs.net:1935/live/CSPAN2@14846"
+alias cspan3="mplayer -framedrop -cache $RTMP_CACHE rtmp://cp82348.live.edgefcs.net:1935/live/CSPAN3@14847"
+alias france24="rtmpdump -v -r rtmp://stream2.france24.yacast.net/france24_live/en -a france24_live/en -W http://www.france24.com/en/sites/all/modules/maison/aef_player/flash/player.swf -p http://www.france24.com/en/aef_player_popup/france24_player -y f24_liveen | mplayer -framedrop -cache $RTMP_CACHE -"
+alias rt="rtmpdump -v -r rtmp://fms5.visionip.tv/live -a live -W http://rt.com/s/swf/player5.4.viral.swf -p http://rt.com/on-air/ -y RT_3 | mplayer -framedrop -cache $RTMP_CACHE -"
 alias skynews="mplayer -cache $MMS_CACHE mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k"
 
 # Radio
