@@ -1,7 +1,7 @@
 " #################################################################################
 " # .pentadactylrc - pentadactyl configuration
 " #
-" # author: mutantmonkey <mutantmonkey@gmail.com>
+" # author: mutantmonkey <mutantmonkey@mutantmonkey.in>
 " ################################################################################
 
 " Set color scheme
@@ -19,7 +19,7 @@ set yankshort+=nullpaste.com
 set passkeys+="https://www\.google\.com/calendar":jk12345qc
 
 " reddit
-set passkeys+="www\.reddit\.com":achijklsxz<Return>
+set passkeys+="reddit\.com":achijklsxz<Return>
 
 " Twitter
 set passkeys+="twitter\.com":jk/?.m
@@ -31,11 +31,10 @@ silent qmark h https://news.ycombinator.com
 silent qmark p https://plus.google.com
 silent qmark r https://pay.reddit.com
 silent qmark t https://twitter.com
-silent qmark w http://www.wubel.com
 " }}}
 
 " Remap scroll keys
-nnoremap j 5j
-nnoremap k 5k
-nnoremap l 5l
-nnoremap h 5h
+nmap -builtin j 5j
+nmap -builtin k 5k
+nmap -builtin l 5l
+nmap -builtin h 5h
