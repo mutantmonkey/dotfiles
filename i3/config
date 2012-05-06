@@ -5,7 +5,8 @@
 ################################################################################
 
 # font for window titles. ISO 10646 = Unicode
-font -schumacher-clean-medium-r-normal--12-*-*-*-*-*-*-*
+#font -schumacher-clean-medium-r-normal--12-*-*-*-*-*-*-*
+font -*-dejavu sans mono-medium-r-normal--10-*-*-*-*-*-*-*
 
 # Window placement
 assign [class="Firefox"] 2
@@ -23,6 +24,7 @@ for_window [class="openarena"]  border 1pixel
 for_window [class="Roxterm"]    border 1pixel
 for_window [class="Sakura"]     border 1pixel
 for_window [class="sxiv"]       border 1pixel
+for_window [class="TorBrowser"] border 1pixel
 for_window [class="Xournal"]    border 1pixel
 for_window [class="Zathura"]    border 1pixel
 
@@ -60,7 +62,7 @@ bindsym $m+s border normal
 bindsym $m+semicolon exec /usr/bin/dmenu_run -fn 'DejaVu Sans Mono-9' -nb '#3f3f3f' -nf '#dcdccc' -sb '#1e2320' -sf '#f0dfaf'
 
 # lock screen with $m+x
-bindsym $m+x exec /usr/bin/i3lock -c 000000
+bindsym $m+x exec /usr/bin/i3lock -c 000000 -u
 
 # screenshot with PrintScrn
 bindsym Print exec /usr/bin/scrot
