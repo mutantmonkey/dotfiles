@@ -4,8 +4,21 @@
 # author: mutantmonkey <mutantmonkey@gmail.com>
 ################################################################################
 
+# General options {{{
+nolirc=yes
+
+prefer-ipv4=yes
+
+# Disable screensaver
+#stop-xscreensaver=yes
+#heartbeat-cmd="gnome-screensaver-command -p &"
+# }}}
+
 # Audio {{{
 ao=oss
+
+# English please
+alang=en
 
 # Fix A/V Sync
 #mc=0.2
@@ -13,8 +26,8 @@ ao=oss
 # }}}
 
 # Video {{{
-#vo=vdpau
-vo=xv
+vo=gl
+#vo=directfb
 
 zoom=1
 
@@ -22,31 +35,37 @@ zoom=1
 double=yes
 
 # drop frames nicely if necessary
-framedrop=1
-hardframedrop=0
+framedrop=yes
+hardframedrop=no
 # }}}
 
-# Subtitles {{{
+# Subtitles and OSD {{{
+# English please
+slang=en
+
 # Load all sub files with same name as movie title
 sub-fuzziness=1
 
 # ASS subtitles
-ass=0
+ass=1
 ass-color=ffffff00
 ass-font-scale=1
 ass-line-spacing=0
 ass-styles=styles.ass
 
 # Use fontconfig
-fontconfig=1
+fontconfig=yes
 font="DejaVu Sans"
 
 # Give subtitles a narrow black outline
-ffactor=1
+#ffactor=1
 
 # Set font scale
-#subfont-text-scale=4.4
-subfont-text-scale=2
+subfont-text-scale=4.4
+#subfont-text-scale=2
+
+# Set OSD scale
+subfont-osd-scale=4.4
 
 # Scale subtitles to movie width
 subfont-autoscale=2
@@ -68,13 +87,4 @@ subfont-encoding="unicode"
 unicode=yes
 utf8=yes
 # }}}
-
-# OSD {{{
-subfont-osd-scale=4.4
-# }}}
-
-# Disable screensaver {{{
-stop-xscreensaver=1
-#heartbeat-cmd="gnome-screensaver-command -p &"
-# }}} 
 
