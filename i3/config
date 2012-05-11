@@ -30,6 +30,19 @@ for_window [class="Zathura"]    border 1pixel
 
 for_window [instance="Steam.exe"]   border 1pixel
 
+# Workspace monitor assignment
+workspace 1 output LVDS1
+workspace 2 output VGA1
+workspace 3 output LVDS1
+workspace 4 output LVDS1
+workspace 5 output LVDS1
+workspace 6 output LVDS1
+workspace 7 output LVDS1
+workspace 8 output LVDS1
+#workspace 6 output VGA1
+#workspace 7 output VGA1
+#workspace 8 output VGA1
+
 # Colors {{{
 
 # class                 border  bg      fg

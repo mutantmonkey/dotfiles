@@ -4,8 +4,19 @@
 # author: mutantmonkey <mutantmonkey@gmail.com>
 ################################################################################
 
+# General options {{{
+nolirc=yes
+
+# Disable screensaver
+#stop-xscreensaver=1
+#heartbeat-cmd="gnome-screensaver-command -p &"
+# }}}
+
 # Audio {{{
 ao=pulse
+
+# English please
+alang=en
 
 # Fix A/V Sync
 #mc=0.2
@@ -25,7 +36,10 @@ framedrop=1
 hardframedrop=0
 # }}}
 
-# Subtitles {{{
+# Subtitles and OSD {{{
+# English please
+slang=en
+
 # Load all sub files with same name as movie title
 sub-fuzziness=1
 
@@ -47,6 +61,9 @@ ffactor=1
 #subfont-text-scale=4.4
 subfont-text-scale=2
 
+# Set OSD scale
+subfont-osd-scale=4.4
+
 # Scale subtitles to movie width
 subfont-autoscale=2
 
@@ -67,13 +84,4 @@ subfont-encoding="unicode"
 unicode=yes
 utf8=yes
 # }}}
-
-# OSD {{{
-subfont-osd-scale=4.4
-# }}}
-
-# Disable screensaver {{{
-stop-xscreensaver=1
-#heartbeat-cmd="gnome-screensaver-command -p &"
-# }}} 
 
