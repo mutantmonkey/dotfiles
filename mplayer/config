@@ -8,12 +8,15 @@
 nolirc=yes
 
 # Disable screensaver
-#stop-xscreensaver=1
+#stop-xscreensaver=yes
 #heartbeat-cmd="gnome-screensaver-command -p &"
 # }}}
 
 # Audio {{{
 ao=pulse
+
+# English please
+alang=en
 
 # English please
 alang=en
@@ -32,8 +35,8 @@ zoom=1
 double=yes
 
 # drop frames nicely if necessary
-framedrop=1
-hardframedrop=0
+framedrop=yes
+hardframedrop=no
 # }}}
 
 # Subtitles and OSD {{{
@@ -44,22 +47,25 @@ slang=en
 sub-fuzziness=1
 
 # ASS subtitles
-ass=0
+ass=1
 ass-color=ffffff00
 ass-font-scale=1
 ass-line-spacing=0
 ass-styles=styles.ass
 
 # Use fontconfig
-fontconfig=1
+fontconfig=yes
 font="DejaVu Sans"
 
 # Give subtitles a narrow black outline
-ffactor=1
+#ffactor=1
 
 # Set font scale
-#subfont-text-scale=4.4
-subfont-text-scale=2
+subfont-text-scale=4.4
+#subfont-text-scale=2
+
+# Set OSD scale
+subfont-osd-scale=4.4
 
 # Set OSD scale
 subfont-osd-scale=4.4
