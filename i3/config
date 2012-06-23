@@ -5,7 +5,6 @@
 ################################################################################
 
 # font for window titles. ISO 10646 = Unicode
-#font -schumacher-clean-medium-r-normal--12-*-*-*-*-*-*-*
 font -*-dejavu sans mono-medium-r-normal--10-*-*-*-*-*-*-*
 
 # Window placement
@@ -39,9 +38,11 @@ workspace 5 output LVDS1
 workspace 6 output LVDS1
 workspace 7 output LVDS1
 workspace 8 output LVDS1
-#workspace 6 output VGA1
-#workspace 7 output VGA1
-#workspace 8 output VGA1
+workspace 6 output LVDS1
+workspace 7 output LVDS1
+workspace 8 output LVDS1
+workspace 9 output HDMI1
+workspace 10 output LVDS1
 
 # Colors {{{
 
