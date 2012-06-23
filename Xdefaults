@@ -1,5 +1,11 @@
 Xcursor.theme:     Vanilla-DMZ
 
+! dzen {{{
+dzen2.font:         DejaVu Sans Mono-9
+dzen2.foreground:   #dcdccc
+dzen2.background:   #3f3f3f
+! }}}
+
 ! xft {{{
 Xft.antialias:     true
 Xft.hinting:       true
