@@ -80,6 +80,7 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
 # alias mosh to ssh completions
 compdef mosh=ssh
+compdef mosh4=mosh
 # }}}
 
 # Terminal colors {{{
@@ -159,6 +160,7 @@ fi
 # Aliases {{{
 
 alias flvplay="quvi --exec 'mplayer %u'"
+alias kismet="TERM=xterm-color kismet"
 alias net_connected='sudo lsof -i -n | grep -v LISTEN'
 alias net_listening='sudo lsof -i -n | grep LISTEN'
 alias pacs='pacman -Ss'
