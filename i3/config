@@ -22,6 +22,7 @@ for_window [class="mplayer2"]   border 1pixel
 for_window [class="openarena"]  border 1pixel
 for_window [class="Roxterm"]    border 1pixel
 for_window [class="Sakura"]     border 1pixel
+for_window [class="SshAskpass"] border 1pixel
 for_window [class="sxiv"]       border 1pixel
 for_window [class="TorBrowser"] border 1pixel
 for_window [class="Xournal"]    border 1pixel
