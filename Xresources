@@ -1,3 +1,6 @@
+*foreground:    #dcdccc
+*background:    #3f3f3f
+
 Xcursor.theme:     Vanilla-DMZ
 
 ! dzen {{{
