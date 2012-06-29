@@ -1,4 +1,4 @@
-#mpd_music_dir = "/media/stuff/music"
+mpd_host = "gigantea.mutantmonkey.in"
 
 # use alternative UI
 user_interface = "alternative"

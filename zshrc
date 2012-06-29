@@ -148,6 +148,8 @@ export EDITOR=vim
 export PAGER=less
 export LESS="-R -iMx4"
 
+export MPD_HOST="gigantea.mutantmonkey.in"
+
 # Java settings
 export _JAVA_AWT_WM_NONREPARENTING=1
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd_vrgb -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
@@ -163,10 +165,11 @@ alias flvplay="quvi --exec 'mplayer %u'"
 alias kismet="TERM=xterm-color kismet"
 alias net_connected='sudo lsof -i -n | grep -v LISTEN'
 alias net_listening='sudo lsof -i -n | grep LISTEN'
-alias mpdstream='mplayer --prefer-ipv4 http://localhost:8000'
+alias mpdstream='mplayer --prefer-ipv6 -cache 640 http://gigantea.mutantmonkey.in:8000'
 alias pacs='pacman -Ss'
 alias strtx='startx & vlock'
 alias vless='/usr/share/vim/vim73/macros/less.sh'
+alias ssh_home="ssh -L9091:localhost:9091 -D8118 home.schwinabart.com"
 
 alias canto="canto -D $XDG_CONFIG_HOME/canto/ -L $XDG_DATA_HOME/canto/log -F $XDG_DATA_HOME/canto/feeds/ -S $XDG_CONFIG_HOME/canto/scripts/"
 
