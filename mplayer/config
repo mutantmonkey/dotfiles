@@ -6,6 +6,7 @@
 
 # General options {{{
 nolirc=yes
+nojoystick=yes
 
 # Disable screensaver
 #stop-xscreensaver=yes
