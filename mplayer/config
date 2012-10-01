@@ -15,18 +15,15 @@ prefer-ipv4=yes
 # }}}
 
 # Audio {{{
-ao=oss
+ao=pulse
 
 # English please
 alang=en
-
-# Fix A/V Sync
-#mc=0.2
-#autosync=30
 # }}}
 
 # Video {{{
-vo=gl
+vo=xv
+#vo=gl
 #vo=directfb
 
 zoom=1
