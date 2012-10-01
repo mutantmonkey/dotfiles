@@ -1,4 +1,8 @@
 mpd_host = "gigantea.mutantmonkey.in"
+<<<<<<< HEAD
+=======
+mpd_communication_mode = "notifications"
+>>>>>>> master
 
 # use alternative UI
 user_interface = "alternative"
