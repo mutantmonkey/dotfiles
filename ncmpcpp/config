@@ -1,4 +1,11 @@
+################################################################################
+# ncmpcpp/config - ncmpcpp config
+#
+# author: mutantmonkey <mutantmonkey@mutantmonkey.in>
+################################################################################
+
 mpd_host = "gigantea.mutantmonkey.in"
+mpd_communication_mode = "notifications"
 
 # use alternative UI
 user_interface = "alternative"

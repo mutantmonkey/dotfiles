@@ -170,6 +170,7 @@ alias pacs='pacman -Ss'
 alias strtx='startx & vlock'
 alias vless='/usr/share/vim/vim73/macros/less.sh'
 alias ssh_home="ssh -L9091:localhost:9091 -D8118 home.schwinabart.com"
+alias linxbin='curl -s -F Filedata=@- https://linx.li/upload/public && echo'
 
 alias canto="canto -D $XDG_CONFIG_HOME/canto/ -L $XDG_DATA_HOME/canto/log -F $XDG_DATA_HOME/canto/feeds/ -S $XDG_CONFIG_HOME/canto/scripts/"
 
@@ -191,7 +192,7 @@ alias skynews="mplayer -cache $MMS_CACHE mms://live1.wm.skynews.servecast.net/sk
 alias echofm='mplayer http://xgrid04.ruf.uni-freiburg.de:8000/'
 alias radioq='mplayer http://stream.radioq.de:8000/gross.mp3'
 alias startfm='mplayer http://eteris.startfm.lt/startfm'
-alias wuvt='mplayer http://engine.collegemedia.vt.edu:8000/wuvt.ogg'
+alias wuvt='mplayer http://engine.collegemedia.vt.edu:8000/wuvt-hq.ogg'
 alias wvtf='mplayer http://mp3.rev.net:8000/wvtf-64.mp3'
 alias wwvt='mplayer http://mp3.rev.net:8000/riq-64.mp3'
 

@@ -13,12 +13,15 @@
 # Files
 data.location=/home/mutantmonkey/.task
 
-# Removets
 push.default.uri=gigantea.mutantmonkey.in:/srv/task/
+pull.default.uri=gigantea.mutantmonkey.in:/srv/task/
 
 # Color theme
 include /home/mutantmonkey/.dotfiles/task/zenburn-256.theme
 
 # Date format
-dateformat=Y-M-DTH:N
+dateformat=Y-M-D H:N
+dateformat.edit=Y-M-D H:N
+dateformat.info=Y-M-D H:N
+dateformat.annotation=Y-M-D H:N
 dateformat.report=Y-M-D H:N

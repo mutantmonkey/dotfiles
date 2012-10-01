@@ -4,11 +4,12 @@
 # author: mutantmonkey <mutantmonkey@mutantmonkey.in>
 ################################################################################
 
-# font for window titles. ISO 10646 = Unicode
-font -*-dejavu sans mono-medium-r-normal--10-*-*-*-*-*-*-*
+# font for window titles
+font xft:DejaVu Sans Mono 9
 
 # Window placement
-assign [class="Firefox"] 2
+#assign [class="Firefox"] 2
+assign [instance="Navigator"] 2
 
 # Window styles
 for_window [class="Aurora"]     border 1pixel

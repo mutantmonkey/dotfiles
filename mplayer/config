@@ -18,17 +18,15 @@ ao=pulse
 
 # English please
 alang=en
-
-# English please
-alang=en
-
-# Fix A/V Sync
-#mc=0.2
-#autosync=30
 # }}}
 
 # Video {{{
 vo=xv
+<<<<<<< HEAD
+=======
+#vo=gl
+#vo=directfb
+>>>>>>> master
 
 zoom=1
 
