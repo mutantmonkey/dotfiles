@@ -23,6 +23,7 @@ for_window [class="mplayer2"]   border 1pixel
 for_window [class="openarena"]  border 1pixel
 for_window [class="Roxterm"]    border 1pixel
 for_window [class="Sakura"]     border 1pixel
+for_window [class="SshAskpass"] border 1pixel
 for_window [class="sxiv"]       border 1pixel
 for_window [class="TorBrowser"] border 1pixel
 for_window [class="Xournal"]    border 1pixel
@@ -32,11 +33,11 @@ for_window [instance="Steam.exe"]   border 1pixel
 
 # Colors {{{
 
-# class                 border  bg      fg
-client.focused          #5b605e #5b605e #262626
-client.focused_inactive #3f3f3f #3f3f3f #5b605e
-client.unfocused        #3f3f3f #3f3f3f #5b605e
-client.urgent           #dca3a3 #3f3f3f #dca3a3
+# class                 border  bg      fg      indicator
+client.focused          #5b605e #5b605e #262626 #8f8f8f
+client.focused_inactive #3f3f3f #3f3f3f #5b605e #8f8f8f
+client.unfocused        #3f3f3f #3f3f3f #5b605e #8f8f8f
+client.urgent           #dca3a3 #3f3f3f #dca3a3 #8f8f8f
 
 client.background       #000000
 

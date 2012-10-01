@@ -1,4 +1,11 @@
+*foreground:    #dcdccc
+*background:    #3f3f3f
+
 Xcursor.theme:     Vanilla-DMZ
+
+! dzen {{{
+dzen2.font:         DejaVu Sans Mono-9
+! }}}
 
 ! xft {{{
 Xft.antialias:     true
@@ -50,5 +57,18 @@ urxvt*color13:     #ec93d3
 ! bright-cyan + bright-white
 urxvt*color14:     #93e0e3
 urxvt*color15:     #ffffff
+! }}}
+
+! x11-ssh-askpass {{{
+x11-ssh-askpass*font:          -*-dejavu sans mono-medium-r-normal--12-*-*-*-*-*-*-*
+x11-ssh-askpass*foreground:    #dcdccc
+x11-ssh-askpass*background:    #3f3f3f
+x11-ssh-askpass*borderColor:   #5b605e
+x11-ssh-askpass*topShadowColor:         #3f3f3f
+x11-ssh-askpass*bottomShadowColor:      #3f3f3f
+x11-ssh-askpass*borderWidth:            0
+x11-ssh-askpass.Indicator*foreground:   #87af87
+x11-ssh-askpass.Indicator*borderWidth:  1
+x11-ssh-askpass.Button*borderWidth:     1
 ! }}}
 

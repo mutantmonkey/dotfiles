@@ -2,13 +2,8 @@
 /mutt/cache
 /mutt/certificates
 /mutt/groups
-/mutt/hcache
-/mutt/*.imaprc
-/mutt/mailboxes
+/mutt/lists
 /mutt/personal
 /mutt/signatures/
+/mutt/*.imaprc
 /vim/spell/*.spl
-/xmonad/xmonad-x86_64-linux
-/xmonad/xmonad.errors
-/xmonad/xmonad.hi
-
