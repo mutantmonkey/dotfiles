@@ -8,7 +8,6 @@
 font xft:DejaVu Sans Mono 9
 
 # Window placement
-#assign [class="Firefox"] 2
 assign [instance="Navigator"] 2
 
 # Window styles
