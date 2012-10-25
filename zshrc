@@ -163,18 +163,19 @@ fi
 
 alias flvplay="quvi --exec 'mplayer %u'"
 alias kismet="TERM=xterm-color kismet"
-alias net_connected='sudo lsof -i -n | grep -v LISTEN'
-alias net_listening='sudo lsof -i -n | grep LISTEN'
 alias mpdstream='mplayer --prefer-ipv6 -cache 640 http://gigantea.mutantmonkey.in:8000'
 alias pacs='pacman -Ss'
 alias strtx='startx & vlock'
 alias vless='/usr/share/vim/vim73/macros/less.sh'
-alias ssh_home="ssh -L9091:localhost:9091 -D8118 home.schwinabart.com"
 alias linxbin='curl -s -F Filedata=@- https://linx.li/upload/public && echo'
 
 alias canto="canto -D $XDG_CONFIG_HOME/canto/ -L $XDG_DATA_HOME/canto/log -F $XDG_DATA_HOME/canto/feeds/ -S $XDG_CONFIG_HOME/canto/scripts/"
 
-# Live media streams
+# Git aliases
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias gs="git status -sb"
+
+# Live media streams {{{
 RTMP_CACHE=1024
 MMS_CACHE=$RTMP_CACHE
 
@@ -195,5 +196,6 @@ alias startfm='mplayer http://eteris.startfm.lt/startfm'
 alias wuvt='mplayer http://engine.collegemedia.vt.edu:8000/wuvt-hq.ogg'
 alias wvtf='mplayer http://mp3.rev.net:8000/wvtf-64.mp3'
 alias wwvt='mplayer http://mp3.rev.net:8000/riq-64.mp3'
+# }}}
 
 # }}}
