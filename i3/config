@@ -8,7 +8,6 @@
 font xft:DejaVu Sans Mono 9
 
 # Window placement
-#assign [class="Firefox"] 2
 assign [instance="Navigator"] 2
 
 # Window styles
@@ -78,7 +77,7 @@ bindsym $m+s border normal
 bindsym $m+semicolon exec /usr/bin/dmenu_run -fn 'DejaVu Sans Mono-9' -nb '#3f3f3f' -nf '#dcdccc' -sb '#1e2320' -sf '#f0dfaf'
 
 # lock screen with $m+x
-bindsym $m+x exec /usr/bin/i3lock -c 000000 -u
+bindsym $m+x exec /usr/bin/i3lock -c 000000
 
 # screenshot with PrintScrn
 bindsym Print exec /usr/bin/scrot

@@ -173,7 +173,7 @@ alias canto="canto -D $XDG_CONFIG_HOME/canto/ -L $XDG_DATA_HOME/canto/log -F $XD
 
 # Git aliases
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-alias gs="git status -sb"
+alias gits="git status -sb"
 
 # Live media streams {{{
 RTMP_CACHE=1024
