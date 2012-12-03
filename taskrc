@@ -20,7 +20,7 @@ pull.default.uri=gigantea.mutantmonkey.in:/srv/task/
 include /home/mutantmonkey/.dotfiles/task/zenburn-256.theme
 
 # Date format
-dateformat=Y-M-D H:N
+dateformat=Y-M-DTH:N
 dateformat.edit=Y-M-D H:N
 dateformat.info=Y-M-D H:N
 dateformat.annotation=Y-M-D H:N
