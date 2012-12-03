@@ -23,5 +23,8 @@ display_screens_numbers_on_start = no
 # ignore leading the when sorting
 ignore_leading_the = yes
 
+# use album artist in library
+media_library_left_column = "A"
+
 default_find_mode = wrapped
 default_space_mode = add
