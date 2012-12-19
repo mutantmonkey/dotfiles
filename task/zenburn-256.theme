@@ -67,6 +67,7 @@ color.pri.H=color255
 color.pri.M=color250
 color.pri.L=color245
 color.tagged=color108
+color.blocking=on color4
 color.blocked=color236 on color8
 color.project.none=
 color.tag.none=

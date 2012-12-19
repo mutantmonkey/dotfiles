@@ -17,11 +17,20 @@ browser_display_mode = "columns"
 # mouse wheel should not scroll entire page
 mouse_list_scroll_whole_page = no
 
+# disable fancy scrolling (it is too slow)
+fancy_scrolling = no
+
 display_volume_level = no
 display_screens_numbers_on_start = no
 
 # ignore leading the when sorting
 ignore_leading_the = yes
+
+# disable two column mode for media library
+media_library_disable_two_column_mode = yes
+
+# use album artist in library
+media_library_left_column = "A"
 
 default_find_mode = wrapped
 default_space_mode = add

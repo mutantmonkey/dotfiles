@@ -22,13 +22,15 @@ for_window [class="mplayer2"]   border 1pixel
 for_window [class="openarena"]  border 1pixel
 for_window [class="Roxterm"]    border 1pixel
 for_window [class="Sakura"]     border 1pixel
+for_window [class="Spicy"]      border 1pixel
 for_window [class="SshAskpass"] border 1pixel
 for_window [class="sxiv"]       border 1pixel
 for_window [class="TorBrowser"] border 1pixel
 for_window [class="Xournal"]    border 1pixel
 for_window [class="Zathura"]    border 1pixel
 
-for_window [instance="Steam.exe"]   border 1pixel
+for_window [instance="Steam"]   border 1pixel
+for_window [instance="Steam"]   floating enable
 
 # Workspace monitor assignment
 workspace 1 output LVDS1

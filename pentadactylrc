@@ -7,6 +7,9 @@
 " Set color scheme
 colors zenburn
 
+" Use X11 clipboard buffer instead of primary buffer
+js editor.defaultRegister="+"
+
 " Short URLs {{{
 set yankshort+=filesha.re
 set yankshort+=linx.li
