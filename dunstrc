@@ -7,7 +7,7 @@
     #   %b  body
     #   %i  iconname (including its path)
     #   %I  iconname (without its path)
-    format = "%a: %s | %b %p"
+    format = "%s %b %p"
 
     sort = yes
     indicate_hidden = yes
