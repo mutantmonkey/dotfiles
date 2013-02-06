@@ -8,8 +8,6 @@
 nolirc=yes
 nojoystick=yes
 
-prefer-ipv4=yes
-
 # Disable screensaver
 #stop-xscreensaver=yes
 #heartbeat-cmd="gnome-screensaver-command -p &"
