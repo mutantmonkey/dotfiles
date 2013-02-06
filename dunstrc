@@ -7,13 +7,13 @@
     #   %b  body
     #   %i  iconname (including its path)
     #   %I  iconname (without its path)
-    format = "%s %b"
+    format = "%a: %s | %b %p"
 
     sort = yes
     indicate_hidden = yes
     alignment = left
 
-    show_age_threshold = 60;
+    show_age_threshold = 60
     idle_threshold = 120
     sticky_history = yes
 
