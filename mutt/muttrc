@@ -45,7 +45,7 @@ set certificate_file	= ~/.mutt/certificates
 # IMAP settings
 set imap_check_subscribed
 set imap_delim_chars = "/"
-set imap_idle
+set imap_idle = yes
 
 # mailbox
 set folder    = "imap://cubensis.mutantmonkey.in"
