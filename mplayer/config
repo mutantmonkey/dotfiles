@@ -22,11 +22,8 @@ alang=en
 
 # Video {{{
 vo=xv
-<<<<<<< HEAD
-=======
 #vo=gl
 #vo=directfb
->>>>>>> master
 
 zoom=1
 
