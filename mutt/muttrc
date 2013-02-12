@@ -72,16 +72,20 @@ set timeout      = 10
 
 # outgoing mail
 set sendmail      = "/usr/bin/msmtp -C $HOME/.config/msmtp/msmtprc"
-set envelope_from = "yes"
-set edit_headers  = "yes"
+set envelope_from = yes
+set edit_headers  = yes
 
 # outgoing addresses
-set reverse_name     = "yes"
-set reverse_realname = "no"
+set reverse_name     = yes
+set reverse_realname = no
 
 # hide unimportant headers
 ignore *
 unignore from date subject to cc
+
+# bell on new message
+set beep     = yes
+set beep_new = yes
 
 # Presentation {{{
 # disable line wrap markers
