@@ -50,7 +50,6 @@ ass-line-spacing=0
 ass-styles=styles.ass
 
 # Use fontconfig
-fontconfig=yes
 font="DejaVu Sans"
 
 # Give subtitles a narrow black outline
@@ -80,7 +79,5 @@ subalign=2
 
 # Unicode
 subfont-encoding="unicode"
-unicode=yes
-utf8=yes
 # }}}
 
