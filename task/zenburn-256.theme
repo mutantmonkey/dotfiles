@@ -58,6 +58,7 @@ color.calendar.holiday=color223
 color.calendar.weeknumber=color248
 
 color.recurring=color223
+color.scheduled=color223
 color.overdue=color0 on color9
 color.due.today=color0 on color9
 color.due=color7

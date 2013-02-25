@@ -1,23 +1,14 @@
-# [Created by task 1.9.4 7/27/2011 21:02:30]
-# Taskwarrior program configuration file.
-# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-faq',
-# 'man task-tutorial', 'man task-color', 'man task-sync' or 'man taskrc'
-
-# Here is an example of entries that use the default, override and blank values
-#   variable=foo   -- By specifying a value, this overrides the default
-#   variable=      -- By specifying no value, this means no default
-#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
-
-# Use the command 'task show' to see all defaults and overrides
-
-# Files
-data.location=/home/mutantmonkey/.task
-
-push.default.uri=gigantea.mutantmonkey.in:/srv/task/
-pull.default.uri=gigantea.mutantmonkey.in:/srv/task/
+################################################################################
+# taskrc - taskwarrior config
+#
+# author: mutantmonkey <mutantmonkey@mutantmonkey.in>
+################################################################################
 
 # Color theme
 include /home/mutantmonkey/.dotfiles/task/zenburn-256.theme
+
+# Data files
+data.location=/home/mutantmonkey/.task
 
 # Date format
 dateformat=Y-M-DTH:N
@@ -25,3 +16,11 @@ dateformat.edit=Y-M-D H:N
 dateformat.info=Y-M-D H:N
 dateformat.annotation=Y-M-D H:N
 dateformat.report=Y-M-D H:N
+
+# Sorting
+#report.next.sort=due+,priority-,start-,project+
+
+# Sync
+#push.default.uri=gigantea.mutantmonkey.in:/srv/task/
+#pull.default.uri=gigantea.mutantmonkey.in:/srv/task/
+merge.default.uri=gigantea.mutantmonkey.in:/srv/task/

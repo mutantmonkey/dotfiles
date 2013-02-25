@@ -39,6 +39,7 @@ bindkey '^[[B'  vi-down-line-or-history
 
 # Auto completion {{{
 
+fpath=($HOME/.dotfiles/zsh $fpath)
 
 zstyle :compinstall filename "$HOME/.zshrc"
 
@@ -181,7 +182,8 @@ MMS_CACHE=$RTMP_CACHE
 
 # Video
 alias abc24au="mplayer -framedrop -cache $RTMP_CACHE rtmp://cp103653.live.edgefcs.net/live/international_medium@36382"
-alias alj="mplayer -framedrop -cache $RTMP_CACHE rtmp://aljazeeraflashlivefs.fplive.net/aljazeeraflashlive-live/aljazeera_eng_med"
+#alias alj="mplayer -framedrop -cache $RTMP_CACHE rtmp://aljazeeraflashlivefs.fplive.net/aljazeeraflashlive-live/aljazeera_eng_med"
+alias alj="rtmpdump -v -r rtmp://livestfslivefs.fplive.net/livestfslive-live/ -y 'aljazeera_en_veryhigh?videoId=747084146001&lineUpId=&pubId=665003303001&playerId=751182905001&affiliateId=' -W 'http://admin.brightcove.com/viewer/us20121025.1123/federatedVideoUI/BrightcovePlayer.swf?uid=1351574870983 -p 'http://english.aljazeera.net/watch_now/ -a 'aljazeeraflashlive-live?videoId=747084146001&lineUpId=&pubId=665003303001&playerId=751182905001&affiliateId=' | mplayer -"
 alias cspan1="mplayer -framedrop -cache $RTMP_CACHE rtmp://cp82346.live.edgefcs.net:1935/live/CSPAN1@14845"
 alias cspan2="mplayer -framedrop -cache $RTMP_CACHE rtmp://cp82347.live.edgefcs.net:1935/live/CSPAN2@14846"
 alias cspan3="mplayer -framedrop -cache $RTMP_CACHE rtmp://cp82348.live.edgefcs.net:1935/live/CSPAN3@14847"
