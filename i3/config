@@ -8,7 +8,7 @@
 font xft:DejaVu Sans Mono 9
 
 # Window placement
-assign [instance="Navigator"] 2
+#assign [instance="Navigator"] 2
 
 # Window styles
 for_window [class="Aurora"]     border 1pixel
