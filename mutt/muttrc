@@ -8,13 +8,13 @@ source ${HOME}/.mutt/zenburn
 source ${HOME}/.mutt/muttgpg
 
 set charset = utf-8         # use utf-8
-set nomark_old              # don't mark unread new messages as old
-set nomove                  # do not move messages
-set pipe_decode             # decode messages before piping
+set mark_old = no           # don't mark unread new messages as old
+set move = no               # do not move messages
+set pipe_decode = yes       # decode messages before piping
 
 # message display
 set pager_index_lines = 5   # display a mini-index in pager
-set pager_stop              # do not move to next message when at end
+set pager_stop = yes        # do not move to next message when at end
 set sort        = threads
 set sort_aux    = reverse-last-date-received
 
@@ -43,17 +43,16 @@ set ssl_usesystemcerts	= no
 set certificate_file	= ~/.mutt/certificates
 
 # IMAP settings
-set imap_check_subscribed
+set imap_check_subscribed = yes
 set imap_delim_chars = "/"
 set imap_idle = yes
 
+source ${HOME}/.mutt/personal
+
 # mailbox
-set folder    = "imap://cubensis.mutantmonkey.in"
 set spoolfile = =INBOX
 set record    = =sent
 set postponed = =drafts
-
-source ${HOME}/.mutt/personal
 
 # keybindings
 macro index S   "<save-message>=spam<enter>"    "mark message as spam"
@@ -71,7 +70,6 @@ set mail_check   = 3600
 set timeout      = 10
 
 # outgoing mail
-set sendmail      = "/usr/bin/msmtp -C $HOME/.config/msmtp/msmtprc"
 set envelope_from = yes
 set edit_headers  = yes
 
