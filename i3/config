@@ -5,7 +5,7 @@
 ################################################################################
 
 # font for window titles
-font xft:DejaVu Sans Mono 9
+font pango:DejaVu Sans Mono 9
 
 # Window placement
 #assign [instance="Navigator"] 2
@@ -158,6 +158,8 @@ bindsym $m+Shift+w reload
 bindsym $m+Shift+e restart
 # exit i3 (logs you out of your X session)
 bindsym $m+Shift+q exit
+
+bindsym $m+m move workspace to output right
 # }}}
 
 bar {
