@@ -59,6 +59,11 @@ macro index S   "<save-message>=spam<enter>"    "mark message as spam"
 macro index \cb "<pipe-entry>'urlscan'<enter>"  "follow links with urlscan"
 macro pager \cb "<pipe-entry>'urlscan'<enter>"  "follow links with urlscan"
 
+# trash folder
+folder-hook .      'macro index,pager d "<save-message>=Trash<enter><enter>"'
+folder-hook =spam  'macro index,pager d <delete-message>'
+folder-hook =Trash 'macro index,pager d <delete-message>'
+
 # sign emails
 set pgp_autosign = yes
 
