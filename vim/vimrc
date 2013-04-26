@@ -1,8 +1,11 @@
 " ##############################################################################
-" .config/vim/vimrc - Vim configuration
+" vim/vimrc - Vim configuration
 "
 " author: mutantmonkey <mutantmonkey@mutantmonkey.in>
 " ##############################################################################
+
+" Pathogen needs to run first
+execute pathogen#infect()
 
 " General Settings {{{
 set nocompatible					" Disable vi-compatible mode
@@ -22,8 +25,6 @@ set t_Co=256						" Use 256 colors
 
 if $TERM =~ "256color" || has('gui_running')
 	colorscheme zenburn
-else
-	colorscheme darkdot
 endif
 " }}}
 
@@ -128,13 +129,7 @@ set smartcase
 
 " Plugins {{{
 
-" NERDCommenter {{{
-set runtimepath+=/home/mutantmonkey/.dotfiles/vim/plugin-git/nerdcommenter/
-" }}}
-
 " NERDTree {{{
-set runtimepath+=/home/mutantmonkey/.dotfiles/vim/plugin-git/nerdtree/
-
 " Have NERDTree change directory when we do
 let g:NERDTreeChDirMode = 2
 
@@ -153,15 +148,9 @@ nmap <leader>N :NERDTreeClose<CR>
 " }}}
 
 " SnipMate {{{
-set runtimepath+=/home/mutantmonkey/.dotfiles/vim/plugin-git/snipmate/
-set runtimepath+=/home/mutantmonkey/.dotfiles/vim/plugin-git/snipmate/after/
-
 let g:snips_author ='mutantmonkey'
 let g:snips_email = 'mutantmonkey@mutantmonkey.in'
-let g:snippets_dir = "/home/mutantmonkey/.dotfiles/vim/snippets"
 " }}}
-
-set runtimepath+=$VIMHOME/after/
 
 " }}}
 
