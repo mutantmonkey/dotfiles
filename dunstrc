@@ -1,5 +1,5 @@
 [global]
-    font = DejaVu Sans Mono-9
+    font = DejaVu Sans Mono Book 9
 
     # The format of the message. Possible variables are:
     #   %a  appname
@@ -18,13 +18,14 @@
     sticky_history = yes
 
     geometry = "0x1+0+0"
-    monitor = 0
+    monitor = 1
     follow = none
 
 [shortcuts]
     close = ctrl+space
     close_all = ctrl+shift+space
     history = ctrl+grave
+    context = ctrl+shift+period
 
 [urgency_low]
     background = "#3f3f3f"
