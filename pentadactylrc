@@ -11,22 +11,7 @@ colors zenburn
 js editor.defaultRegister="+"
 
 " Short URLs {{{
-set yankshort+=filesha.re
 set yankshort+=linx.li
-set yankshort+=nullpaste.com
-" }}}
-
-" Passkeys {{{
-
-" Google Calendar
-set passkeys+="https://www\.google\.com/calendar":jk12345qc
-
-" reddit
-set passkeys+="reddit\.com":achijklsxz<Return>
-
-" Twitter
-set passkeys+="twitter\.com":jk/?.m
-
 " }}}
 
 " Quickmarks {{{
