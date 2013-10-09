@@ -19,6 +19,7 @@ for_window [class="Gvim"]       border 1pixel
 for_window [class="Jumanji"]    border 1pixel
 for_window [class="MPlayer"]    border 1pixel
 for_window [class="mplayer2"]   border 1pixel
+for_window [class="mpv"]        border 1pixel
 for_window [class="openarena"]  border 1pixel
 for_window [class="Roxterm"]    border 1pixel
 for_window [class="Sakura"]     border 1pixel

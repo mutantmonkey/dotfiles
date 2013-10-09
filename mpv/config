@@ -1,0 +1,24 @@
+################################################################################
+# .mplayer/config - mplayer configuration
+#
+# author: mutantmonkey <mutantmonkey@gmail.com>
+################################################################################
+
+# Audio {{{
+ao=pulse
+
+# English please
+alang=en
+# }}}
+
+# Video {{{
+vo=xv
+#vo=opengl-hq
+#vo=vdpau
+# }}}
+
+# Subtitles and OSD {{{
+# English please
+slang=en
+# }}}
+

@@ -141,13 +141,11 @@ fi
 
 # Aliases {{{
 
-alias flvplay="quvi --exec 'mplayer %u'"
 alias kismet="TERM=xterm-color kismet"
 alias mpdstream='mplayer --prefer-ipv6 -cache 640 http://gigantea.mutantmonkey.in:8000'
 alias pacs='pacman -Ss'
 alias strtx='startx & vlock'
-alias vless='/usr/share/vim/vim73/macros/less.sh'
-alias linxbin='curl -s -F Filedata=@- https://linx.li/upload/public && echo'
+alias mplayer='mpv'
 
 alias canto="canto -D $XDG_CONFIG_HOME/canto/ -L $XDG_DATA_HOME/canto/log -F $XDG_DATA_HOME/canto/feeds/ -S $XDG_CONFIG_HOME/canto/scripts/"
 
