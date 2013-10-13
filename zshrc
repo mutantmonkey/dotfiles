@@ -140,9 +140,8 @@ fi
 # }}}
 
 # Aliases {{{
-
 alias kismet="TERM=xterm-color kismet"
-alias mpdstream='mplayer --prefer-ipv6 -cache 640 http://gigantea.mutantmonkey.in:8000'
+alias mpdstream='mpv --prefer-ipv6 -cache 640 http://gigantea.mutantmonkey.in:8000'
 alias pacs='pacman -Ss'
 alias strtx='startx & vlock'
 alias mplayer='mpv'
