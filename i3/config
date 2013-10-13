@@ -11,13 +11,11 @@ font pango:DejaVu Sans Mono 9
 for_window [class="Chromium"]    border 1pixel
 for_window [class="Firefox"]     border 1pixel
 for_window [class="Gvim"]        border 1pixel
-for_window [class="Roxterm"]     border 1pixel
 for_window [class="Sakura"]      border 1pixel
 for_window [class="Spicy"]       border 1pixel
 for_window [class="SshAskpass"]  border 1pixel
 for_window [class="TorBrowser"]  border 1pixel
 for_window [class="Xournal"]     border 1pixel
-for_window [class="Zathura"]     border 1pixel
 for_window [class="hl2_linux"]   fullscreen
 for_window [class="mpv"]         border 1pixel
 for_window [class="openarena"]   border 1pixel
@@ -26,10 +24,6 @@ for_window [class="sxiv"]        border 1pixel
 for_window [instance="Steam"]    border 1pixel
 for_window [instance="Steam"]    floating enable
 for_window [class="ProjectM-pulseaudio"]    border 1pixel
-
-for_window [instance="Steam"]   border 1pixel
-for_window [instance="Steam"]   floating enable
-for_window [class="hl2_linux"]  fullscreen
 
 # Colors {{{
 
