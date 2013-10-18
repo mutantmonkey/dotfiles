@@ -61,6 +61,8 @@ set matchpairs+=<:>					" Make < and > match
 
 set pastetoggle=<F2>				" Toggle paste mode (no automatic indents)
 
+set colorcolumn=80                  " Show a line to indicate the line width
+
 " Automatic formatting; auto-wrap text, comments; automatically insert current
 " comment leader when hitting enter in insert mode allow formatting of
 " comments with gq; recognize lists
