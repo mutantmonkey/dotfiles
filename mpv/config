@@ -4,21 +4,17 @@
 # author: mutantmonkey <mutantmonkey@gmail.com>
 ################################################################################
 
-# Audio {{{
+no-osc
+screenshot-format=png
+
+# Audio
 ao=pulse
-
-# English please
 alang=en
-# }}}
 
-# Video {{{
-vo=xv
-#vo=opengl-hq
+# Video
+#vo=xv
+vo=opengl-hq
 #vo=vdpau
-# }}}
 
-# Subtitles and OSD {{{
-# English please
+# Subtitles
 slang=en
-# }}}
-
