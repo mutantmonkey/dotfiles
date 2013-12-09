@@ -153,27 +153,69 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C
 alias gits="git status -sb"
 
 # Live media streams {{{
-RTMP_CACHE=1024
-MMS_CACHE=$RTMP_CACHE
+function tv {
+    RTMP_CACHE=1024
+    MMS_CACHE=$RTMP_CACHE
 
-# Video
-alias abc24au="mplayer -framedrop -cache $RTMP_CACHE rtmp://cp103653.live.edgefcs.net/live/international_medium@36382"
-#alias alj="mplayer -framedrop -cache $RTMP_CACHE rtmp://aljazeeraflashlivefs.fplive.net/aljazeeraflashlive-live/aljazeera_eng_med"
-alias alj="rtmpdump -v -r rtmp://livestfslivefs.fplive.net/livestfslive-live/ -y 'aljazeera_en_veryhigh?videoId=747084146001&lineUpId=&pubId=665003303001&playerId=751182905001&affiliateId=' -W 'http://admin.brightcove.com/viewer/us20121025.1123/federatedVideoUI/BrightcovePlayer.swf?uid=1351574870983 -p 'http://english.aljazeera.net/watch_now/ -a 'aljazeeraflashlive-live?videoId=747084146001&lineUpId=&pubId=665003303001&playerId=751182905001&affiliateId=' | mplayer -"
-alias cspan1="mplayer -framedrop -cache $RTMP_CACHE rtmp://cp82346.live.edgefcs.net:1935/live/CSPAN1@14845"
-alias cspan2="mplayer -framedrop -cache $RTMP_CACHE rtmp://cp82347.live.edgefcs.net:1935/live/CSPAN2@14846"
-alias cspan3="mplayer -framedrop -cache $RTMP_CACHE rtmp://cp82348.live.edgefcs.net:1935/live/CSPAN3@14847"
-alias france24="rtmpdump -v -r rtmp://stream2.france24.yacast.net/france24_live/en -a france24_live/en -W http://www.france24.com/en/sites/all/modules/maison/aef_player/flash/player.swf -p http://www.france24.com/en/aef_player_popup/france24_player -y f24_liveen | mplayer -framedrop -cache $RTMP_CACHE -"
-alias rt="rtmpdump -v -r rtmp://fms5.visionip.tv/live -a live -W http://rt.com/s/swf/player5.4.viral.swf -p http://rt.com/on-air/ -y RT_3 | mplayer -framedrop -cache $RTMP_CACHE -"
-alias skynews="mplayer -cache $MMS_CACHE mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k"
+    case "$1" in
+        france24)
+            rtmpdump -v -r rtmp://stream2.france24.yacast.net/france24_live/en\
+                -a france24_live/en \
+                -W http://www.france24.com/en/sites/all/modules/maison/aef_player/flash/player.swf\
+                -p http://www.france24.com/en/aef_player_popup/france24_player\
+                -y f24_liveen | mpv -framedrop -cache $RTMP_CACHE -
+            ;;
+        rt)
+            rtmpdump -v -r rtmp://fms5.visionip.tv/live -a live \
+                -W http://rt.com/s/swf/player5.4.viral.swf \
+                -p http://rt.com/on-air/ -y RT_3 |\
+                mpv -framedrop -cache $RTMP_CACHE -
+            ;;
+        skynews)
+            mpv -cache $MMS_CACHE \
+                mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k
+            ;;
+        *)
+            echo "Please enter a supported station."
+            return 1
+            ;;
+    esac
+}
 
-# Radio
-alias echofm='mplayer http://xgrid04.ruf.uni-freiburg.de:8000/'
-alias radioq='mplayer http://stream.radioq.de:8000/gross.mp3'
-alias startfm='mplayer http://eteris.startfm.lt/startfm'
-alias wuvt='mplayer http://engine.collegemedia.vt.edu:8000/wuvt-hq.ogg'
-alias wvtf='mplayer http://mp3.rev.net:8000/wvtf-64.mp3'
-alias wwvt='mplayer http://mp3.rev.net:8000/riq-64.mp3'
-# }}}
+function radio {
+    case "$1" in
+        kpbs)
+            streamurl=http://kpbs.streamguys.tv:80/kpbs-aac
+            ;;
+        echofm)
+            streamurl=http://xgrid04.ruf.uni-freiburg.de:8000/
+            ;;
+        morefm)
+            streamurl=http://204.45.27.179:3006/
+            ;;
+        radioq)
+            streamurl=http://stream.radioq.de:8000/gross.mp3
+            ;;
+        startfm)
+            streamurl=http://eteris.startfm.lt/startfm
+            ;;
+        wuvt)
+            streamurl=http://engine.wuvt.vt.edu:8000/wuvt-hq.ogg
+            ;;
+        wvtf)
+            streamurl=http://mp3.rev.net:8000/wvtf-64.mp3
+            ;;
+        wwvt)
+            streamurl=http://mp3.rev.net:8000/riq-64.mp3
+            ;;
+        *)
+            echo "Please enter a supported station."
+            return 1
+            ;;
+    esac
 
+    mpc clear
+    mpc add $streamurl
+    mpc play
+}
 # }}}
