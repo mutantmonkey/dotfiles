@@ -4,29 +4,32 @@
 # author: mutantmonkey <mutantmonkey@mutantmonkey.in>
 ################################################################################
 
+# connection
 mpd_host = "gigantea.mutantmonkey.in"
 mpd_communication_mode = "notifications"
 
-# use alternative UI
-user_interface = "alternative"
+# general
+display_screens_numbers_on_start = "no"
 
-# use columns display mode
+# display
+user_interface = "alternative"
 playlist_display_mode = "columns"
 browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+playlist_editor_display_mode = "columns"
 
-# mouse wheel should not scroll entire page
-mouse_list_scroll_whole_page = no
+# interaction
+default_find_mode = "wrapped"
+default_space_mode = "add"
 
-# disable fancy scrolling (it is too slow)
-fancy_scrolling = no
-
-display_screens_numbers_on_start = no
+# scrolling
+mouse_list_scroll_whole_page = "no"
+fancy_scrolling = "no"
+cyclic_scrolling = "yes"
+mouse_support = "yes"
 
 # ignore leading the when sorting
-ignore_leading_the = yes
+ignore_leading_the = "yes"
 
 # use album artist in library
 media_library_left_column = "A"
-
-default_find_mode = wrapped
-default_space_mode = add
