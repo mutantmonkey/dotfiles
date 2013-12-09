@@ -68,7 +68,7 @@ bindkey -M menuselect '^o' accept-and-infer-next-history
 
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
-zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
+zstyle ':completion:*:*:*:*:processes' command "ps -u $(whoami) -o pid,user,comm -w -w"
 
 # disable named-directories autocompletion
 #zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
@@ -89,9 +89,9 @@ compdef mosh4=mosh
 # directory colors
 if [ "$TERM" != "dumb" ]; then
     # directory colors
-    eval `dircolors -b`
-    alias ls='ls --color=auto -F'
-    alias dir='ls --color=auto -F'
+    eval $(dircolors -b)
+    alias ls='ls --color=auto --group-directories-first -F'
+    alias dir='ls --color=auto --group-directories-first -F'
 
     # grep color
     export GREP_COLOR="1;33"
