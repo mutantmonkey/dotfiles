@@ -156,7 +156,6 @@ bar {
     workspace_buttons yes
     tray_output       none
 
-    #i3bar_command     /usr/bin/i3bar-icons
     status_command    /home/mutantmonkey/code/mmbar/status.py
 
     colors {
