@@ -1,0 +1,6 @@
+
+[roxterm options]
+warn_close=1
+colour_scheme=Zenburn
+encoding=UTF-8
+shortcut_scheme=Custom

@@ -11,6 +11,7 @@ font pango:DejaVu Sans Mono, FontAwesome 9
 for_window [class="Chromium"]    border 1pixel
 for_window [class="Firefox"]     border 1pixel
 for_window [class="Gvim"]        border 1pixel
+for_window [class="Roxterm"]      border 1pixel
 for_window [class="Sakura"]      border 1pixel
 for_window [class="Spicy"]       border 1pixel
 for_window [class="SshAskpass"]  border 1pixel
@@ -44,7 +45,7 @@ set $m Mod4
 floating_modifier $m
 
 # start a terminal
-bindsym $m+Shift+Return exec /usr/bin/sakura
+bindsym $m+Shift+Return exec /usr/bin/roxterm
 #bindsym $m+Shift+Return exec /usr/bin/st
 
 # kill focused window

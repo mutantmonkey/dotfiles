@@ -1,0 +1,26 @@
+
+[roxterm profile]
+background_img=/home/mutantmonkey
+browser=false
+mailer=roxterm -e mutt
+scrollbar_pos=0
+background_type=0
+saturation=0.156316
+visible_bell=1
+audible_bell=0
+hide_menubar=1
+height=24
+true_translucence=1
+always_show_tabs=0
+term=xterm-256color
+disable_menu_shortcuts=1
+disable_menu_access=1
+disable_tab_menu_shortcuts=1
+font=DejaVu Sans Mono 10
+maximise=0
+color_term=roxterm
+dir_filer=roxterm -e ranger
+colour_scheme=
+show_add_tab_btn=1
+show_resize_grip=0
+tab_pos=4
