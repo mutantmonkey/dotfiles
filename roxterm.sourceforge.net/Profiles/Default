@@ -13,3 +13,6 @@ color_term=roxterm
 show_add_tab_btn=1
 show_resize_grip=0
 tab_pos=4
+colour_scheme=
+browser=/usr/bin/xdg-open
+mailer=/usr/bin/xdg-open
