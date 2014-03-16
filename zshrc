@@ -5,40 +5,20 @@
 ################################################################################
 
 # History {{{
-
 HISTFILE=~/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000
 setopt appendhistory
-
 # }}}
 
 # Key bindings {{{
-
 bindkey -v
 
 bindkey '^[[A'  vi-up-line-or-history
 bindkey '^[[B'  vi-down-line-or-history
-
-## for rxvt
-#bindkey "\e[8~" end-of-line
-#bindkey "\e[7~" beginning-of-line
-
-## for non RH/Debian xterm, can't hurt for RH/DEbian xterm
-#bindkey "\eOH" beginning-of-line
-#bindkey "\eOF" end-of-line
-
-## for freebsd console
-#bindkey "\e[H" beginning-of-line
-#bindkey "\e[F" end-of-line
-
-## completion in the middle of a line
-#bindkey '^i' expand-or-complete-prefix
-
 # }}}
 
 # Auto completion {{{
-
 fpath=($HOME/.dotfiles/zsh $fpath)
 
 zstyle :compinstall filename "$HOME/.zshrc"
@@ -85,8 +65,6 @@ compdef mosh4=mosh
 # }}}
 
 # Terminal colors {{{
-
-# directory colors
 if [ "$TERM" != "dumb" ]; then
     # directory colors
     eval $(dircolors -b)
@@ -99,19 +77,7 @@ if [ "$TERM" != "dumb" ]; then
 fi
 # }}}
 
-# Window title {{{
-
-# user@host:dir
-case "$TERM" in
-    xterm*|rxvt*)
-        precmd () {print -Pn "\e]0;%n@%m: %~\a"}
-    ;;
-esac
-
-# }}}
-
 # Prompt {{{
-
 MAIN_COLOR=$'%{\e[1;30m%}'
 USER_COLOR=$'%{\e[1;34m%}'
 DIR_COLOR=$'%{\e[0;37m%}'
@@ -119,29 +85,10 @@ RESET_COLOR=$'%{\e[0;00m%}'
 
 export PROMPT="$MAIN_COLOR($USER_COLOR%n@%m$MAIN_COLOR|$DIR_COLOR%~$MAIN_COLOR)$RESET_COLOR%# "
 export PROMPT2="$MAIN_COLOR... $RESET_COLOR"
-
-# }}}
-
-# Variables {{{
-export BROWSER=firefox
-export EDITOR=vim
-export PAGER=less
-export LESS="-R -iMx4"
-
-export MPD_HOST="gigantea.mutantmonkey.in"
-
-# Java settings
-export _JAVA_AWT_WM_NONREPARENTING=1
-export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd_vrgb -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
-
-if [[ "$TERM" == "xterm" ]]; then
-    export TERM=xterm-256color
-fi
 # }}}
 
 # Aliases {{{
 alias kismet="TERM=xterm-color kismet"
-alias mpdstream='mpv --prefer-ipv6 -cache 640 http://gigantea.mutantmonkey.in:8000'
 alias pacs='pacman -Ss'
 alias strtx='startx & vlock'
 alias mplayer='mpv'
@@ -216,4 +163,5 @@ function radio {
     mpc add $streamurl
     mpc play
 }
+# }}}
 # }}}

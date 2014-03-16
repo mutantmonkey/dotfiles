@@ -1,0 +1,11 @@
+# Environment variables that will be set by pam_env.so
+
+# default applications
+EDITOR=/usr/bin/vim
+PAGER=/usr/bin/less
+
+# java config
+_JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd_vrgb -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+
+# less config
+LESS="-R -iMx4"
