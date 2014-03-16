@@ -59,7 +59,7 @@ bindsym $m+s border normal
 bindsym $m+semicolon exec /usr/bin/dmenu_run -fn 'DejaVu Sans Mono-9' -nb '#3f3f3f' -nf '#dcdccc' -sb '#1e2320' -sf '#f0dfaf'
 
 # lock screen with $m+x
-bindsym $m+x exec /usr/bin/i3lock -c 000000
+bindsym $m+x    exec /usr/bin/dbus-send --system /org/freekdestop/login1/Session org.freedesktop.login1.Session.Lock
 
 # screenshot with PrintScrn
 bindsym Print exec /usr/bin/scrot
@@ -169,3 +169,5 @@ bar {
         urgent_workspace   #3d3535 #3d3535 #e37170
     }
 }
+
+exec ~/bin/lockd.py
