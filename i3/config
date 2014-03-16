@@ -62,14 +62,18 @@ bindsym $m+semicolon exec /usr/bin/dmenu_run -fn 'DejaVu Sans Mono-9' -nb '#3f3f
 bindsym $m+x    exec /usr/bin/dbus-send --system /org/freekdestop/login1/Session org.freedesktop.login1.Session.Lock
 
 # screenshot with PrintScrn
-bindsym Print exec /usr/bin/scrot
+bindsym Print   exec /usr/bin/canberra-gtk-play -i screen-capture; exec /usr/bin/scrot -e 'mv $f ~/screenshots/'
 
-bindsym $m+p exec MPD_HOST=gigantea.mutantmonkey.in /usr/bin/mpc toggle
+bindsym $m+p    exec MPD_HOST=gigantea.mutantmonkey.in /usr/bin/mpc toggle
+
+# brightness keys
+bindsym XF86MonBrightnessUp    exec /usr/bin/xbacklight -steps 1 -inc 7
+bindsym XF86MonBrightnessDown  exec /usr/bin/xbacklight -steps 1 -dec 7
 
 # volume keys
-bindsym XF86AudioRaiseVolume exec ~/bin/pavol.sh up
-bindsym XF86AudioLowerVolume exec ~/bin/pavol.sh down
-bindsym XF86AudioMute exec ~/bin/pavol.sh mute
+bindsym XF86AudioRaiseVolume   exec ~/bin/pavol.sh up
+bindsym XF86AudioLowerVolume   exec ~/bin/pavol.sh down
+bindsym XF86AudioMute          exec ~/bin/pavol.sh mute
 
 # change focus
 bindsym $m+h focus left
