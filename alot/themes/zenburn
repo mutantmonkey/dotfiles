@@ -1,0 +1,72 @@
+# zenburn color theme for alot
+
+[global]
+    footer = 'standout,bold','','white','dark blue','g100','dark blue'
+    body = '','','light gray','','light gray',''
+    notify_error = 'standout','','light gray','dark red','light gray','dark red'
+    notify_normal = '','','light gray','black','light gray','#68a'
+    prompt = '','','light gray','','light gray',''
+    tag = '','','yellow','','yellow',''
+    tag_focus = 'standout, bold','','yellow','','yellow',''
+[help]
+    text = '','','light gray','dark gray','light gray','dark gray'
+    section = 'underline','','white,underline','dark gray','g100,underline','dark gray'
+    title = 'standout','','white,underline','dark gray','g100,underline','dark gray'
+[bufferlist]
+    line_even = '','','light gray','','light gray',''
+    line_odd = '','','light gray','','light gray',''
+    line_focus = 'standout','','black','dark cyan','black','dark cyan'
+[taglist]
+    line_even = '','','light gray','black','light gray','black'
+    line_odd = '','','light gray','black','light gray','black'
+    line_focus = 'standout','','black','dark cyan','black','dark cyan'
+[thread]
+    arrow_heads = '','','light blue','','light blue',''
+    arrow_bars = '','','light blue','','light blue',''
+    attachment = '','','yellow','','yellow,bold','dark blue'
+    attachment_focus = 'standout','','black','yellow','g0,bold','yellow'
+    body = '','','light gray','','light gray','g24'
+    body_focus = '','','light gray','','light gray','g27'
+    header = '','','dark cyan','dark blue','g100','dark blue'
+    header_key = '','','dark cyan','dark blue','g100','dark blue'
+    header_value = '','','dark cyan','dark blue','g100','dark blue'
+
+    [[summary]]
+        even = '','','light gray','','white','dark blue'
+        odd = '','','light gray','','white','dark blue'
+        focus = 'standout','','','light blue','g0,bold','h12'
+
+[envelope]
+    body = '','','light gray','','light gray',''
+    header = '','','dark cyan','dark blue','dark cyan','dark blue'
+    header_key = '','','dark cyan','dark blue','dark cyan','dark blue'
+    header_value = '','','dark cyan','dark blue','dark cyan','dark blue'
+[search]
+    [[threadline]]
+        normal = '','','light gray','','light gray',''
+        focus = 'standout','','black','dark cyan','black','dark cyan'
+        parts = date,authors,mailcount,subject,tags
+        [[[date]]]
+            normal = '','','dark green','','dark green',''
+            focus = 'standout','','black','dark green','black','dark green'
+            width = 'fit',10,10
+            alignment = right
+        [[[mailcount]]]
+            normal = '','','brown','','brown',''
+            focus = 'standout','','black','brown','black','brown'
+            width = 'fit', 5,5
+        [[[tags]]]
+            normal = '','','dark green','','dark green',''
+            focus = 'standout','','black','dark green','black','dark green'
+        [[[authors]]]
+            normal = '','','dark cyan','','dark cyan',''
+            focus = 'standout','','black','dark cyan','black','dark cyan'
+            width = 'fit',25,25
+        [[[subject]]]
+            normal = '','','light gray','','light gray',''
+            focus = 'standout','','black','dark cyan','black','h10'
+            width = 'weight', 1
+        [[[content]]]
+            normal = '','','light gray','','light gray',''
+            focus = 'standout','','black','dark cyan','black','dark cyan'
+            width = 'weight', 1
