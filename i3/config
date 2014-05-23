@@ -29,7 +29,7 @@ for_window [class="ProjectM-pulseaudio"]    border 1pixel
 # Colors {{{
 
 # class                 border  bg      fg      indicator
-client.focused          #5b605e #5b605e #262626 #8f8f8f
+client.focused          #5b605e #9fafaf #161616 #8f8f8f
 client.focused_inactive #3f3f3f #3f3f3f #5b605e #8f8f8f
 client.unfocused        #3f3f3f #3f3f3f #5b605e #8f8f8f
 client.urgent           #dca3a3 #3f3f3f #dca3a3 #8f8f8f
@@ -63,8 +63,6 @@ bindsym $m+x    exec /usr/bin/dbus-send --system /org/freekdestop/login1/Session
 
 # screenshot with PrintScrn
 bindsym Print   exec /usr/bin/canberra-gtk-play -i screen-capture; exec /usr/bin/scrot -e 'mv $f ~/screenshots/'
-
-bindsym $m+p    exec MPD_HOST=gigantea.mutantmonkey.in /usr/bin/mpc toggle
 
 # brightness keys
 bindsym XF86MonBrightnessUp    exec /usr/bin/xbacklight -steps 1 -inc 7
