@@ -13,6 +13,10 @@ Color = auto
 # timeouts.
 #ConnectTimeout =
 
+# Always ignore out of date packages. This can be overridden on the command line
+# with --no-ignore-ood.
+#IgnoreOOD
+
 # Ignore the specified packages when checking for updates. Multiple arguments
 # to this option should be space delimited. Similar to the --ignore option,
 # this is in addition to any packages found in pacman's config.
@@ -20,10 +24,7 @@ Color = auto
 
 # Ignore the specified binary repos when checking for updates. Multiple arguments
 # to this option should be space delimited.
-#IgnoreRepo =
-
-# Avoid using SSL connections.
-#NoSSL
+IgnoreRepo = mutantmonkey
 
 # Absolute path to download and extract to. Parameter and tilde expansions are
 # honored here.
