@@ -2,10 +2,9 @@
 
 # default applications
 EDITOR=/usr/bin/vim
-PAGER=/usr/bin/less
+PAGER=/usr/bin/less -r
 
-# java config
-_JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd_vrgb -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+ANSIBLE_HOSTS=/home/mutantmonkey/.config/ansible/hosts
 
 # less config
-LESS="-R -iMx4"
+LESS=-R -iMx4
