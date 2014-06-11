@@ -14,13 +14,6 @@ js editor.defaultRegister="+"
 set yankshort+=linx.li
 " }}}
 
-" Quickmarks {{{
-silent qmark h https://news.ycombinator.com
-silent qmark p https://plus.google.com
-silent qmark r https://pay.reddit.com
-silent qmark t https://twitter.com
-" }}}
-
 " Remap scroll keys
 nmap -builtin j 5j
 nmap -builtin k 5k
