@@ -77,6 +77,7 @@ set timeout      = 10
 # outgoing mail
 set envelope_from = yes
 set edit_headers  = yes
+set user_agent    = no
 
 # outgoing addresses
 set reverse_name     = yes
