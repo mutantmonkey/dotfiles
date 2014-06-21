@@ -5,7 +5,7 @@
 ################################################################################
 
 # connection
-mpd_host = "gigantea.mutantmonkey.in"
+mpd_host = "localhost"
 mpd_communication_mode = "notifications"
 
 # general
