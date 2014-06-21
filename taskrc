@@ -16,11 +16,3 @@ dateformat.edit=Y-M-D H:N
 dateformat.info=Y-M-D H:N
 dateformat.annotation=Y-M-D H:N
 dateformat.report=Y-M-D H:N
-
-# Sorting
-#report.next.sort=due+,priority-,start-,project+
-
-# Sync
-#push.default.uri=gigantea.mutantmonkey.in:/srv/task/
-#pull.default.uri=gigantea.mutantmonkey.in:/srv/task/
-merge.default.uri=gigantea.mutantmonkey.in:/srv/task/
