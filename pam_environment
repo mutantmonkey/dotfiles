@@ -2,6 +2,7 @@
 
 # default applications
 EDITOR=/usr/bin/vim
+SUDO_EDITOR=/usr/bin/rvim
 PAGER=/usr/bin/less -r
 
 ANSIBLE_HOSTS=/home/mutantmonkey/.config/ansible/hosts
