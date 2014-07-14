@@ -173,5 +173,4 @@ bar {
 }
 
 exec ~/bin/lockd.py
-exec /usr/bin/compton --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc
-exec /usr/bin/start-pulseaudio-x11
+exec /usr/bin/compton --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc -CG
