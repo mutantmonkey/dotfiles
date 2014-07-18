@@ -4,6 +4,9 @@
 # author: mutantmonkey <mutantmonkey@mutantmonkey.in>
 ################################################################################
 
+# enable autocd mode to save precious keystrokes
+setopt autocd
+
 # History {{{
 HISTFILE=~/.zsh_history
 HISTSIZE=50000
