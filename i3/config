@@ -59,7 +59,7 @@ bindsym $m+s border normal
 bindsym $m+semicolon exec /usr/bin/dmenu_run -fn 'DejaVu Sans Mono-9' -nb '#3f3f3f' -nf '#dcdccc' -sb '#1e2320' -sf '#f0dfaf'
 
 # lock screen with $m+x
-bindsym $m+x    exec /usr/bin/dbus-send --system /org/freekdestop/login1/Session org.freedesktop.login1.Session.Lock
+bindsym $m+x    exec /usr/bin/light-locker-command -l
 
 # screenshot with PrintScrn
 bindsym Print   exec /usr/bin/canberra-gtk-play -i screen-capture; exec /usr/bin/scrot -e 'mv $f ~/screenshots/'
@@ -172,5 +172,7 @@ bar {
     }
 }
 
-exec ~/bin/lockd.py
+exec /usr/bin/start-pulseaudio-x11
 exec /usr/bin/compton --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc -CG
+exec /usr/bin/light-locker
+exec /usr/bin/gnome-keyring-daemon --start --components=secrets
