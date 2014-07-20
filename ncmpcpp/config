@@ -5,7 +5,6 @@
 ################################################################################
 
 # connection
-mpd_host = "localhost"
 mpd_communication_mode = "notifications"
 
 # general
