@@ -69,9 +69,9 @@ bindsym XF86MonBrightnessUp    exec /usr/bin/xbacklight -steps 1 -inc 7
 bindsym XF86MonBrightnessDown  exec /usr/bin/xbacklight -steps 1 -dec 7
 
 # volume keys
-bindsym XF86AudioRaiseVolume   exec ~/bin/pavol.sh up
-bindsym XF86AudioLowerVolume   exec ~/bin/pavol.sh down
-bindsym XF86AudioMute          exec ~/bin/pavol.sh mute
+bindsym XF86AudioRaiseVolume   exec /usr/bin/ponymix increase 5
+bindsym XF86AudioLowerVolume   exec /usr/bin/ponymix decrease 5
+bindsym XF86AudioMute          exec /usr/bin/ponymix toggle
 
 # change focus
 bindsym $m+h focus left
