@@ -1,7 +1,5 @@
 " ##############################################################################
 " .vimrc - Vim configuration bootstrap
-"
-" author: mutantmonkey <mutantmonkey@mutantmonkey.in>
 " ##############################################################################
 
 let $VIMHOME="$HOME/.dotfiles/vim/"

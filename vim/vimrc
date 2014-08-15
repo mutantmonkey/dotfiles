@@ -1,7 +1,5 @@
 " ##############################################################################
 " vim/vimrc - Vim configuration
-"
-" author: mutantmonkey <mutantmonkey@mutantmonkey.in>
 " ##############################################################################
 
 " Pathogen needs to run first

@@ -1,7 +1,5 @@
 ################################################################################
 # .zshrc - ZSH configuration
-#
-# author: mutantmonkey <mutantmonkey@mutantmonkey.in>
 ################################################################################
 
 # enable autocd mode to save precious keystrokes

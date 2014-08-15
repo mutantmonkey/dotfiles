@@ -1,7 +1,5 @@
 ################################################################################
 # cower/config - cower configuration file
-#
-# author: mutantmonkey <mutantmonkey@gmail.com>
 ################################################################################
 
 # Use color in the output. This takes an optional arg of auto/never/always,
