@@ -2,9 +2,6 @@
 # ncmpcpp/config - ncmpcpp config
 ################################################################################
 
-# general
-#display_screens_numbers_on_start = "no"
-
 # display
 user_interface = "alternative"
 playlist_display_mode = "columns"
@@ -18,12 +15,8 @@ default_space_mode = "add"
 
 # scrolling
 mouse_list_scroll_whole_page = "no"
-#fancy_scrolling = "no"
 cyclic_scrolling = "yes"
 mouse_support = "yes"
 
 # ignore leading the when sorting
 ignore_leading_the = "yes"
-
-# use album artist in library
-#media_library_left_column = "A"
