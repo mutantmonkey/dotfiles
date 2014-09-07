@@ -2,11 +2,8 @@
 # ncmpcpp/config - ncmpcpp config
 ################################################################################
 
-# connection
-mpd_communication_mode = "notifications"
-
 # general
-display_screens_numbers_on_start = "no"
+#display_screens_numbers_on_start = "no"
 
 # display
 user_interface = "alternative"
@@ -21,7 +18,7 @@ default_space_mode = "add"
 
 # scrolling
 mouse_list_scroll_whole_page = "no"
-fancy_scrolling = "no"
+#fancy_scrolling = "no"
 cyclic_scrolling = "yes"
 mouse_support = "yes"
 
@@ -29,4 +26,4 @@ mouse_support = "yes"
 ignore_leading_the = "yes"
 
 # use album artist in library
-media_library_left_column = "A"
+#media_library_left_column = "A"

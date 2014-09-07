@@ -1,0 +1,39 @@
+################################################################################
+# ncmpcpp keybindings
+################################################################################
+
+# disable Internet features {{{
+# disable artist info
+def_key "I"
+  dummy
+
+# disable selecting lyrics fetcher
+def_key "L"
+  dummy
+
+# disable toggle fetching lyrics in background
+def_key "F"
+  dummy
+
+# disable fetching lyrics
+def_key "`"
+  dummy
+# }}}
+
+# disable visualizer
+def_key "8"
+  dummy
+
+# disable display mode toggle
+def_key "P"
+  dummy
+
+# disable interface toggle
+def_key "\\"
+  dummy
+
+def_key "j"
+  scroll_down
+
+def_key "k"
+  scroll_up
