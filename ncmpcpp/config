@@ -20,3 +20,6 @@ mouse_support = "yes"
 
 # ignore leading the when sorting
 ignore_leading_the = "yes"
+
+# use album artist in library
+media_library_primary_tag = album_artist
