@@ -20,6 +20,14 @@ def_key "`"
   dummy
 # }}}
 
+# disable tag editor {{{
+def_key "6"
+    dummy
+
+def_key "E"
+    dummy
+# }}}
+
 # disable visualizer
 def_key "8"
   dummy
