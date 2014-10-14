@@ -1,0 +1,5 @@
+/* disable ridiculous client-side decoration shadow */
+.window-frame {
+    box-shadow: none;
+    margin: 0;
+}
