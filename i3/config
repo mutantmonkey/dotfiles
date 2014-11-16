@@ -157,7 +157,7 @@ bar {
     workspace_buttons yes
     tray_output       none
 
-    status_command    /home/mutantmonkey/code/mmbar/status.py
+    status_command    /usr/bin/mmbar-status
 
     colors {
         background #3f3f3f
