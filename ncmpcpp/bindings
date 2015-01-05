@@ -16,8 +16,9 @@ def_key "F"
   dummy
 
 # disable fetching lyrics
-def_key "`"
-  dummy
+#def_key "`"
+#  add_random_items
+#  dummy
 # }}}
 
 # disable tag editor {{{
