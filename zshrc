@@ -104,29 +104,32 @@ function virtenv {
 
 function radio {
     case "$1" in
-        kpbs)
-            streamurl=http://kpbs.streamguys.tv:80/kpbs-aac
-            ;;
         echofm)
-            streamurl=http://xgrid04.ruf.uni-freiburg.de:8000/
+            stream_url=http://xgrid04.ruf.uni-freiburg.de:8000/
+            ;;
+        kpbs)
+            stream_url=http://kpbs.streamguys.tv:80/kpbs-aac
+            ;;
+        ksdt)
+            stream_url=http://ksdt.ucsd.edu:8000/stream
             ;;
         morefm)
-            streamurl=http://204.45.27.179:3006/
+            stream_url=http://204.45.27.179:3006/
             ;;
         radioq)
-            streamurl=http://stream.radioq.de:8000/gross.mp3
+            stream_url=http://stream.radioq.de:8000/gross.mp3
             ;;
         startfm)
-            streamurl=http://eteris.startfm.lt/startfm
+            stream_url=http://eteris.startfm.lt/startfm
             ;;
         wuvt)
-            streamurl=http://engine.wuvt.vt.edu:8000/wuvt-hq.ogg
+            stream_url=http://engine.wuvt.vt.edu:8000/wuvt-hq.ogg
             ;;
         wvtf)
-            streamurl=http://mp3.rev.net:8000/wvtf-64.mp3
+            stream_url=http://mp3.rev.net:8000/wvtf-64.mp3
             ;;
         wwvt)
-            streamurl=http://mp3.rev.net:8000/riq-64.mp3
+            stream_url=http://mp3.rev.net:8000/riq-64.mp3
             ;;
         *)
             echo "Please enter a supported station."
@@ -134,9 +137,12 @@ function radio {
             ;;
     esac
 
-    mpc clear
-    mpc add $streamurl
-    mpc play
+    if [ -n "$MPD_HOST" ]; then
+        mpc clear
+        mpc add $stream_url
+        mpc play
+    else
+        torify mpv --loop=force $stream_url
+    fi
 }
-# }}}
 # }}}
