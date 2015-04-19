@@ -98,34 +98,8 @@ alias mplayer='mpv'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gits="git status -sb"
 
-# Live media streams {{{
-function tv {
-    RTMP_CACHE=1024
-    MMS_CACHE=$RTMP_CACHE
-
-    case "$1" in
-        france24)
-            rtmpdump -v -r rtmp://stream2.france24.yacast.net/france24_live/en\
-                -a france24_live/en \
-                -W http://www.france24.com/en/sites/all/modules/maison/aef_player/flash/player.swf\
-                -p http://www.france24.com/en/aef_player_popup/france24_player\
-                -y f24_liveen | mpv -framedrop -cache $RTMP_CACHE -
-            ;;
-        rt)
-            rtmpdump -v -r rtmp://fms5.visionip.tv/live -a live \
-                -W http://rt.com/s/swf/player5.4.viral.swf \
-                -p http://rt.com/on-air/ -y RT_3 |\
-                mpv -framedrop -cache $RTMP_CACHE -
-            ;;
-        skynews)
-            mpv -cache $MMS_CACHE \
-                mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k
-            ;;
-        *)
-            echo "Please enter a supported station."
-            return 1
-            ;;
-    esac
+function virtenv {
+    source $HOME/.local/share/virtualenv/$1/bin/activate
 }
 
 function radio {
