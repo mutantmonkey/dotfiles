@@ -149,7 +149,9 @@ bindsym $m+Shift+e restart
 # exit i3 (logs you out of your X session)
 bindsym $m+Shift+q exit
 
-bindsym $m+m move workspace to output right
+# move workspaces to other outputs
+bindsym $m+bracketleft move workspace to output left
+bindsym $m+bracketright move workspace to output right
 # }}}
 
 bar {
