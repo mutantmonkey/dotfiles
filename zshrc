@@ -89,10 +89,6 @@ export PROMPT2="$MAIN_COLOR... $RESET_COLOR"
 # }}}
 
 # Aliases {{{
-alias kismet="TERM=xterm-color kismet"
-alias pacs='pacman -Ss'
-alias strtx='startx & vlock'
-alias mplayer='mpv'
 
 # Git aliases
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
