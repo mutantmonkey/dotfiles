@@ -95,7 +95,12 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C
 alias gits="git status -sb"
 
 function virtenv {
-    source $HOME/.local/share/virtualenv/$1/bin/activate
+    if [ -e $1 ]; then
+        echo "Please specify the virtualenv as an argument."
+        return 1
+    else
+        source $HOME/.local/share/virtualenv/$1/bin/activate
+    fi
 }
 
 function radio {
