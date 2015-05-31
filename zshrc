@@ -138,7 +138,7 @@ function radio {
         mpc add $stream_url
         mpc play
     else
-        torify mpv --loop=force $stream_url
+        torsocks -i mpv --loop=force $stream_url
     fi
 }
 # }}}
