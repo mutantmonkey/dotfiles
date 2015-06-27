@@ -1,6 +1,4 @@
 Host *
-    #ControlMaster auto
-    #ControlPath ~/.ssh/mux-%r@%h:%p
     ServerAliveInterval 60
 
     # https://stribika.github.io/2015/01/04/secure-secure-shell.html
