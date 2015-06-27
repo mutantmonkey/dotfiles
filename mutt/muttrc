@@ -19,7 +19,7 @@ set sort        = threads
 set sort_aux    = reverse-last-date-received
 
 # mailcap
-set mailcap_path = ${HOME}/.mutt/mailcap
+set mailcap_path = ${HOME}/.dotfiles/mailcap
 
 # aliases
 set alias_file = ${HOME}/.mutt/aliases
