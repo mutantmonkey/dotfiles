@@ -1,4 +1,5 @@
-LN_FLAGS = -sfn
+LN_FLAGS = -sfnv
+MKDIR_FLAGS = -pv
 
 home_symlinks = gnupg/gpg.conf \
 	ncmpcpp/bindings \
@@ -34,44 +35,44 @@ install: alot ansible dunst gnupg gtk-2.0 gtk-3.0 i3 mpv roxterm.sourceforge.net
 .PHONY: $(home_symlinks)
 $(home_symlinks):
 	$(eval DESTDIR := $(shell dirname ~/.$@))
-	mkdir -p $(DESTDIR)
+	mkdir $(MKDIR_FLAGS) $(DESTDIR)
 	test -e $(CURDIR)/$@ && ln $(LN_FLAGS) $(CURDIR)/$@ ~/.$@
 
 .PHONY: $(config_symlinks)
 $(config_symlinks):
 	$(eval DESTDIR := $(shell dirname ~/.config/$@))
-	mkdir -p $(DESTDIR)
+	mkdir $(MKDIR_FLAGS) $(DESTDIR)
 	test -e $(CURDIR)/$@ && ln $(LN_FLAGS) $(CURDIR)/$@ ~/.config/$@
 
 alot: alot/themes
-	mkdir -p ~/.config/alot
+	mkdir $(MKDIR_FLAGS) ~/.config/alot
 
 ansible: ansible/ansible.cfg
-	mkdir -p ~/.config/ansible
+	mkdir $(MKDIR_FLAGS) ~/.config/ansible
 
 dunst: dunst/dunstrc
-	mkdir -p ~/.config/dunst
+	mkdir $(MKDIR_FLAGS) ~/.config/dunst
 
 gnupg: gnupg/gpg.conf
-	mkdir -p ~/.gnupg
+	mkdir $(MKDIR_FLAGS) ~/.gnupg
 
 gtk-2.0: gtk-2.0/gtkrc
-	mkdir -p ~/.config/gtk-2.0
+	mkdir $(MKDIR_FLAGS) ~/.config/gtk-2.0
 
 gtk-3.0: gtk-3.0/gtk.css gtk-3.0/settings.ini
-	mkdir -p ~/.config/gtk-3.0
+	mkdir $(MKDIR_FLAGS) ~/.config/gtk-3.0
 
 mpv: mpv/mpv.conf
-	mkdir -p ~/.config/mpv
+	mkdir $(MKDIR_FLAGS) ~/.config/mpv
 
 ncmpcpp: ncmpcpp/bindings ncmpcpp/config
-	mkdir -p ~/.ncmpcpp
+	mkdir $(MKDIR_FLAGS) ~/.ncmpcpp
 
 ranger: ranger/rc.conf
-	mkdir -p ~/.config/ranger
+	mkdir $(MKDIR_FLAGS) ~/.config/ranger
 
 weechat: weechat/perl weechat/alias.conf weechat/plugins.conf
-	mkdir -p ~/.weechat
+	mkdir $(MKDIR_FLAGS) ~/.weechat
 
 zshenv:
 	test -e $(CURDIR)/profile && ln $(LN_FLAGS) $(CURDIR)/profile ~/.zshenv
