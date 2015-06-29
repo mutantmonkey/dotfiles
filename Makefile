@@ -33,10 +33,14 @@ install: alot ansible dunst gnupg gtk-2.0 gtk-3.0 i3 mpv roxterm.sourceforge.net
 
 .PHONY: $(home_symlinks)
 $(home_symlinks):
+	$(eval DESTDIR := $(shell dirname ~/.$@))
+	mkdir -p $(DESTDIR)
 	test -e $(CURDIR)/$@ && ln $(LN_FLAGS) $(CURDIR)/$@ ~/.$@
 
 .PHONY: $(config_symlinks)
 $(config_symlinks):
+	$(eval DESTDIR := $(shell dirname ~/.config/$@))
+	mkdir -p $(DESTDIR)
 	test -e $(CURDIR)/$@ && ln $(LN_FLAGS) $(CURDIR)/$@ ~/.config/$@
 
 alot: alot/themes
