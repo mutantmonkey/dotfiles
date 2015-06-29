@@ -3,10 +3,7 @@
 ################################################################################
 
 # Color theme
-include /home/mutantmonkey/.dotfiles/task/zenburn-256.theme
-
-# Data files
-data.location=/home/mutantmonkey/.task
+include ~/.config/task/zenburn-256.theme
 
 # Date format
 dateformat=Y-M-DTH:N
