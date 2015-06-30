@@ -45,34 +45,24 @@ $(config_symlinks):
 	test -e $(CURDIR)/$@ && ln $(LN_FLAGS) $(CURDIR)/$@ ~/.config/$@
 
 alot: alot/themes
-	mkdir $(MKDIR_FLAGS) ~/.config/alot
 
 ansible: ansible/ansible.cfg
-	mkdir $(MKDIR_FLAGS) ~/.config/ansible
 
 dunst: dunst/dunstrc
-	mkdir $(MKDIR_FLAGS) ~/.config/dunst
 
 gnupg: gnupg/gpg.conf
-	mkdir $(MKDIR_FLAGS) ~/.gnupg
 
 gtk-2.0: gtk-2.0/gtkrc
-	mkdir $(MKDIR_FLAGS) ~/.config/gtk-2.0
 
 gtk-3.0: gtk-3.0/gtk.css gtk-3.0/settings.ini
-	mkdir $(MKDIR_FLAGS) ~/.config/gtk-3.0
 
 mpv: mpv/mpv.conf
-	mkdir $(MKDIR_FLAGS) ~/.config/mpv
 
 ncmpcpp: ncmpcpp/bindings ncmpcpp/config
-	mkdir $(MKDIR_FLAGS) ~/.ncmpcpp
 
 ranger: ranger/rc.conf
-	mkdir $(MKDIR_FLAGS) ~/.config/ranger
 
 weechat: weechat/perl weechat/alias.conf weechat/plugins.conf
-	mkdir $(MKDIR_FLAGS) ~/.weechat
 
 zshenv:
 	test -e $(CURDIR)/profile && ln $(LN_FLAGS) $(CURDIR)/profile ~/.zshenv
