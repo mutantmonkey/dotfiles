@@ -32,7 +32,7 @@ set query_command = "lbdbq '%s'"
 bind editor <Tab> complete-query
 
 # header cache
-set header_cache = ${HOME}/.mutt/cache
+set header_cache = ${HOME}/.cache/mutt/headers
 
 # Always use TLS
 set ssl_starttls  = yes
