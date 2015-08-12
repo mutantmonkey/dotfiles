@@ -15,6 +15,7 @@ home_symlinks = gnupg/gpg.conf \
 
 config_symlinks = alot/themes \
 	ansible/ansible.cfg \
+	compton.conf \
 	cower/config \
 	dunst/dunstrc \
 	gtk-2.0/gtkrc \
@@ -30,7 +31,7 @@ config_symlinks = alot/themes \
 
 all: install
 
-install: alot ansible dunst gnupg gtk-2.0 gtk-3.0 i3 mpv \
+install: alot ansible compton.conf dunst gnupg gtk-2.0 gtk-3.0 i3 mpv \
 	roxterm.sourceforge.net tmux.conf vim Xkbmap Xresources \
 	zsh zshenv zshrc
 

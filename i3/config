@@ -11,9 +11,7 @@ for_window [class="Firefox"]     border 1pixel
 for_window [class="Gvim"]        border 1pixel
 for_window [class="Roxterm"]     border 1pixel
 for_window [class="Sakura"]      border 1pixel
-for_window [class="Spicy"]       border 1pixel
 for_window [class="SshAskpass"]  border 1pixel
-for_window [class="TorBrowser"]  border 1pixel
 for_window [class="Xournal"]     border 1pixel
 for_window [class="hl2_linux"]   fullscreen
 for_window [class="mpv"]         border 1pixel
@@ -27,10 +25,11 @@ for_window [class="ProjectM-pulseaudio"]    border 1pixel
 # Colors {{{
 
 # class                 border  bg      fg      indicator
-client.focused          #5b605e #9fafaf #161616 #8f8f8f
-client.focused_inactive #3f3f3f #3f3f3f #5b605e #8f8f8f
-client.unfocused        #3f3f3f #3f3f3f #5b605e #8f8f8f
-client.urgent           #dca3a3 #3f3f3f #dca3a3 #8f8f8f
+client.focused          #1f1f1f #1f1f1f #dcdccc #9fafaf
+client.focused_inactive #3f3f3f #3f3f3f #5b605e #9fafaf
+client.unfocused        #3f3f3f #3f3f3f #5b605e #9fafaf
+client.urgent           #dca3a3 #3f3f3f #dca3a3 #9fafaf
+client.placeholder      #3f3f3f #3f3f3f #5b605e #9fafaf
 
 client.background       #000000
 
@@ -173,6 +172,6 @@ bar {
 }
 
 exec /usr/bin/start-pulseaudio-x11
-exec /usr/bin/compton --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc -CG
+exec /usr/bin/compton
 exec /usr/bin/light-locker
 exec /usr/bin/gnome-keyring-daemon --start --components=secrets
