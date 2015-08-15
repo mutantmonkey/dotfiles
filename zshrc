@@ -20,7 +20,7 @@ bindkey '^[[B'  vi-down-line-or-history
 # }}}
 
 # Auto completion {{{
-fpath=($HOME/.dotfiles/zsh $fpath)
+fpath=($HOME/.config/zsh $fpath)
 
 zstyle :compinstall filename "$HOME/.zshrc"
 
