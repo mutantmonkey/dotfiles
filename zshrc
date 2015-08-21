@@ -120,6 +120,30 @@ function radio {
         radioq)
             stream_url=http://stream.radioq.de:8000/gross.mp3
             ;;
+        somafm-defcon)
+            # http://somafm.com/defcon/directstreamlinks.html
+            stream_url=http://uwstream3.somafm.com:6200
+            ;;
+        somafm-dronezone)
+            # http://somafm.com/dronezone/directstreamlinks.html
+            stream_url=http://uwstream2.somafm.com:8100
+            ;;
+        somafm-fluid)
+            # http://somafm.com/fluid/directstreamlinks.html
+            stream_url=http://uwstream2.somafm.com:9196
+            ;;
+        somafm-groovesalad)
+            # http://somafm.com/groovesalad/directstreamlinks.html
+            stream_url=http://uwstream2.somafm.com:3000
+            ;;
+        somafm-secretagent)
+            # http://somafm.com/secretagent/directstreamlinks.html
+            stream_url=http://xstream1.somafm.com:9010
+            ;;
+        somafm-spacestation)
+            # http://somafm.com/spacestation/directstreamlinks.html
+            stream_url=http://xstream1.somafm.com:8200
+            ;;
         startfm)
             stream_url=http://eteris.startfm.lt/startfm
             ;;
