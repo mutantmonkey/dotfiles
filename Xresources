@@ -11,8 +11,8 @@ dzen2.font:         DejaVu Sans Mono-9
 Xft.antialias:     true
 Xft.hinting:       true
 Xft.hintstyle:     hintfull
-Xft.rgba:          vrgb
-Xft.autohint:      true
+Xft.rgba:          rgb
+Xft.autohint:      false
 Xft.lcdfilter:     lcddefault
 ! }}}
 
