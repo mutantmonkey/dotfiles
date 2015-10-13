@@ -26,6 +26,7 @@ config_symlinks = alot/themes \
 	pacman/makepkg.conf \
 	ranger/rc.conf \
 	roxterm.sourceforge.net \
+	termite \
 	vim \
 	zsh
 
