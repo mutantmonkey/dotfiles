@@ -7,7 +7,6 @@ font pango:DejaVu Sans Mono, Icons 9
 
 # Window styles
 for_window [class="Chromium"]               border none
-for_window [class="Firefox"]                border none
 for_window [class="Gvim"]                   border none
 for_window [class="Roxterm"]                border none
 for_window [class="Sakura"]                 border none
@@ -15,11 +14,12 @@ for_window [class="SshAskpass"]             border none
 for_window [class="Termite"]                border none
 for_window [class="Xournal"]                border none
 for_window [class="hl2_linux"]              fullscreen
-for_window [class="mpv"]                    border none
+for_window [class="mpv"]                    border 1pixel
 for_window [class="openarena"]              border none
 for_window [class="st-256color"]            border none
 for_window [class="Sxiv"]                   border none
 for_window [class="ProjectM-pulseaudio"]    border none
+for_window [instance="Browser"]             border none
 
 # Colors {{{
 
