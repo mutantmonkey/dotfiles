@@ -179,6 +179,11 @@ function radio {
             # http://somafm.com/spacestation/directstreamlinks.html
             stream_url=http://xstream1.somafm.com:8200
             ;;
+        somafm-thetrip)
+            # http://somafm.com/thetrip/directstreamlinks.html
+            stream_url=http://xstream1.somafm.com:2504
+            #stream_url=http://uwstream3.somafm.com:2504
+            ;;
         startfm)
             stream_url=http://eteris.startfm.lt/startfm
             ;;
