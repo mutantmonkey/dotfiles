@@ -41,7 +41,7 @@ set $m Mod4
 floating_modifier $m
 
 # start a terminal
-bindsym $m+Shift+Return exec /usr/bin/termite
+bindsym $m+Shift+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $m+c kill
