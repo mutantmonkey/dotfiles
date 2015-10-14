@@ -5,6 +5,7 @@ home_symlinks = gnupg/gpg.conf \
 	ncmpcpp/bindings \
 	ncmpcpp/config \
 	profile \
+	terminfo \
 	tmux.conf \
 	weechat/perl \
 	weechat/alias.conf \
@@ -33,7 +34,7 @@ config_symlinks = alot/themes \
 all: install
 
 install: alot ansible compton.conf dunst gnupg gtk-2.0 gtk-3.0 i3 mpv \
-	roxterm.sourceforge.net tmux.conf vim Xkbmap Xresources \
+	roxterm.sourceforge.net terminfo termite tmux.conf vim Xkbmap Xresources \
 	zsh zshenv zshrc
 
 .PHONY: $(home_symlinks)
@@ -65,6 +66,10 @@ mpv: mpv/mpv.conf
 ncmpcpp: ncmpcpp/bindings ncmpcpp/config
 
 ranger: ranger/rc.conf
+
+terminfo: terminfo/x/xterm-termite
+
+termite: termite/config
 
 weechat: weechat/perl weechat/alias.conf weechat/plugins.conf
 
