@@ -1,7 +1,9 @@
 # default applications
-export EDITOR=/usr/bin/vim
-export SUDO_EDITOR=/usr/bin/rvim
-export PAGER="/usr/bin/less -r"
+export EDITOR=vim
+export PAGER=less
+export SUDO_EDITOR=rvim
+export TERMINAL=termite
+export VISUAL=vim
 
 # XDG directory standard
 export XDG_CONFIG_HOME="$HOME/.config"
