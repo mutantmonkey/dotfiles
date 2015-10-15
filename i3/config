@@ -37,42 +37,46 @@ client.background       #000000
 # Keybindings {{{
 set $m Mod4
 
+# use these keys for focus, movement, and resize directions when reaching for
+# the arrows is not convenient
+set $up k
+set $down j
+set $left h
+set $right l
+
 # use Mouse+$m to drag floating windows to their wanted position
 floating_modifier $m
 
 # start a terminal
+bindsym $m+Return exec i3-sensible-terminal
 bindsym $m+Shift+Return exec i3-sensible-terminal
 
 # kill focused window
-bindsym $m+c kill
-
-# border styles
-bindsym $m+a border none
-bindsym $m+s border normal
+bindsym $m+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $m+semicolon exec /usr/bin/dmenu_run -fn 'DejaVu Sans Mono-9' -nb '#3f3f3f' -nf '#dcdccc' -sb '#1e2320' -sf '#f0dfaf'
+bindsym $m+semicolon exec dmenu_run -fn 'DejaVu Sans Mono-9' -nb '#3f3f3f' -nf '#dcdccc' -sb '#1e2320' -sf '#f0dfaf'
 
 # lock screen with $m+x
-bindsym $m+x    exec /usr/bin/light-locker-command -l
+bindsym $m+x    exec light-locker-command -l
 
 # screenshot with PrintScrn
-bindsym Print   exec /usr/bin/canberra-gtk-play -i screen-capture; exec /usr/bin/scrot -e 'mv $f ~/screenshots/'
+bindsym Print   exec canberra-gtk-play -i screen-capture; exec scrot -e 'mv $f ~/screenshots/'
 
 # brightness keys
-bindsym XF86MonBrightnessUp    exec /usr/bin/xbacklight -steps 1 -inc 7
-bindsym XF86MonBrightnessDown  exec /usr/bin/xbacklight -steps 1 -dec 7
+bindsym XF86MonBrightnessUp    exec xbacklight -steps 1 -inc 7
+bindsym XF86MonBrightnessDown  exec xbacklight -steps 1 -dec 7
 
 # volume keys
-bindsym XF86AudioRaiseVolume   exec "/usr/bin/canberra-gtk-play -i audio-volume-change; /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -- +2%"
-bindsym XF86AudioLowerVolume   exec "/usr/bin/canberra-gtk-play -i audio-volume-change; /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -- -2%"
-bindsym XF86AudioMute          exec /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume   exec "canberra-gtk-play -i audio-volume-change; pactl set-sink-volume @DEFAULT_SINK@ -- +2%"
+bindsym XF86AudioLowerVolume   exec "canberra-gtk-play -i audio-volume-change; pactl set-sink-volume @DEFAULT_SINK@ -- -2%"
+bindsym XF86AudioMute          exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # change focus
-bindsym $m+h focus left
-bindsym $m+j focus down
-bindsym $m+k focus up
-bindsym $m+l focus right
+bindsym $m+$left focus left
+bindsym $m+$down focus down
+bindsym $m+$up focus up
+bindsym $m+$right focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $m+Left focus left
@@ -81,10 +85,10 @@ bindsym $m+Up focus up
 bindsym $m+Right focus right
 
 # move focused window
-bindsym $m+Shift+h move left
-bindsym $m+Shift+j move down
-bindsym $m+Shift+k move up
-bindsym $m+Shift+l move right
+bindsym $m+Shift+$left move left
+bindsym $m+Shift+$down move down
+bindsym $m+Shift+$up move up
+bindsym $m+Shift+$right move right
 
 # alternatively, you can use the cursor keys:
 bindsym $m+Shift+Left move left
@@ -102,18 +106,28 @@ bindsym $m+o split v
 bindsym $m+f fullscreen
 
 # change container layout (stacked, tabbed, default)
-bindsym $m+r layout stacking
-bindsym $m+t layout tabbed
-bindsym $m+y layout default
+bindsym $m+s layout stacking
+bindsym $m+w layout tabbed
+bindsym $m+e layout default
 
 # toggle tiling / floating
 bindsym $m+Shift+space floating toggle
 
+# change focus between tiling / floating windows
+bindsym $m+space focus mode_toggle
+
 # focus the parent container
-bindsym $m+u focus parent
+bindsym $m+a focus parent
 
 # focus the child container
-#bindsym $m+d focus child
+bindsym $m+d focus child
+
+# move the currently focused window to the scratchpad
+bindsym $m+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $m+minus scratchpad show
 
 # switch to workspace
 bindsym $m+1 workspace 1
@@ -140,11 +154,37 @@ bindsym $m+Shift+9 move workspace 9
 bindsym $m+Shift+0 move workspace 10
 
 # reload the configuration file
-bindsym $m+Shift+w reload
+bindsym $m+Shift+z reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $m+Shift+e restart
+bindsym $m+Shift+x restart
 # exit i3 (logs you out of your X session)
-bindsym $m+Shift+q exit
+bindsym $m+Shift+c exit
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym Mod1+r mode "resize"
 
 # move workspaces to other outputs
 bindsym $m+bracketleft move workspace to output left
@@ -169,7 +209,7 @@ bar {
     }
 }
 
-exec /usr/bin/start-pulseaudio-x11
-exec /usr/bin/compton
-exec /usr/bin/light-locker
-exec /usr/bin/gnome-keyring-daemon --start --components=secrets
+exec start-pulseaudio-x11
+exec compton
+exec light-locker
+exec gnome-keyring-daemon --start --components=secrets
