@@ -6,9 +6,7 @@
 setopt autocd
 
 # History {{{
-HISTFILE=~/.zsh_history
-HISTSIZE=50000
-SAVEHIST=50000
+unset HISTFILE
 setopt appendhistory
 # }}}
 
