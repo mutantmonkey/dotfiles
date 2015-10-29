@@ -196,7 +196,7 @@ bar {
     workspace_buttons yes
     tray_output       none
 
-    status_command    /usr/bin/mmbar-status
+    status_command  m2status
 
     colors {
         background #3f3f3f
