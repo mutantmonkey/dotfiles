@@ -26,6 +26,7 @@ config_symlinks = alot/themes \
 	mpv/mpv.conf \
 	pacman/makepkg.conf \
 	ranger/rc.conf \
+	ranger/rifle.conf \
 	roxterm.sourceforge.net \
 	termite \
 	vim \
@@ -65,7 +66,7 @@ mpv: mpv/mpv.conf
 
 ncmpcpp: ncmpcpp/bindings ncmpcpp/config
 
-ranger: ranger/rc.conf
+ranger: ranger/rc.conf ranger/rifle.conf
 
 terminfo: terminfo/x/xterm-termite
 
