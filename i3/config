@@ -19,7 +19,7 @@ for_window [class="openarena"]              border none
 for_window [class="st-256color"]            border none
 for_window [class="Sxiv"]                   border none
 for_window [class="ProjectM-pulseaudio"]    border none
-for_window [instance="Browser"]             border none
+for_window [class="Tor Browser"]            floating enable
 
 # Colors {{{
 
