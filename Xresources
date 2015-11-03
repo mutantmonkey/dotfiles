@@ -1,11 +1,7 @@
 *foreground:    #dcdccc
 *background:    #3f3f3f
 
-Xcursor.theme:     Vanilla-DMZ
-
-! dzen {{{
-dzen2.font:         DejaVu Sans Mono-9
-! }}}
+Xcursor.theme:  Adwaita
 
 ! xft {{{
 Xft.antialias:     true
