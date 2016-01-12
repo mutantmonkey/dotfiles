@@ -10,3 +10,6 @@
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/ferm"]
+	path = vim/bundle/ferm
+	url = https://github.com/cometsong/ferm.vim
