@@ -1,7 +1,8 @@
 LN_FLAGS = -sfnv
 MKDIR_FLAGS = -pv
 
-home_symlinks = gnupg/gpg.conf \
+home_symlinks = gnupg/dirmngr.conf \
+	gnupg/gpg.conf \
 	ncmpcpp/bindings \
 	ncmpcpp/config \
 	profile \
@@ -58,7 +59,7 @@ ansible: ansible/ansible.cfg
 
 dunst: dunst/dunstrc
 
-gnupg: gnupg/gpg.conf
+gnupg: gnupg/dirmngr.conf gnupg/gpg.conf
 
 gtk-2.0: gtk-2.0/gtkrc
 
