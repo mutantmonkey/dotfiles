@@ -70,3 +70,18 @@
             normal = '','','light gray','','light gray',''
             focus = 'standout','','black','dark cyan','black','dark cyan'
             width = 'weight', 1
+    [[threadline-unread]]
+        query = 'is:unread'
+        normal = 'standout','','light gray','','light gray','g27'
+        [[[date]]]
+            normal = '','','dark green','','dark green','g27'
+        [[[mailcount]]]
+            normal = '','','brown','','brown','g27'
+        [[[tags]]]
+            normal = '','','dark green','','dark green','g27'
+        [[[authors]]]
+            normal = '','','dark cyan','','dark cyan','g27'
+        [[[subject]]]
+            normal = '','','light gray','','light gray, bold','g27'
+        [[[content]]]
+            normal = '','','light gray','','light gray, bold','g27'
