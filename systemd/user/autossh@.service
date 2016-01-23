@@ -1,0 +1,6 @@
+[Service]
+Type=simple
+ExecStart=/usr/bin/autossh -M 0 -N %i
+
+[Install]
+WantedBy=default.target
