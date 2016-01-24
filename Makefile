@@ -39,8 +39,8 @@ config_symlinks = alot/themes \
 all: install
 
 install: alot ansible compton.conf dunst gnupg gtk-2.0 gtk-3.0 i3 mpv \
-	roxterm.sourceforge.net systemd terminfo termite tmux.conf vim Xkbmap \
-	Xresources zsh zshenv zshrc
+	ranger roxterm.sourceforge.net systemd terminfo termite tmux.conf vim \
+	Xkbmap Xresources zsh zshenv zshrc
 
 .PHONY: $(home_symlinks)
 $(home_symlinks):
