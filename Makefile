@@ -15,6 +15,9 @@ home_symlinks = gnupg/dirmngr.conf \
 	Xresources \
 	zshrc
 
+config_copy = systemd/user/autossh@.service \
+	systemd/user/gpg-agent.service
+
 config_symlinks = alot/themes \
 	ansible/ansible.cfg \
 	compton.conf \
@@ -29,8 +32,6 @@ config_symlinks = alot/themes \
 	ranger/rc.conf \
 	ranger/rifle.conf \
 	roxterm.sourceforge.net \
-	systemd/user/autossh@.service \
-	systemd/user/gpg-agent.service \
 	termite \
 	vim \
 	zsh
@@ -46,6 +47,12 @@ $(home_symlinks):
 	$(eval DESTDIR := $(shell dirname ~/.$@))
 	mkdir $(MKDIR_FLAGS) $(DESTDIR)
 	test -e $(CURDIR)/$@ && ln $(LN_FLAGS) $(CURDIR)/$@ ~/.$@
+
+.PHONY: $(config_copy)
+$(config_copy):
+	$(eval DESTDIR := $(shell dirname ~/.config/$@))
+	mkdir $(MKDIR_FLAGS) $(DESTDIR)
+	test -e $(CURDIR)/$@ && cp --remove-destination -p $(CURDIR)/$@ ~/.config/$@
 
 .PHONY: $(config_symlinks)
 $(config_symlinks):
