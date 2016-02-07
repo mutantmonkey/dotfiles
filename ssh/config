@@ -1,6 +1,9 @@
 Host *
     ServerAliveInterval 60
 
+    # use only specified identities, if applicable
+    IdentitiesOnly yes
+
     # https://stribika.github.io/2015/01/04/secure-secure-shell.html
     KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
     HostKeyAlgorithms ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-ed25519,ssh-rsa
