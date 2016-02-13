@@ -7,6 +7,7 @@ font pango:DejaVu Sans Mono, Icons 9
 
 # Window styles
 for_window [class="Chromium"]               border none
+for_window [class="Evince"]                 border none
 for_window [class="Gvim"]                   border none
 for_window [class="Roxterm"]                border none
 for_window [class="Sakura"]                 border none
