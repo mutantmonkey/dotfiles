@@ -62,7 +62,7 @@ bindsym $m+semicolon exec dmenu_run -fn 'DejaVu Sans Mono-9' -nb '#3f3f3f' -nf '
 bindsym $m+x    exec light-locker-command -l
 
 # screenshot with PrintScrn
-bindsym Print   exec canberra-gtk-play -i screen-capture; exec scrot -e 'mv $f ~/screenshots/'
+bindsym Print   exec canberra-gtk-play -i screen-capture; exec maim --opengl ~/screenshots/$(date +%F-%T).png
 
 # brightness keys
 bindsym XF86MonBrightnessUp    exec xbacklight -steps 1 -inc 7
