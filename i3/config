@@ -68,8 +68,8 @@ bindsym XF86MonBrightnessUp    exec xbacklight -steps 1 -inc 7
 bindsym XF86MonBrightnessDown  exec xbacklight -steps 1 -dec 7
 
 # volume keys
-bindsym XF86AudioRaiseVolume   exec "canberra-gtk-play -i audio-volume-change; pactl set-sink-volume @DEFAULT_SINK@ -- +2%"
-bindsym XF86AudioLowerVolume   exec "canberra-gtk-play -i audio-volume-change; pactl set-sink-volume @DEFAULT_SINK@ -- -2%"
+bindsym XF86AudioRaiseVolume   exec "canberra-gtk-play -i audio-volume-change; pactl set-sink-volume @DEFAULT_SINK@ +2%"
+bindsym XF86AudioLowerVolume   exec "canberra-gtk-play -i audio-volume-change; pactl set-sink-volume @DEFAULT_SINK@ -2%"
 bindsym XF86AudioMute          exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # change focus
