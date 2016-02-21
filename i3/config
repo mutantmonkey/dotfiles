@@ -55,8 +55,8 @@ bindsym $m+Shift+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $m+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $m+semicolon exec dmenu_run -fn 'DejaVu Sans Mono-9' -nb '#3f3f3f' -nf '#dcdccc' -sb '#1e2320' -sf '#f0dfaf'
+# start launcher
+bindsym $m+semicolon exec i3-dmenu-desktop --dmenu="bemenu --fn 'DejaVu Sans Mono 9' --tb '#1f1f1f' --tf '#9fafaf' --fb '#3f3f3f' --ff '#dcdccc' --nb '#3f3f3f' --nf '#dcdccc' --sb '#1e2320' --sf '#f0dfaf' --hf '#1e2320' --hf '#f0dfaf' -p ''"
 
 # lock screen with $m+x
 bindsym $m+x    exec light-locker-command -l
