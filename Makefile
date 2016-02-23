@@ -28,6 +28,7 @@ config_symlinks = alot/themes \
 	gtk-3.0/settings.ini \
 	i3 \
 	mpv/mpv.conf \
+	nvim/init.vim \
 	pacman/makepkg.conf \
 	ranger/rc.conf \
 	ranger/rifle.conf \
@@ -75,6 +76,8 @@ gtk-3.0: gtk-3.0/gtk.css gtk-3.0/settings.ini
 mpv: mpv/mpv.conf
 
 ncmpcpp: ncmpcpp/bindings ncmpcpp/config
+
+nvim: nvim/init.vim
 
 ranger: ranger/rc.conf ranger/rifle.conf
 
