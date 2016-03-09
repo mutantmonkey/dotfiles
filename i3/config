@@ -8,6 +8,7 @@ font pango:DejaVu Sans Mono, Icons 9
 # Gaps
 gaps inner 2
 gaps outer 1
+smart_gaps on
 
 # Window styles
 for_window [class="^.*"]                    border none
