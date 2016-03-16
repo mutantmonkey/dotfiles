@@ -3,7 +3,7 @@
 Xcursor.theme:      Adwaita
 Xft.antialias:      true
 Xft.hinting:        true
-Xft.hintstyle:      hintfull
+Xft.hintstyle:      hintslight
 Xft.rgba:           rgb
 Xft.autohint:       false
 Xft.lcdfilter:      lcddefault
