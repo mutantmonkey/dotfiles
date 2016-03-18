@@ -35,13 +35,14 @@ config_symlinks = alot/themes \
 	roxterm.sourceforge.net \
 	termite \
 	vim \
+	xpra \
 	zsh
 
 all: install
 
 install: alot ansible compton.conf dunst gnupg gtk-2.0 gtk-3.0 i3 mpv \
 	ranger roxterm.sourceforge.net systemd terminfo termite tmux.conf vim \
-	Xkbmap Xresources zsh zshenv zshrc
+	Xkbmap xpra Xresources zsh zshenv zshrc
 
 .PHONY: $(home_symlinks)
 $(home_symlinks):
@@ -88,6 +89,8 @@ terminfo: terminfo/x/xterm-termite
 termite: termite/config
 
 weechat: weechat/perl weechat/alias.conf weechat/plugins.conf
+
+xpra: xpra/xpra.conf
 
 zshenv:
 	test -e $(CURDIR)/profile && ln $(LN_FLAGS) $(CURDIR)/profile ~/.zshenv
