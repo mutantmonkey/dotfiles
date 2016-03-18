@@ -11,10 +11,10 @@ gaps outer 1
 smart_gaps on
 
 # Window styles
-for_window [class="^.*"]                    border none
+for_window [class="^.*"]                    border pixel 0
 for_window [class="hl2_linux"]              fullscreen
-for_window [class="mpv"]                    border 1pixel
 for_window [class="Tor Browser"]            floating enable
+for_window [class="xfreerdp"]               floating enable
 
 # Colors {{{
 
@@ -53,19 +53,19 @@ bindsym $m+Shift+q kill
 bindsym $m+semicolon exec i3-dmenu-desktop --dmenu="bemenu --fn 'DejaVu Sans Mono 9' --tb '#1f1f1f' --tf '#9fafaf' --fb '#3f3f3f' --ff '#dcdccc' --nb '#3f3f3f' --nf '#dcdccc' --sb '#1e2320' --sf '#f0dfaf' --hf '#1e2320' --hf '#f0dfaf' -p ''"
 
 # lock screen with $m+x
-bindsym $m+x    exec light-locker-command -l
+bindsym $m+x    exec --no-startup-id light-locker-command -l
 
 # screenshot with PrintScrn
-bindsym Print   exec canberra-gtk-play -i screen-capture; exec maim --opengl ~/screenshots/$(date +%F-%T).png
+bindsym Print   exec --no-startup-id "canberra-gtk-play -i screen-capture; maim --opengl ~/screenshots/$(date +%F-%T).png"
 
 # brightness keys
-bindsym XF86MonBrightnessUp    exec xbacklight -steps 1 -inc 7
-bindsym XF86MonBrightnessDown  exec xbacklight -steps 1 -dec 7
+bindsym XF86MonBrightnessUp    exec --no-startup-id xbacklight -steps 1 -inc 7
+bindsym XF86MonBrightnessDown  exec --no-startup-id xbacklight -steps 1 -dec 7
 
 # volume keys
-bindsym XF86AudioRaiseVolume   exec "canberra-gtk-play -i audio-volume-change; pactl set-sink-volume @DEFAULT_SINK@ +2%"
-bindsym XF86AudioLowerVolume   exec "canberra-gtk-play -i audio-volume-change; pactl set-sink-volume @DEFAULT_SINK@ -2%"
-bindsym XF86AudioMute          exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume   exec --no-startup-id "canberra-gtk-play -i audio-volume-change; pactl set-sink-volume @DEFAULT_SINK@ +2%"
+bindsym XF86AudioLowerVolume   exec --no-startup-id "canberra-gtk-play -i audio-volume-change; pactl set-sink-volume @DEFAULT_SINK@ -2%"
+bindsym XF86AudioMute          exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # change focus
 bindsym $m+$left focus left
@@ -204,7 +204,7 @@ bar {
     }
 }
 
-exec start-pulseaudio-x11
-exec compton
-exec light-locker
-exec gnome-keyring-daemon --start --components=secrets
+exec --no-startup-id start-pulseaudio-x11
+exec --no-startup-id compton
+exec --no-startup-id light-locker
+exec --no-startup-id gnome-keyring-daemon --start --components=secrets
