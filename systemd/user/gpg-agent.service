@@ -4,8 +4,9 @@ IgnoreOnIsolate=true
 
 [Service]
 Type=forking
-ExecStart=/usr/bin/gpg-agent --daemon --enable-ssh-support
+ExecStart=/usr/bin/gpg-agent --daemon
 KillSignal=SIGKILL
+Restart=on-abort
 
 [Install]
 WantedBy=default.target
