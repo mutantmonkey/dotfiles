@@ -17,7 +17,7 @@ export TASKRC="$XDG_CONFIG_HOME/task/taskrc"
 export XPRA_USER_CONF_DIRS="$XDG_CONFIG_HOME/xpra"
 
 # less config
-export LESS="-R -iMx4"
+export LESS="-FRSXMK"
 export LESSHISTFILE=-
 
 export GOPATH="$HOME/go"
