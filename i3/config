@@ -182,8 +182,10 @@ mode "resize" {
 bindsym Mod1+r mode "resize"
 
 # move workspaces to other outputs
-bindsym $m+bracketleft move workspace to output left
-bindsym $m+bracketright move workspace to output right
+bindsym Ctrl+$m+h move workspace to output left
+bindsym Ctrl+$m+j move workspace to output up
+bindsym Ctrl+$m+k move workspace to output down
+bindsym Ctrl+$m+l move workspace to output right
 # }}}
 
 bar {
