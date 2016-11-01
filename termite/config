@@ -21,6 +21,7 @@ cursor_shape = block
 
 # $BROWSER is used by default
 #browser = firefox
+browser = /usr/bin/true
 
 # set size hints for the window
 #size_hints = false
