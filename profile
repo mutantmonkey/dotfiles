@@ -21,4 +21,4 @@ export LESS="-FRSXMK"
 export LESSHISTFILE=-
 
 export GOPATH="$HOME/go"
-export PATH=$PATH:$HOME/bin
+export PATH="$PATH:$HOME/bin"
