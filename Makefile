@@ -42,7 +42,7 @@ all: install
 
 install: alot ansible compton.conf dunst gnupg gtk-2.0 gtk-3.0 i3 mpv \
 	ranger roxterm.sourceforge.net systemd terminfo termite tmux.conf vim \
-	Xkbmap xpra Xresources zsh zshenv zshrc
+	Xkbmap xpra Xresources zsh zprofile zshrc
 
 .PHONY: $(home_symlinks)
 $(home_symlinks):
@@ -92,5 +92,5 @@ weechat: weechat/perl weechat/alias.conf weechat/plugins.conf
 
 xpra: xpra/xpra.conf
 
-zshenv:
-	test -e $(CURDIR)/profile && ln $(LN_FLAGS) $(CURDIR)/profile ~/.zshenv
+zprofile:
+	test -e $(CURDIR)/profile && ln $(LN_FLAGS) $(CURDIR)/profile ~/.zprofile
