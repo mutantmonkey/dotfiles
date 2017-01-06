@@ -1,9 +1,17 @@
 # default applications
-export EDITOR=vim
 export PAGER=less
-export SUDO_EDITOR=rvim
 export TERMINAL=termite
-export VISUAL=vim
+
+# use nvim as the default editor if installed; otherwise, default to vim
+if [ -x /usr/bin/nvim ]; then
+    export EDITOR=nvim
+    export SUDO_EDITOR="nvim -Z"
+    export VISUAL=nvim
+else
+    export EDITOR=vim
+    export SUDO_EDITOR=rvim
+    export VISUAL=vim
+fi
 
 # XDG directory standard
 export XDG_CONFIG_HOME="$HOME/.config"
