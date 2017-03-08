@@ -55,7 +55,7 @@ bindsym $m+semicolon exec --no-startup-id i3-dmenu-desktop --dmenu="bemenu --fn 
 bindsym $m+x    exec --no-startup-id light-locker-command -l
 
 # screenshot with PrintScrn
-bindsym Print   exec --no-startup-id "canberra-gtk-play -i screen-capture; maim --opengl ~/screenshots/$(date +%F-%T).png"
+bindsym Print   exec --no-startup-id "canberra-gtk-play -i screen-capture; maim ~/screenshots/$(date +%F-%T).png"
 
 # brightness keys
 bindsym XF86MonBrightnessUp    exec --no-startup-id xbacklight -steps 1 -inc 7
