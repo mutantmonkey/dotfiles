@@ -61,6 +61,8 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 # alias mosh to ssh completions
 compdef mosh=ssh
 compdef mosh4=mosh
+
+type kubectl >/dev/null && source <(kubectl completion zsh)
 # }}}
 
 # Terminal colors {{{
