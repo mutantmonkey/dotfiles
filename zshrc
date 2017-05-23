@@ -94,6 +94,12 @@ export PROMPT2="$MAIN_COLOR... $RESET_COLOR"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gits="git status -sb"
 
+function lspath_byctime {
+    for dir in $@; do
+        print -lr -- $dir/*(Oc)
+    done
+}
+
 function virtenv {
     if [ -e $1 ]; then
         echo "Please specify the virtualenv as an argument."
