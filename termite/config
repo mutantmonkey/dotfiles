@@ -21,15 +21,20 @@ cursor_shape = block
 
 # $BROWSER is used by default
 #browser = firefox
+browser = /usr/bin/true
 
 # set size hints for the window
 #size_hints = false
+
+# Hide links that are no longer valid in url select overlay mode
+filter_unmatched_urls = true
 
 # emit escape sequences for other keys modified by Control
 #modify_other_keys = false
 
 [colors]
 #cursor = #dcdccc
+#cursor_foreground = #dcdccc
 foreground = #dcdccc
 foreground_bold = #ffffff
 background = #3f3f3f
