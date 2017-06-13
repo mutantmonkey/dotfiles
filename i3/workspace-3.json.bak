@@ -1,0 +1,71 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 2100,
+               "width": 3820,
+               "x": 10,
+               "y": 50
+            },
+            "name": "Signal",
+            "percent": 0.5,
+            "swallows": [
+               {
+                 "class": "^Signal$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 2100,
+               "width": 1272,
+               "x": 1284,
+               "y": 50
+            },
+            "name": "Telegram",
+            "percent": 0.5,
+            "swallows": [
+               {
+                 "class": "^TelegramDesktop$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 0,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 2100,
+       "width": 1906,
+       "x": 1924,
+       "y": 50
+    },
+    "name": "WhatsApp",
+    "percent": 0.5,
+    "swallows": [
+       {
+         "class": "^Chromium$",
+         "instance": "^web\\.whatsapp\\.com$"
+       }
+    ],
+    "type": "con"
+}
+
