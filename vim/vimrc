@@ -153,3 +153,4 @@ let g:snips_email = 'mutantmonkey@mutantmonkey.in'
 
 " }}}
 
+autocmd BufRead,BufNewFile PKGBUILD setlocal ts=2 sw=2 et
