@@ -27,6 +27,7 @@ config_symlinks = alot/themes \
 	gtk-3.0/gtk.css \
 	gtk-3.0/settings.ini \
 	i3 \
+	i3status \
 	mpv/mpv.conf \
 	nvim/init.vim \
 	pacman/makepkg.conf \
@@ -73,6 +74,8 @@ gnupg: gnupg/dirmngr.conf gnupg/gpg.conf
 gtk-2.0: gtk-2.0/gtkrc
 
 gtk-3.0: gtk-3.0/gtk.css gtk-3.0/settings.ini
+
+i3status: i3status
 
 mpv: mpv/mpv.conf
 

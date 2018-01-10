@@ -1,0 +1,29 @@
+general {
+    colors = true
+    color_good = "#7f9f7f"
+    color_degraded = "#e37170"
+    color_bad = "#e37170"
+    interval = 5
+}
+
+order += "wireless wlp3s0"
+order += "battery 0"
+order += "tztime local"
+
+wireless wlp3s0 {
+    format_up = "  %essid"
+    format_down = ""
+    color_good = "#dfaf8f"
+    color_degraded = "#dfaf8f"
+    color_bad = "#dfaf8f"
+}
+
+battery 0 {
+    format = "  %percentage"
+    format_down = ""
+    low_threshold = 10
+}
+
+tztime local {
+    format = "  %a %d %b %H:%M"
+}
