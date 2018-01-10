@@ -91,6 +91,9 @@ unignore from date subject to cc
 set beep     = yes
 set beep_new = yes
 
+# send notification on new mail
+set new_mail_command = "notify-send --icon=mail-message-new 'New Mail' '%n new messages, %u unread.' &"
+
 # Presentation {{{
 # disable line wrap markers
 set markers    = no
