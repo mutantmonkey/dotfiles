@@ -33,6 +33,7 @@ config_symlinks = alot/themes \
 	pacman/makepkg.conf \
 	ranger/rc.conf \
 	ranger/rifle.conf \
+	rofi \
 	roxterm.sourceforge.net \
 	termite \
 	vim \
@@ -41,9 +42,9 @@ config_symlinks = alot/themes \
 
 all: install
 
-install: alot ansible compton.conf dunst gnupg gtk-2.0 gtk-3.0 i3 mpv \
-	ranger roxterm.sourceforge.net systemd terminfo termite tmux.conf vim \
-	Xkbmap xpra Xresources zsh zprofile zshrc
+install: alot ansible compton.conf dunst gnupg gtk-2.0 gtk-3.0 i3 i3status \
+	mpv nvim ranger rofi roxterm.sourceforge.net systemd terminfo termite \
+	tmux.conf vim Xkbmap xpra Xresources zsh zprofile zshrc
 
 .PHONY: $(home_symlinks)
 $(home_symlinks):

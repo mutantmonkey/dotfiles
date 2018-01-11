@@ -49,7 +49,7 @@ bindsym $m+Shift+Return exec i3-sensible-terminal
 bindsym $m+Shift+q kill
 
 # start launcher
-bindsym $m+semicolon exec --no-startup-id i3-dmenu-desktop --dmenu="bemenu --fn 'DejaVu Sans Mono 9' --tb '#1f1f1f' --tf '#9fafaf' --fb '#3f3f3f' --ff '#dcdccc' --nb '#3f3f3f' --nf '#dcdccc' --sb '#1e2320' --sf '#f0dfaf' --hf '#1e2320' --hf '#f0dfaf' -p ''"
+bindsym $m+semicolon exec rofi -show drun
 
 # lock screen with $m+x
 bindsym $m+x    exec --no-startup-id light-locker-command -l
