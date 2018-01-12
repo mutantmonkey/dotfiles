@@ -48,7 +48,7 @@ configuration {
 /*	window-format: "{w}    {i}{c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
-	theme: "android_notification";
+	theme: "zenburn";
 /*	color-normal: ;*/
 /*	color-urgent: ;*/
 /*	color-active: ;*/
