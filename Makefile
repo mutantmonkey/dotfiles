@@ -3,8 +3,6 @@ MKDIR_FLAGS = -pv
 
 home_symlinks = gnupg/dirmngr.conf \
 	gnupg/gpg.conf \
-	ncmpcpp/bindings \
-	ncmpcpp/config \
 	profile \
 	terminfo \
 	tmux.conf \
@@ -29,6 +27,8 @@ config_symlinks = alot/themes \
 	i3 \
 	i3status \
 	mpv/mpv.conf \
+	ncmpcpp/bindings \
+	ncmpcpp/config \
 	nvim/init.vim \
 	pacman/makepkg.conf \
 	ranger/rc.conf \
