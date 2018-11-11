@@ -52,7 +52,7 @@ bindsym $m+Shift+q kill
 bindsym $m+semicolon exec rofi -show drun
 
 # lock screen with $m+x
-bindsym $m+x    exec --no-startup-id light-locker-command -l
+bindsym $m+x    exec --no-startup-id xset s activate
 
 # screenshot with PrintScrn
 bindsym Print   exec --no-startup-id "canberra-gtk-play -i screen-capture; maim ~/screenshots/$(date +%F-%T).png"
@@ -207,5 +207,5 @@ bar {
 
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id compton
-exec --no-startup-id light-locker
+exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- env XSECURELOCK_SHOW_HOSTNAME=0 XSECURELOCK_SHOW_USERNAME=0 xsecurelock
 exec --no-startup-id gnome-keyring-daemon --start --components=secrets
