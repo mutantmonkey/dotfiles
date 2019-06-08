@@ -1,0 +1,251 @@
+################################################################################
+# sway/config - sway configuration
+################################################################################
+
+# font for window titles
+font pango:DejaVu Sans Mono, Icons 9
+
+# Gaps
+gaps inner 8
+gaps outer 2
+
+# Window styles
+#for_window [class="^.*"]                    border pixel 0
+for_window [class="hl2_linux"]              fullscreen
+for_window [class="Tor Browser"]            floating enable
+for_window [class="xfreerdp"]               floating enable
+for_window [app_id="termite"]                border pixel 0
+
+# Window assignments
+assign [class="Tor Browser" title="^.* on casual$"] → 2
+assign [instance="web.whatsapp.com"] → 3
+assign [class="Signal"] → 3
+assign [class="ricochet"] → 3
+assign [class="TelegramDesktop"] → 3
+#assign [class="Pavucontrol"] → 3
+
+output eDP-1 disable
+output DP-4 res 3840x2160 scale 2
+
+# FIXME: ideally this should be random
+output * bg /home/mutantmonkey/wallpapers/4k/04016_cosmologicalmasterpiece_3840x2160.jpg fill #3f3f3f
+
+# Workspace output
+workspace  1 output DP-3
+workspace  2 output DP-3
+workspace  3 output DP-3
+workspace  4 output DP-3
+workspace  5 output DP-3
+workspace  6 output DP-3
+workspace  7 output DP-3
+workspace  8 output DP-3
+workspace  9 output DP-3
+#workspace 10 output DP-3
+
+# Colors {{{
+
+# class                 border  bg      fg      indicator title
+client.focused          #1f1f1f #1f1f1f #dcdccc #9fafaf   #1f1f1f
+client.focused_inactive #3f3f3f #3f3f3f #5b605e #9fafaf   #1f1f1f
+client.unfocused        #3f3f3f #3f3f3f #5b605e #9fafaf   #1f1f1f
+client.urgent           #dca3a3 #3f3f3f #dca3a3 #9fafaf   #1f1f1f
+client.placeholder      #3f3f3f #3f3f3f #5b605e #9fafaf   #1f1f1f
+
+client.background       #000000
+
+# }}}
+
+# Keybindings {{{
+set $m Mod4
+
+# use these keys for focus, movement, and resize directions when reaching for
+# the arrows is not convenient
+set $up k
+set $down j
+set $left h
+set $right l
+
+# use Mouse+$m to drag floating windows to their wanted position
+floating_modifier $m
+
+# start a terminal
+bindsym $m+Return exec i3-sensible-terminal
+bindsym $m+Shift+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $m+Shift+q kill
+
+# start launcher
+#bindsym $m+semicolon exec rofi -show drun
+bindsym $m+semicolon exec i3-dmenu-desktop --dmenu='bemenu --fn "DejaVu Sans Mono 10" -p drun -l 15 --tb \#3f3f3f --tf \#dcdccc --fb \#3f3f3f --ff \#dcdccc --nb \#3f3f3f --nf \#dcdccc --hb \#2f2f2f --hf \#dcdccc --sb \#3f3f3f --sf \#dcdccc --scb \#262626 --sf \#dcdccc'
+
+# lock screen with $m+x
+# XXX: investigate if this is the best way or not
+bindsym $m+x    exec --no-startup-id swaylock -c 000000
+
+# screenshot with PrintScrn
+bindsym Print   exec --no-startup-id "canberra-gtk-play -i screen-capture; grim -o ~/screenshots/$(date +%F-%T).png"
+
+# brightness keys
+# FIXME: this doesn't work with wayland
+#bindsym XF86MonBrightnessUp    exec --no-startup-id xbacklight -steps 1 -inc 7
+#bindsym XF86MonBrightnessDown  exec --no-startup-id xbacklight -steps 1 -dec 7
+
+# volume keys
+bindsym XF86AudioRaiseVolume   exec --no-startup-id "canberra-gtk-play -i audio-volume-change; pactl set-sink-volume @DEFAULT_SINK@ +2%"
+bindsym XF86AudioLowerVolume   exec --no-startup-id "canberra-gtk-play -i audio-volume-change; pactl set-sink-volume @DEFAULT_SINK@ -2%"
+bindsym XF86AudioMute          exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# volume keys for rtp stream
+bindsym Shift+XF86AudioRaiseVolume   exec --no-startup-id rtpvol.sh up
+bindsym Shift+XF86AudioLowerVolume   exec --no-startup-id rtpvol.sh down
+bindsym Shift+XF86AudioMute          exec --no-startup-id rtpvol.sh mute
+
+# change focus
+bindsym $m+$left focus left
+bindsym $m+$down focus down
+bindsym $m+$up focus up
+bindsym $m+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $m+Left focus left
+bindsym $m+Down focus down
+bindsym $m+Up focus up
+bindsym $m+Right focus right
+
+# move focused window
+bindsym $m+Shift+$left move left
+bindsym $m+Shift+$down move down
+bindsym $m+Shift+$up move up
+bindsym $m+Shift+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym $m+Shift+Left move left
+bindsym $m+Shift+Right move right
+bindsym $m+Shift+Down move down
+bindsym $m+Shift+Up move up
+
+# split in horizontal orientation
+bindsym $m+i split h
+
+# split in vertical orientation
+bindsym $m+o split v
+
+# enter fullscreen mode for the focused container
+bindsym $m+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym $m+s layout stacking
+bindsym $m+w layout tabbed
+bindsym $m+e layout default
+
+# toggle tiling / floating
+bindsym $m+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $m+space focus mode_toggle
+
+# focus the parent container
+bindsym $m+a focus parent
+
+# focus the child container
+bindsym $m+d focus child
+
+# move the currently focused window to the scratchpad
+bindsym $m+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $m+minus scratchpad show
+
+# switch to workspace
+bindsym $m+1 workspace 1
+bindsym $m+2 workspace 2
+bindsym $m+3 workspace 3
+bindsym $m+4 workspace 4
+bindsym $m+5 workspace 5
+bindsym $m+6 workspace 6
+bindsym $m+7 workspace 7
+bindsym $m+8 workspace 8
+bindsym $m+9 workspace 9
+bindsym $m+0 workspace 10
+
+# move focused container to workspace
+bindsym $m+Shift+1 move workspace 1
+bindsym $m+Shift+2 move workspace 2
+bindsym $m+Shift+3 move workspace 3
+bindsym $m+Shift+4 move workspace 4
+bindsym $m+Shift+5 move workspace 5
+bindsym $m+Shift+6 move workspace 6
+bindsym $m+Shift+7 move workspace 7
+bindsym $m+Shift+8 move workspace 8
+bindsym $m+Shift+9 move workspace 9
+bindsym $m+Shift+0 move workspace 10
+
+# reload the configuration file
+bindsym $m+Shift+z exec swaymsg reload
+# restart sway inplace (preserves your layout/session, can be used to upgrade sway)
+bindsym $m+Shift+x exec swaymsg restart
+# exit sway (logs you out of your session)
+bindsym $m+Shift+c exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your session.' -b 'Yes, exit sway' 'swaymsg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym Mod1+r mode "resize"
+
+# move workspaces to other outputs
+bindsym Ctrl+$m+h move workspace to output left
+bindsym Ctrl+$m+j move workspace to output up
+bindsym Ctrl+$m+k move workspace to output down
+bindsym Ctrl+$m+l move workspace to output right
+# }}}
+
+bar {
+    position          top
+    workspace_buttons yes
+    tray_output       none
+
+    #swaybar_command waybar
+    status_command  i3status
+
+    colors {
+        background #3f3f3f
+        statusline #dcdccc
+
+        focused_workspace  #1e1e1e #1e1e1e #b6bf98
+        active_workspace   #3f3f3f #3f3f3f #b6bf98
+        inactive_workspace #3f3f3f #3f3f3f #9fafaf
+        urgent_workspace   #3d3535 #3d3535 #e37170
+    }
+}
+
+exec --no-startup-id pulseaudio --start
+exec --no-startup-id swayidle -w \
+         timeout 300 'swaylock -f -c 000000' \
+         lock 'swaylock -f -c 000000'
+exec --no-startup-id gnome-keyring-daemon --start --components=secrets
+exec --no-startup-id systemctl --user import-environment GTK2_RC_FILES
+exec --no-startup-id dbus-update-activation-environment --systemd GDK_SCALE GDK_DPI_SCALE
+exec --no-startup-id home.sh
