@@ -6,12 +6,12 @@ general {
     interval = 5
 }
 
-order += "wireless wlp3s0"
+order += "wireless wlp4s0"
 order += "battery 0"
 order += "tztime local"
 
-wireless wlp3s0 {
-    format_up = "  %essid"
+wireless wlp4s0 {
+    format_up = " %essid"
     format_down = ""
     color_good = "#dfaf8f"
     color_degraded = "#dfaf8f"
@@ -19,11 +19,11 @@ wireless wlp3s0 {
 }
 
 battery 0 {
-    format = "  %percentage"
+    format = " %percentage"
     format_down = ""
     low_threshold = 10
 }
 
 tztime local {
-    format = "  %a %d %b %H:%M"
+    format = " %a %d %b %H:%M"
 }
