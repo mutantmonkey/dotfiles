@@ -39,8 +39,8 @@ set ssl_starttls  = yes
 set ssl_force_tls = yes
 
 # Do not use system certs, check manually
-set ssl_usesystemcerts	= no
-set certificate_file	= ~/.mutt/certificates
+#set ssl_usesystemcerts	= no
+#set certificate_file	= ~/.mutt/certificates
 
 # IMAP settings
 set imap_check_subscribed = yes
@@ -63,9 +63,6 @@ macro pager \cb "<pipe-entry>'urlscan'<enter>"  "follow links with urlscan"
 folder-hook .      'macro index,pager d "<save-message>=Trash<enter><enter>"'
 folder-hook =spam  'macro index,pager d <delete-message>'
 folder-hook =Trash 'macro index,pager d <delete-message>'
-
-# sign emails
-set pgp_autosign = yes
 
 # status bar color
 color status white blue
