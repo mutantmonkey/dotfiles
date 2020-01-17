@@ -95,6 +95,7 @@ bindsym Print   exec --no-startup-id "canberra-gtk-play -i screen-capture; grim 
 bindsym XF86AudioRaiseVolume   exec --no-startup-id "canberra-gtk-play -i audio-volume-change; pactl set-sink-volume @DEFAULT_SINK@ +2%"
 bindsym XF86AudioLowerVolume   exec --no-startup-id "canberra-gtk-play -i audio-volume-change; pactl set-sink-volume @DEFAULT_SINK@ -2%"
 bindsym XF86AudioMute          exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute       exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # volume keys for rtp stream
 bindsym Shift+XF86AudioRaiseVolume   exec --no-startup-id rtpvol.sh up
