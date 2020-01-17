@@ -19,9 +19,15 @@ wireless wlp4s0 {
 }
 
 battery 0 {
-    format = " %percentage"
+    format = "%status %percentage"
     format_down = ""
-    low_threshold = 10
+    status_chr = ""
+    status_bat = ""
+    status_unk = ""
+    status_full = ""
+    low_threshold = 30
+    threshold_type = time
+    integer_battery_capacity = true
 }
 
 tztime local {
