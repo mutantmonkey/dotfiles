@@ -18,7 +18,6 @@ config_copy = systemd/user/autossh@.service \
 
 config_symlinks = alot/themes \
 	ansible/ansible.cfg \
-	compton.conf \
 	cower/config \
 	dunst/dunstrc \
 	gtk-2.0/gtkrc \
@@ -31,6 +30,7 @@ config_symlinks = alot/themes \
 	ncmpcpp/config \
 	nvim/init.vim \
 	pacman/makepkg.conf \
+	picom.conf \
 	ranger/rc.conf \
 	ranger/rifle.conf \
 	rofi \
@@ -42,8 +42,8 @@ config_symlinks = alot/themes \
 
 all: install
 
-install: alot ansible compton.conf dunst gnupg gtk-2.0 gtk-3.0 i3 i3status \
-	mpv nvim ranger rofi roxterm.sourceforge.net systemd terminfo termite \
+install: alot ansible dunst gnupg gtk-2.0 gtk-3.0 i3 i3status mpv nvim \
+	picom.conf ranger rofi roxterm.sourceforge.net systemd terminfo termite \
 	tmux.conf vim Xkbmap xpra Xresources zsh zprofile zshrc
 
 .PHONY: $(home_symlinks)

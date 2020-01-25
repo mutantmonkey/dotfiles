@@ -207,6 +207,6 @@ bar {
 }
 
 exec --no-startup-id start-pulseaudio-x11
-exec --no-startup-id compton
+exec --no-startup-id picom
 exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- env XSECURELOCK_SHOW_HOSTNAME=0 XSECURELOCK_SHOW_USERNAME=0 xsecurelock
 exec --no-startup-id gnome-keyring-daemon --start --components=secrets
