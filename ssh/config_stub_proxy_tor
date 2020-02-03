@@ -1,0 +1,2 @@
+VerifyHostKeyDNS no
+ProxyCommand ncat --nodns --proxy 127.0.0.1:9050 --proxy-type socks5 --proxy-auth %h:ssh_%p %h %p

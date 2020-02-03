@@ -1,7 +1,5 @@
 Host *.onion
-    VerifyHostKeyDNS no
-    #ProxyCommand nc -X 5 -x 127.0.0.1:9050 %h %p
-    ProxyCommand ncat --nodns --proxy 127.0.0.1:9050 --proxy-type socks5 --proxy-auth %h:ssh_%p %h %p
+    Include config_stub_proxy_tor
 
 Host *
     ServerAliveInterval 60
