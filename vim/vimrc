@@ -21,7 +21,7 @@ set clipboard=unnamedplus           " Use X11 clipboard for + register
 " Color Settings {{{
 set t_Co=256						" Use 256 colors
 
-if $TERM =~ "256color" || $TERM == "xterm-termite" || has('gui_running')
+if $TERM =~ "256color" || $TERM == "xterm-termite" || $TERM == "alacritty" || has('gui_running')
 	colorscheme zenburn
 endif
 " }}}
