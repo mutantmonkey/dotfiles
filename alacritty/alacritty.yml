@@ -1,0 +1,34 @@
+window:
+  decorations: none
+
+font:
+  size: 10
+
+colors:
+  primary:
+    background: '0x3f3f3f'
+    foreground: '0xdcdccc'
+    bright_foreground: '0xffffff'
+  selection:
+    background: '0x2f2f2f'
+  normal:
+    black:   '0x3f3f3f'
+    red:     '0x705050'
+    green:   '0x60b48a'
+    yellow:  '0xdfaf8f'
+    blue:    '0x506070'
+    magenta: '0xdc8cc3'
+    cyan:    '0x8cd0d3'
+    white:   '0xdcdccc'
+  bright:
+    black:   '0x709080'
+    red:     '0xdca3a3'
+    green:   '0xc3bf9f'
+    yellow:  '0xf0dfaf'
+    blue:    '0x94bff3'
+    magenta: '0xec93d3'
+    cyan:    '0x93e0e3'
+    white:   '0xffffff'
+
+mouse:
+  hide_when_typing: true

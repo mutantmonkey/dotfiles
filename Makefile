@@ -16,7 +16,8 @@ home_symlinks = gnupg/dirmngr.conf \
 config_copy = systemd/user/autossh@.service \
 	systemd/user/gpg-agent.service
 
-config_symlinks = alot/themes \
+config_symlinks = alacritty \
+	alot/themes \
 	ansible/ansible.cfg \
 	cower/config \
 	dunst/dunstrc \
@@ -42,9 +43,9 @@ config_symlinks = alot/themes \
 
 all: install
 
-install: alot ansible dunst gnupg gtk-2.0 gtk-3.0 i3 i3status mpv nvim \
-	picom.conf ranger rofi roxterm.sourceforge.net systemd terminfo termite \
-	tmux.conf vim Xkbmap xpra Xresources zsh zprofile zshrc
+install: alacritty alot ansible dunst gnupg gtk-2.0 gtk-3.0 i3 i3status mpv \
+	nvim picom.conf ranger rofi roxterm.sourceforge.net systemd terminfo \
+	termite tmux.conf vim Xkbmap xpra Xresources zsh zprofile zshrc
 
 .PHONY: $(home_symlinks)
 $(home_symlinks):
@@ -63,6 +64,8 @@ $(config_symlinks):
 	$(eval DESTDIR := $(shell dirname ~/.config/$@))
 	mkdir $(MKDIR_FLAGS) $(DESTDIR)
 	test -e $(CURDIR)/$@ && ln $(LN_FLAGS) $(CURDIR)/$@ ~/.config/$@
+
+alacritty: alacritty/alacritty.yml
 
 alot: alot/themes
 
