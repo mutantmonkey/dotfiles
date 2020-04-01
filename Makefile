@@ -13,8 +13,7 @@ home_symlinks = gnupg/dirmngr.conf \
 	Xresources \
 	zshrc
 
-config_copy = systemd/user/autossh@.service \
-	systemd/user/gpg-agent.service
+config_copy = systemd/user/autossh@.service
 
 config_symlinks = alacritty \
 	alot/themes \
@@ -89,7 +88,7 @@ nvim: nvim/init.vim
 
 ranger: ranger/rc.conf ranger/rifle.conf
 
-systemd: systemd/user/autossh@.service systemd/user/gpg-agent.service
+systemd: systemd/user/autossh@.service
 
 terminfo: terminfo/x/xterm-termite
 
