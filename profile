@@ -30,3 +30,5 @@ export LESSHISTFILE=-
 
 export GOPATH="$HOME/go"
 export PATH="$PATH:$HOME/bin"
+
+export WORMHOLE_TRANSIT_RELAY=wss://relay.magic-wormhole.io/v1
