@@ -21,12 +21,14 @@ set clipboard=unnamedplus           " Use X11 clipboard for + register
 " Color Settings {{{
 set t_Co=256						" Use 256 colors
 
-if $TERM =~ "256color" || $TERM == "xterm-termite" || $TERM == "alacritty" || has('gui_running')
+if $TERM =~ "256color" || $TERM == "xterm-termite" || $TERM == "alacritty" || has('gui_running') || has('nvim')
 	colorscheme zenburn
 endif
 " }}}
 
 " GUI Settings {{{
+set guifont=DejaVu_Sans_Mono:h24
+
 if has("gui_running")
 	set guioptions-=t				" Disable tear-off menus
 
