@@ -27,7 +27,7 @@ endif
 " }}}
 
 " GUI Settings {{{
-set guifont=DejaVu_Sans_Mono:h24
+set guifont=DejaVu\ Sans\ Mono:h24
 
 if has("gui_running")
 	set guioptions-=t				" Disable tear-off menus
