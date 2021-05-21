@@ -15,6 +15,22 @@ for_window [class="hl2_linux"]              fullscreen
 for_window [class="Tor Browser"]            floating enable
 for_window [class="xfreerdp"]               floating enable
 
+for_window [class="firefox" window_role="About"]                  floating enable
+for_window [class="firefoxdeveloperedition" window_role="About"]  floating enable
+for_window [class="Nightly" window_role="About"]                  floating enable
+
+#for_window [window_role="termite-tmux"]                         move scratchpad
+#for_window [window_role="termite-music"]                        move scratchpad
+#for_window [instance="crx_bikioccmkafdpakkkcpdbppfkghcmihk"]    move scratchpad
+
+# Window assignments
+assign [class="Tor Browser" title="^.* on casual$"] → 2
+assign [class="WhatsApp"] → 3
+assign [class="Signal"] → 3
+assign [class="ricochet"] → 3
+assign [class="TelegramDesktop"] → 3
+#assign [class="Pavucontrol"] → 3
+
 # Colors {{{
 
 # class                 border  bg      fg      indicator
@@ -42,8 +58,8 @@ set $right l
 floating_modifier $m
 
 # start a terminal
-bindsym $m+Return exec i3-sensible-terminal
-bindsym $m+Shift+Return exec i3-sensible-terminal
+bindsym $m+Return exec --no-startup-id i3-sensible-terminal
+bindsym $m+Shift+Return exec --no-startup-id i3-sensible-terminal
 
 # kill focused window
 bindsym $m+Shift+q kill
