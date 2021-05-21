@@ -1,6 +1,6 @@
 # default applications
 export PAGER=less
-export TERMINAL=termite
+export TERMINAL=alacritty
 
 # use nvim as the default editor if installed; otherwise, default to vim
 if [ -x /usr/bin/nvim ]; then
