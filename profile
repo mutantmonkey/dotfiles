@@ -5,7 +5,7 @@ export TERMINAL=alacritty
 # use nvim as the default editor if installed; otherwise, default to vim
 if [ -x /usr/bin/nvim ]; then
     export EDITOR=nvim
-    export SUDO_EDITOR="nvim -Z"
+    export SUDO_EDITOR=nvim
     export VISUAL=nvim
 else
     export EDITOR=vim
