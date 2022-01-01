@@ -5,6 +5,10 @@
 # Color theme
 include ~/.config/task/zenburn-256.theme
 
+# Directories
+data.location=$XDG_DATA_HOME/task/
+hooks.location=$XDG_CONFIG_HOME/task/hooks/
+
 # Date format
 dateformat=Y-M-DTH:N
 dateformat.edit=Y-M-D H:N
