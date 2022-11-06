@@ -1,0 +1,94 @@
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    // "height": 20, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["mpd", "pulseaudio", "network", "battery", "clock"],
+    // Modules configuration
+    // "sway/workspaces": {
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+    //     "format": "{name}: {icon}",
+    //     "format-icons": {
+    //         "1": "",
+    //         "2": "",
+    //         "3": "",
+    //         "4": "",
+    //         "5": "",
+    //         "urgent": "",
+    //         "focused": "",
+    //         "default": ""
+    //     }
+    // },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/window": {
+        "format": "{}",
+        "rewrite": {
+            "(.*) — Mozilla Firefox": " $1",
+            "(.*) - Mozilla Thunderbird": "<span font_desc='Icons'></span> $1"
+        }
+    },
+    "mpd": {
+        "format": "<span font_desc='Icons'></span> {artist} - {title}",
+        "format-disconnected": "",
+        "format-stopped": "",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "tooltip-format": "MPD (connected): {artist} - {album} - {title}",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": " {:%a %d %b %H:%M}",
+        "format-alt": " {:%Y-%m-%d %H:%M}"
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "<span font_desc='Icons'>{icon}</span> {capacity}%",
+        "format-charging": "<span font_desc='Icons'></span> {capacity}%",
+        "format-plugged": "<span font_desc='Icons'></span> {capacity}%",
+        "format-alt": "<span font_desc='Icons'></span> {time}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", ""]
+    },
+    "network": {
+        "interface": "wlp4s0",
+        "format": "",
+        "format-wifi": "<span font_desc='Icons'></span> {essid}",
+        "tooltip-format": "{ifname}: {signaldBm} dBm"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    }
+}
