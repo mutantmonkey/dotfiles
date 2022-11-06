@@ -73,7 +73,7 @@ if [ "$TERM" != "dumb" ]; then
     alias dir='ls --color=auto --group-directories-first -F'
 
     # grep color
-    export GREP_COLOR="1;33"
+    export GREP_COLORS="mt=1;33"
     alias grep='grep --color=auto'
 fi
 # }}}
