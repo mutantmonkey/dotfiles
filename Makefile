@@ -34,17 +34,17 @@ config_symlinks = alacritty \
 	ranger/rc.conf \
 	ranger/rifle.conf \
 	rofi \
-	roxterm.sourceforge.net \
-	termite \
+	sway \
 	vim \
+	waybar \
 	xpra \
 	zsh
 
 all: install
 
 install: alacritty alot ansible dunst gnupg gtk-2.0 gtk-3.0 i3 i3status mpv \
-	nvim picom.conf ranger rofi roxterm.sourceforge.net systemd terminfo \
-	termite tmux.conf vim Xkbmap xpra Xresources zsh zprofile zshrc
+	nvim picom.conf ranger rofi sway systemd terminfo \
+	tmux.conf vim waybar Xkbmap xpra Xresources zsh zprofile zshrc
 
 .PHONY: $(home_symlinks)
 $(home_symlinks):
@@ -91,8 +91,6 @@ ranger: ranger/rc.conf ranger/rifle.conf
 systemd: systemd/user/autossh@.service
 
 terminfo: terminfo/x/xterm-termite
-
-termite: termite/config
 
 weechat: weechat/perl weechat/alias.conf weechat/plugins.conf
 
