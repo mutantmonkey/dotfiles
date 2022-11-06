@@ -3,44 +3,38 @@
 ################################################################################
 
 # font for window titles
-font pango:DejaVu Sans Mono, Icons 9
+font pango:DejaVu Sans Mono, Icons 14
 
 # Gaps
-gaps inner 8
-gaps outer 2
+gaps inner 4
+gaps outer 1
+smart_gaps on
 
 # Window styles
 #for_window [class="^.*"]                    border pixel 0
 for_window [class="hl2_linux"]              fullscreen
-for_window [class="Tor Browser"]            floating enable
+for_window [class="Tor Browser"]            floating enable,border none
 for_window [class="xfreerdp"]               floating enable
-for_window [app_id="termite"]                border pixel 0
+for_window [app_id="termite"]               border none
+for_window [class="firefox"]                border none
+for_window [app_id="firefox"]               border none
+for_window [app_id="neovide"]               border none
+for_window [app_id="thunderbird"]           border none
+for_window [app_id="Alacritty"]             border none
+
+for_window [app_id="Xpra" title="Tor Browser on .*"]  floating enable,border none
+
+for_window [app_id="firefox" title="About Mozilla Firefox"]        floating enable,border normal
+for_window [app_id="firefox" title="Firefox — Sharing Indicator"]  floating enable
 
 # Window assignments
 assign [class="Tor Browser" title="^.* on casual$"] → 2
+assign [app_id="Xpra" title="^.* on casual$"] → 2
 assign [instance="web.whatsapp.com"] → 3
 assign [class="Signal"] → 3
 assign [class="ricochet"] → 3
 assign [class="TelegramDesktop"] → 3
 #assign [class="Pavucontrol"] → 3
-
-output eDP-1 disable
-output DP-4 res 3840x2160 scale 2
-
-# FIXME: ideally this should be random
-output * bg /home/mutantmonkey/wallpapers/4k/04016_cosmologicalmasterpiece_3840x2160.jpg fill #3f3f3f
-
-# Workspace output
-workspace  1 output DP-3
-workspace  2 output DP-3
-workspace  3 output DP-3
-workspace  4 output DP-3
-workspace  5 output DP-3
-workspace  6 output DP-3
-workspace  7 output DP-3
-workspace  8 output DP-3
-workspace  9 output DP-3
-#workspace 10 output DP-3
 
 # Colors {{{
 
@@ -76,8 +70,7 @@ bindsym $m+Shift+Return exec i3-sensible-terminal
 bindsym $m+Shift+q kill
 
 # start launcher
-#bindsym $m+semicolon exec rofi -show drun
-bindsym $m+semicolon exec i3-dmenu-desktop --dmenu='bemenu --fn "DejaVu Sans Mono 10" -p drun -l 15 --tb \#3f3f3f --tf \#dcdccc --fb \#3f3f3f --ff \#dcdccc --nb \#3f3f3f --nf \#dcdccc --hb \#2f2f2f --hf \#dcdccc --sb \#3f3f3f --sf \#dcdccc --scb \#262626 --sf \#dcdccc'
+bindsym $m+semicolon exec wofi --show drun
 
 # lock screen with $m+x
 # XXX: investigate if this is the best way or not
@@ -87,9 +80,8 @@ bindsym $m+x    exec --no-startup-id swaylock -c 000000
 bindsym Print   exec --no-startup-id "canberra-gtk-play -i screen-capture; grim -o ~/screenshots/$(date +%F-%T).png"
 
 # brightness keys
-# FIXME: this doesn't work with wayland
-#bindsym XF86MonBrightnessUp    exec --no-startup-id xbacklight -steps 1 -inc 7
-#bindsym XF86MonBrightnessDown  exec --no-startup-id xbacklight -steps 1 -dec 7
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp   exec brightnessctl set 5%+
 
 # volume keys
 bindsym XF86AudioRaiseVolume   exec --no-startup-id "canberra-gtk-play -i audio-volume-change; pactl set-sink-volume @DEFAULT_SINK@ +2%"
@@ -228,7 +220,7 @@ bar {
     workspace_buttons yes
     tray_output       none
 
-    #swaybar_command waybar
+    swaybar_command waybar
     status_command  i3status
 
     colors {
@@ -242,11 +234,13 @@ bar {
     }
 }
 
-exec --no-startup-id pulseaudio --start
+exec_always --no-startup-id kanshi
+#exec --no-startup-id pulseaudio --start
+exec --no-startup-id mako
 exec --no-startup-id swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
          lock 'swaylock -f -c 000000'
 exec --no-startup-id gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id systemctl --user import-environment GTK2_RC_FILES
-exec --no-startup-id dbus-update-activation-environment --systemd GDK_SCALE GDK_DPI_SCALE
-exec --no-startup-id home.sh
+exec --no-startup-id smart_connect.sh
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
