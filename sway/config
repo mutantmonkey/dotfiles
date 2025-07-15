@@ -13,7 +13,7 @@ smart_gaps on
 # Window styles
 #for_window [class="^.*"]                    border pixel 0
 for_window [class="hl2_linux"]              fullscreen
-for_window [class="Tor Browser"]            floating enable,border none
+for_window [app_id="Tor Browser"]           floating enable,border none
 for_window [class="xfreerdp"]               floating enable
 for_window [app_id="termite"]               border none
 for_window [class="firefox"]                border none
@@ -28,13 +28,18 @@ for_window [app_id="firefox" title="About Mozilla Firefox"]        floating enab
 for_window [app_id="firefox" title="Firefox — Sharing Indicator"]  floating enable
 
 # Window assignments
-assign [class="Tor Browser" title="^.* on casual$"] → 2
-assign [app_id="Xpra" title="^.* on casual$"] → 2
-assign [instance="web.whatsapp.com"] → 3
-assign [class="Signal"] → 3
-assign [class="ricochet"] → 3
-assign [class="TelegramDesktop"] → 3
-#assign [class="Pavucontrol"] → 3
+assign [app_id="signal"] → 3
+assign [app_id="org.telegram.desktop"] → 3
+assign [app_id="org.keepassxc.KeePassXC"] → 4
+assign [app_id="thunderbird"] → 6
+
+# Input devices {{{
+input * {
+    xkb_options "caps:escape,compose:menu,compose:ralt"
+}
+
+input type:touchpad natural_scroll enabled
+# }}}
 
 # Colors {{{
 
