@@ -20,6 +20,13 @@ config_symlinks = alacritty \
 	ansible/ansible.cfg \
 	cower/config \
 	dunst/dunstrc \
+	fish/config.fish \
+	fish/fish_variables \
+	fish/functions/dir.fish \
+	fish/functions/gits.fish \
+	fish/functions/glog.fish \
+	fish/functions/ls.fish \
+	fish/functions/tree.fish \
 	gtk-2.0/gtkrc \
 	gtk-3.0/gtk.css \
 	gtk-3.0/settings.ini \
@@ -71,6 +78,10 @@ alot: alot/themes
 ansible: ansible/ansible.cfg
 
 dunst: dunst/dunstrc
+
+fish: fish/config.fish fish/fish_variables fish/functions/dir.fish \
+	fish/functions/gits.fish fish/functions/glog.fish fish/functions/ls.fish \
+	fish/functions/tree.fish
 
 gnupg: gnupg/dirmngr.conf gnupg/gpg.conf
 
