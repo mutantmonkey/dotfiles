@@ -1,0 +1,41 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x709080"
+blue = "0x94bff3"
+cyan = "0x93e0e3"
+green = "0xc3bf9f"
+magenta = "0xec93d3"
+red = "0xdca3a3"
+white = "0xffffff"
+yellow = "0xf0dfaf"
+
+[colors.normal]
+black = "0x3f3f3f"
+blue = "0x506070"
+cyan = "0x8cd0d3"
+green = "0x60b48a"
+magenta = "0xdc8cc3"
+red = "0x705050"
+white = "0xdcdccc"
+yellow = "0xdfaf8f"
+
+[colors.primary]
+background = "0x3f3f3f"
+bright_foreground = "0xffffff"
+foreground = "0xdcdccc"
+
+[colors.selection]
+background = "0x2f2f2f"
+foreground = "0xdcdccc"
+
+[font]
+normal = { family = "DejaVuSansM Nerd Font" }
+size = 9
+
+[mouse]
+hide_when_typing = true
+
+[window]
+decorations = "none"
